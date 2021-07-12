@@ -222,32 +222,32 @@
                                      BorderThickness="0"
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
-                                     Style="{StaticResource MenuButtonTheme}"/>
+                                     Style="{StaticResource MenuButtonTheme}" Command="{Binding ModelsViewCommand}"/>
                                 <RadioButton Content="Repairs"
                                      Height="50"
                                      BorderThickness="0"
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
-                                     Style="{StaticResource MenuButtonTheme}"/>
+                                     Style="{StaticResource MenuButtonTheme}" Command="{Binding RepairsViewCommand}"/>
                                 <RadioButton Content="Services"
                                      Height="50"
                                      BorderThickness="0"
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
-                                     Style="{StaticResource MenuButtonTheme}"/>
+                                     Style="{StaticResource MenuButtonTheme}" Command="{Binding ServiceViewCommand}"/>
                                 <RadioButton Content="Accounts"
                                      Height="50"
                                      BorderThickness="0"
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
-                                     Style="{StaticResource MenuButtonTheme}"/>
+                                     Style="{StaticResource MenuButtonTheme}" Command="{Binding AccountsViewCommand}"/>
                                 <RadioButton Content="Reports"
                                                  
                                      Height="50"
                                      BorderThickness="0"
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
-                                     Style="{StaticResource MenuButtonTheme}"/>
+                                     Style="{StaticResource MenuButtonTheme}" Command="{Binding ReportsViewCommand}"/>
 
                             </StackPanel>
                             <StackPanel x:Name="iconPanel" Grid.Column="0"

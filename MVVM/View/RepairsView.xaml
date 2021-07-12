@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="DemoInterface1.MVVM.View.ModelsView"
+﻿<UserControl x:Class="DemoInterface1.MVVM.View.RepairsView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,6 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="520" d:DesignWidth="780">
     <Grid>
-        <TextBlock Foreground="white" Text="Models" FontSize="50"/>
+        <TextBlock Foreground="white" Text="Repairs" FontSize="50"/>
     </Grid>
 </UserControl>

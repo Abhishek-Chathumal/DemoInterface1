@@ -25,6 +25,21 @@
             <DataTemplate DataType="{x:Type viewModel:OwnerViewModel}">
                 <view:OwnerView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ModelsViewModel}">
+                <view:ModelsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:RepairsViewModel}">
+                <view:RepairsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ServiceViewModel}">
+                <view:ServiceView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AccountsViewModel}">
+                <view:AccountsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ReportsViewModel}">
+                <view:ReportsView/>
+            </DataTemplate>
             
             <Style x:Key="FocusVisual">
                 <Setter Property="Control.Template">
