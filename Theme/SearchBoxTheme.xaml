@@ -9,8 +9,7 @@
                         <TextBox Margin="0"
                                  Text="{TemplateBinding Text}"
                                  BorderThickness="0"
-                                 Background="White"
-                                 Opacity="0.05"
+                                 Background="Transparent"
                                  VerticalContentAlignment="Center"
                                  Padding="5"
                                  Foreground="#FF9A9A9A" x:Name="searchBox"/>
