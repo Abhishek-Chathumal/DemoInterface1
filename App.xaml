@@ -40,6 +40,10 @@
             <DataTemplate DataType="{x:Type viewModel:ReportsViewModel}">
                 <view:ReportsView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddCustomerViewModel}">
+                <view:AddCustomerView/>
+            </DataTemplate>
+            
             
             <Style x:Key="FocusVisual">
                 <Setter Property="Control.Template">

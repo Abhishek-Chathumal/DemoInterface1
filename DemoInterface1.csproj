@@ -73,6 +73,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\AddCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\CustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -120,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVVM\ModelView\AccountsViewModel.cs" />
+    <Compile Include="MVVM\ModelView\AddCustomerViewModel.cs" />
     <Compile Include="MVVM\ModelView\CustomerViewModel.cs" />
     <Compile Include="MVVM\ModelView\HomeViewModel.cs" />
     <Compile Include="MVVM\ModelView\MainViewModel.cs" />
@@ -131,6 +136,9 @@
     <Compile Include="MVVM\ModelView\VehicleViewModel.cs" />
     <Compile Include="MVVM\View\AccountsView.xaml.cs">
       <DependentUpon>AccountsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AddCustomerView.xaml.cs">
+      <DependentUpon>AddCustomerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
