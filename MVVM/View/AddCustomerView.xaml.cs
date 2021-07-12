@@ -24,10 +24,5 @@ namespace DemoInterface1.MVVM.View
         {
             InitializeComponent();
         }
-
-        private void btn_back_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
