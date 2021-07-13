@@ -8,7 +8,7 @@
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Border x:Name="border"
                                SnapsToDevicePixels="True"
-                               Background="#302f2f"
+                               Background="#FF330677"
                                Opacity="0.3"
                                CornerRadius="5"
                                Height="{TemplateBinding Height}"
@@ -17,14 +17,14 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation To="1" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="Opacity"/>
+                                    <DoubleAnimation To="1" Duration="0:0:0" Storyboard.TargetName="border" Storyboard.TargetProperty="Opacity"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation To="0.3" Duration="0:0:0.2" Storyboard.TargetName="border" Storyboard.TargetProperty="Opacity"/>
+                                    <DoubleAnimation To="0.3" Duration="0:0:0.5" Storyboard.TargetName="border" Storyboard.TargetProperty="Opacity"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>

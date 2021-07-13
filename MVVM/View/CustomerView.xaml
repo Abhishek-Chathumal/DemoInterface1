@@ -4,15 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:DemoInterface1.MVVM.View" xmlns:core="clr-namespace:DemoInterface1.Core" d:DataContext="{d:DesignInstance Type=core:observableObject}"
+             xmlns:viewModel="clr-namespace:DemoInterface1.MVVM.ModelView"
              mc:Ignorable="d" 
              d:DesignHeight="520" d:DesignWidth="780">
 
     <Grid>
-        <TextBlock Foreground="white" Text="Customers" FontSize="50"/>
-        <Button Content="Add Customers" Height="24" Width="160" VerticalAlignment="Center" HorizontalAlignment="Center"
-                Command="{Binding DataContext.AddCustomerViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Margin="220,248,400,248"/>
-        <Button Content="View Customers" Height="24" Width="160" VerticalAlignment="Center" HorizontalAlignment="Center"
-                Command="{Binding DataContext.ViewCustomerViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Margin="403,248,217,248"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Opacity="0.8" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <RadioButton x:Name="rBtn_cusView" Content="View Customers" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
+                 Style="{StaticResource HorizontalMenuButtonTheme}" Command="{Binding ViewCustomerViewCommand}" Checked="rBtn_cusView_Checked" IsChecked="True"/>
+            <Rectangle Height="24" Width="1" VerticalAlignment="Center" Fill="White" Stroke="White" StrokeThickness="1"/>
+            <RadioButton x:Name="rBtn_cusAdd" Content="Add Customers" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Command="{Binding AddCustomerViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}" Checked="rBtn_cusAdd_Checked"/>
+            <Rectangle Height="24" Width="1" VerticalAlignment="Center" Fill="White" Stroke="White" StrokeThickness="1"/>
+            <RadioButton x:Name="rBtn_cusUpdte" Content="Update Customers" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Command="{Binding UpdateCustomerViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}" Checked="rBtn_cusUpdte_Checked"/>
+        </StackPanel>
+        <ContentControl x:Name="ctntCtrl" Grid.Row="1" Content="{Binding PresentView}"/>
+        
     </Grid>
 </UserControl>

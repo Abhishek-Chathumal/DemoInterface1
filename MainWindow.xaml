@@ -5,11 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoInterface1"
         xmlns:viewModel="clr-namespace:DemoInterface1.MVVM.ModelView"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         Height="600" Width="1000"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Background="Transparent"
         AllowsTransparency="True">
 
     <Window.DataContext>
@@ -169,6 +175,7 @@
                                          BorderThickness="0"
                                          FontSize="12"
                                          Style="{StaticResource ModernSearchBox}"/>
+
                                 <Button x:Name="btn_mainSearch"
                                         Height="30" Width="30" Background="Transparent"
                                         BorderThickness="0"

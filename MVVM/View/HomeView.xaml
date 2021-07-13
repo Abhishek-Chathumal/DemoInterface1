@@ -16,7 +16,6 @@
                 </Grid>
                 <StackPanel Orientation="Horizontal">
                     <StackPanel.Resources>
-
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="Margin" Value="10 10 0 0"/>
                         </Style>

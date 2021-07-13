@@ -5,10 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DemoInterface1.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="489.6" d:DesignWidth="780">
     <Grid>
         <TextBlock Foreground="white" Text="View Customer" FontSize="50"/>
-        <Button Content="Customer Menu" Height="25" Width="129" VerticalAlignment="Center" HorizontalAlignment="Center"
-                Command="{Binding DataContext.CustomerViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Margin="340,224,331,201"/>
+        
     </Grid>
 </UserControl>

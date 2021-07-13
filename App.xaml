@@ -11,6 +11,12 @@
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/SearchBoxTheme.xaml"/>
                 <ResourceDictionary Source="Theme/ScrollbarTheme.xaml"/>
+                <ResourceDictionary Source="Theme/HorizontalMenuButtonTheme.xaml"/>
+
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
@@ -45,6 +51,9 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:ViewCustomerViewModel}">
                 <view:ViewCustomerView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UpdateCustomerViewModel}">
+                <view:UpdateCustomerView/>
             </DataTemplate>
             
             
