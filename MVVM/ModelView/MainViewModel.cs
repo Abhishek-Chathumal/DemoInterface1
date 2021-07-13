@@ -18,8 +18,7 @@ namespace DemoInterface1.MVVM.ModelView
         public RelayCommand ServiceViewCommand { get; set; }
         public RelayCommand AccountsViewCommand { get; set; }
         public RelayCommand ReportsViewCommand { get; set; }
-        public RelayCommand AddCustomerViewCommand { get; set; }
-        public RelayCommand ViewCustomerViewCommand { get; set; }
+        
 
 
         public HomeViewModel HomeVM {get; set;}
@@ -31,8 +30,7 @@ namespace DemoInterface1.MVVM.ModelView
         public ServiceViewModel ServiceVM { get; set; }
         public AccountsViewModel AccountsVM { get; set; }
         public ReportsViewModel ReportsVM { get; set; }
-        public AddCustomerViewModel AddCustomerVM { get; set; }
-        public ViewCustomerViewModel ViewCustomerVM { get; set; }
+        
 
         private object _currentView;
 
@@ -60,8 +58,7 @@ namespace DemoInterface1.MVVM.ModelView
             ServiceVM = new ServiceViewModel();
             AccountsVM = new AccountsViewModel();
             ReportsVM = new ReportsViewModel();
-            AddCustomerVM = new AddCustomerViewModel();
-            ViewCustomerVM = new ViewCustomerViewModel();
+            
             CurrentView = HomeVM;
 
             HomeViewCommand = new RelayCommand(o => 
@@ -99,14 +96,6 @@ namespace DemoInterface1.MVVM.ModelView
             ReportsViewCommand = new RelayCommand(o =>
             {
                 CurrentView = ReportsVM;
-            });
-            AddCustomerViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = AddCustomerVM;
-            });
-            ViewCustomerViewCommand = new RelayCommand(o =>
-            {
-                CurrentView = ViewCustomerVM;
             });
         }
     }

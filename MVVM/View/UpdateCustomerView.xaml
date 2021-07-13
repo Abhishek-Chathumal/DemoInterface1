@@ -1,0 +1,342 @@
+﻿<UserControl x:Class="DemoInterface1.MVVM.View.UpdateCustomerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DemoInterface1.MVVM.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="489.6" d:DesignWidth="780">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Border CornerRadius="10" Background="#191919" Margin="0 10 0 10" Height="469.6">
+            <Border.Clip>
+                <RectangleGeometry RadiusX="10" RadiusY="10"
+                                   Rect="0 0 300 469.6"/>
+            </Border.Clip>
+            <ScrollViewer Margin="10 0 0 0" Grid.Column="0" VerticalScrollBarVisibility="Auto">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="Margin" Value="0 10 0 0"/>
+                            <Setter Property="Background" Value="#252424"/>
+                            <Setter Property="Height" Value="40"/>
+                            <Setter Property="Width" Value="200"/>
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Margin" Value="5 0 0 0"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="Height" Value="20"/>
+                            <Setter Property="Width" Value="20"/>
+                        </Style>
+                        <Style TargetType="{x:Type Rectangle}">
+                            <Setter Property="Margin" Value="5 0 4 0"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="Height" Value="16"/>
+                            <Setter Property="Width" Value="1"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Fill" Value="#FF9A9A9A"/>
+                            <Setter Property="Stroke" Value="#FF9A9A9A"/>
+                            <Setter Property="StrokeThickness" Value="1"/>
+                        </Style>
+                        <Style TargetType="{x:Type TextBox}">
+                            <Setter Property="Height" Value="30"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="Margin" Value="7.5 0 7.5 0"/>
+                            <Setter Property="Width" Value="185"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Foreground" Value="#FF9A9A9A"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="15"/>
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <ComboBox Margin="5 0 5 0" Height="30" Width="185"
+                                      materialDesign:HintAssist.Hint="NIC"
+                                      materialDesign:HintAssist.HintOpacity="0.5"
+                                      materialDesign:HintAssist.Foreground="#FF9A9A9A"
+                                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                                      Foreground="#FF9A9A9A"
+                                      FontSize="15" Background="Transparent"
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                <ComboBoxItem Content="Apple" />
+
+                                <ComboBoxItem Content="Banana" />
+
+                                <ComboBoxItem Content="Pear" />
+
+                                <ComboBoxItem Content="Orange" />
+
+                            </ComboBox>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBlock Text="First Name" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusFname}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_cusFname"/>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBlock Text="Last Name" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusLname}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_cusLname"/>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBox x:Name="txt_cusEmail" Width="185"/>
+                            <TextBlock Text="Email" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusEmail}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <!--Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBox x:Name="txt_cusFname" Width="200" Margin="10 0 0 0"/>
+                            <TextBlock Text="First Name" VerticalAlignment="Center" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusFname}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBox x:Name="txt_cusFname" Width="200" Margin="10 0 0 0"/>
+                            <TextBlock Text="First Name" VerticalAlignment="Center" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusFname}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBox x:Name="txt_cusFname" Width="200" Margin="10 0 0 0"/>
+                            <TextBlock Text="First Name" VerticalAlignment="Center" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusFname}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBox x:Name="txt_cusFname" Width="200" Margin="10 0 0 0"/>
+                            <TextBlock Text="First Name" VerticalAlignment="Center" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusFname}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBox x:Name="txt_cusFname" Width="200" Margin="10 0 0 0"/>
+                            <TextBlock Text="First Name" VerticalAlignment="Center" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusFname}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBox x:Name="txt_cusFname" Width="200" Margin="10 0 0 0"/>
+                            <TextBlock Text="First Name" VerticalAlignment="Center" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusFname}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBox x:Name="txt_cusFname" Width="200" Margin="10 0 0 0"/>
+                            <TextBlock Text="First Name" VerticalAlignment="Center" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusFname}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBox x:Name="txt_cusFname" Width="200" Margin="10 0 0 0"/>
+                            <TextBlock Text="First Name" VerticalAlignment="Center" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusFname}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBox x:Name="txt_cusFname" Width="200" Margin="10 0 0 0"/>
+                            <TextBlock Text="First Name" VerticalAlignment="Center" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusFname}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </Border-->
+                    
+                </StackPanel>
+            </ScrollViewer>
+
+        </Border>
+        
+    </Grid>
+</UserControl>
