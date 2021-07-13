@@ -43,6 +43,9 @@
             <DataTemplate DataType="{x:Type viewModel:AddCustomerViewModel}">
                 <view:AddCustomerView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ViewCustomerViewModel}">
+                <view:ViewCustomerView/>
+            </DataTemplate>
             
             
             <Style x:Key="FocusVisual">

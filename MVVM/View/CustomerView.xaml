@@ -9,8 +9,10 @@
 
     <Grid>
         <TextBlock Foreground="white" Text="Customers" FontSize="50"/>
-        <Button Content="Add" Height="25" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"
-                Command="{Binding DataContext.AddCustomerViewCommand, RelativeSource={RelativeSource AncestorType=Window}}"/>
-        
+        <Button Content="Add Customers" Height="24" Width="160" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Command="{Binding DataContext.AddCustomerViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Margin="220,248,400,248"/>
+        <Button Content="View Customers" Height="24" Width="160" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Command="{Binding DataContext.ViewCustomerViewCommand, RelativeSource={RelativeSource AncestorType=Window}}" Margin="403,248,217,248"/>
+
     </Grid>
 </UserControl>
