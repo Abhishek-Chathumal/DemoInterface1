@@ -83,6 +83,12 @@ namespace DemoInterface1.MVVM.View
             dt = db.getData(query);
             return dt;
         }
+        public int getCustomerCount()
+        {
+            dt = db.getData("select count(cNIC) from Customer");
+            int count = Int32.Parse(dt.Rows[0][0].ToString());
+            return count;
+        }
         public int updateCustomer ()
         {
             string query1 = " update Customer set  cus_FName = '" +fName+ "', cus_LName='" + lName + "', cEmail='" + cusEmail + "', residentAd='" + cusHomeAd + "', homeTel='" + cusHomeTel + "', mobileTel='" +cusMobileTel+ "', cProffession='" + cusProfession + "', workAd='" + cusWorkingAd + "', workTel='" + cusWorkiTel + "', cusPhoto='"+cusPhoto+"' where cNIC = '" + NIC + "'";
