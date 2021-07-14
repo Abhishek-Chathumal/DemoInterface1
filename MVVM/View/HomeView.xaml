@@ -31,6 +31,12 @@
                                 <GradientStop Color="#FF1C3F73" Offset="0.833"/>
                             </LinearGradientBrush>
                         </Border.Background>
+                        <Grid>
+                            <Image HorizontalAlignment="Left" Height="69" Margin="32,10,0,0" VerticalAlignment="Top" Width="78" Source="/IconsAndImages/Total.png"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="145,10,0,0" TextWrapping="Wrap" Text="TOTAL" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold" FontFamily="Tahoma" Opacity="0.6"/>
+                            <TextBlock x:Name="txt_totV" HorizontalAlignment="Left" Margin="165,52,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold" FontFamily="Tahoma" Opacity="0.6"/>
+                        </Grid>
+
                     </Border>
                     <Border VerticalAlignment="Top" HorizontalAlignment="Left"
                             Width="250" Height="90" CornerRadius="10">
@@ -44,6 +50,11 @@
                                 <GradientStop Color="#FFB6490C" Offset="0.833"/>
                             </LinearGradientBrush>
                         </Border.Background>
+                        <Grid>
+                            <Image HorizontalAlignment="Left" Height="69" Margin="32,10,0,0" VerticalAlignment="Top" Width="78" Source="/DemoInterface1;component/IconsAndImages/Available.png"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="115,10,0,0" TextWrapping="Wrap" Text="AVAILABLE" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold" FontFamily="Tahoma" Opacity="0.6" Width="128"/>
+                            <TextBlock x:Name="txt_available" HorizontalAlignment="Left" Margin="165,52,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold" FontFamily="Tahoma" Opacity="0.6"/>
+                        </Grid>
 
                     </Border>
                     <Border VerticalAlignment="Top" HorizontalAlignment="Left"
@@ -77,7 +88,7 @@
                         </Border.Clip>
                     </Border>
                 </StackPanel>
-                
+
 
             </StackPanel>
         </ScrollViewer>

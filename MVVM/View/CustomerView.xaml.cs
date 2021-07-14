@@ -25,6 +25,7 @@ namespace DemoInterface1.MVVM.View
         {
             InitializeComponent();
         }
+        Database db = new Database();
 
         private void rBtn_cusUpdte_Checked(object sender, RoutedEventArgs e)
         {

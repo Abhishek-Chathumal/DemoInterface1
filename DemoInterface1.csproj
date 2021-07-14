@@ -74,6 +74,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Class\AccidentRepair.cs" />
+    <Compile Include="Class\Bill.cs" />
+    <Compile Include="Class\Booking.cs" />
+    <Compile Include="Class\Customer.cs" />
+    <Compile Include="Class\Database.cs" />
+    <Compile Include="Class\HashCode.cs" />
+    <Compile Include="Class\Insurance.cs" />
+    <Compile Include="Class\MaintenanceRepair.cs" />
+    <Compile Include="Class\ModelPricing.cs" />
+    <Compile Include="Class\Owner.cs" />
+    <Compile Include="Class\Repair.cs" />
+    <Compile Include="Class\Service.cs" />
+    <Compile Include="Class\User.cs" />
+    <Compile Include="Class\Vehicle.cs" />
     <Compile Include="Core\observableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -222,6 +236,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CrystalReports\" />
     <Folder Include="Fonts\" />
     <Folder Include="MVVM\Model\" />
   </ItemGroup>
@@ -266,6 +281,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="IconsAndImages\Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IconsAndImages\Total.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IconsAndImages\Available.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

@@ -23,6 +23,14 @@ namespace DemoInterface1.MVVM.View
         public HomeView()
         {
             InitializeComponent();
+            labelData();
+        }
+        Vehicle vehicle = new Vehicle();
+
+        public void labelData()
+        {
+            txt_totV.Text = vehicle.getTotalVehicleCount().ToString();
+            txt_available.Text = vehicle.getAvaialableVehicleCount().ToString();
         }
     }
 }
