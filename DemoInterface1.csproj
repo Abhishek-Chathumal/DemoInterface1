@@ -265,7 +265,6 @@
   <ItemGroup>
     <Compile Include="MVVM\ModelView\AccountsViewModel.cs" />
     <Compile Include="MVVM\ModelView\AddCustomerViewModel.cs" />
-    <Compile Include="MVVM\ModelView\AddVehicleViewModel.cs" />
     <Compile Include="MVVM\ModelView\CustomerViewModel.cs" />
     <Compile Include="MVVM\ModelView\HomeViewModel.cs" />
     <Compile Include="MVVM\ModelView\MainViewModel.cs" />
@@ -275,10 +274,8 @@
     <Compile Include="MVVM\ModelView\ReportsViewModel.cs" />
     <Compile Include="MVVM\ModelView\ServiceViewModel.cs" />
     <Compile Include="MVVM\ModelView\UpdateCustomerViewModel.cs" />
-    <Compile Include="MVVM\ModelView\UpdateVehicleViewModel.cs" />
     <Compile Include="MVVM\ModelView\VehicleViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewCustomerViewModel.cs" />
-    <Compile Include="MVVM\ModelView\ViewVehicleViewModel.cs" />
     <Compile Include="MVVM\View\AccountsView.xaml.cs">
       <DependentUpon>AccountsView.xaml</DependentUpon>
     </Compile>
@@ -437,7 +434,6 @@
     <Resource Include="IconsAndImages\Minimize.png" />
   </ItemGroup>
   <ItemGroup>
-
     <Resource Include="IconsAndImages\Total.png" />
   </ItemGroup>
   <ItemGroup>
@@ -448,7 +444,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-
     <Resource Include="IconsAndImages\Profession.png" />
   </ItemGroup>
   <ItemGroup>
@@ -456,7 +451,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="IconsAndImages\Mobile.png" />
-
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

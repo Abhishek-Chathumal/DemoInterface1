@@ -56,9 +56,7 @@
             <DataTemplate DataType="{x:Type viewModel:UpdateCustomerViewModel}">
                 <view:UpdateCustomerView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:ViewVehicleViewModel}">
-                <view:View/>
-            </DataTemplate>
+           
 
 
             <Style x:Key="FocusVisual">
