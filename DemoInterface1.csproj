@@ -257,6 +257,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Theme\SubCrollbarTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVVM\ModelView\AccountsViewModel.cs" />
@@ -430,6 +434,7 @@
     <Resource Include="IconsAndImages\Minimize.png" />
   </ItemGroup>
   <ItemGroup>
+
     <Resource Include="IconsAndImages\Total.png" />
   </ItemGroup>
   <ItemGroup>
@@ -440,6 +445,15 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+
+    <Resource Include="IconsAndImages\Profession.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IconsAndImages\Contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IconsAndImages\Mobile.png" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
