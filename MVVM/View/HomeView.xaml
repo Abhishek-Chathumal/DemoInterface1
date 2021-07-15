@@ -86,7 +86,7 @@
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 460 300"/>
                         </Border.Clip>
                         <Grid>
-                            <lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Foreground="White">
+                            <lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Foreground="White" Margin="20">
                                 <lvc:PieChart.Series>
                                     <lvc:PieSeries Title="SEDAN" Values="10" DataLabels="True" LabelPoint="{Binding PointLabel}" >
                                         <lvc:PieSeries.Fill>

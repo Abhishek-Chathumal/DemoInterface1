@@ -24,5 +24,11 @@ namespace DemoInterface1.MVVM.View
         {
             InitializeComponent();
         }
+
+        private void btn_book_Click(object sender, RoutedEventArgs e)
+        {
+            Reports.RViewBookingHistory obj = new Reports.RViewBookingHistory();
+            obj.Show();
+        }
     }
 }
