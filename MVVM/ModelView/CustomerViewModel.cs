@@ -37,18 +37,23 @@ namespace DemoInterface1.MVVM.ModelView
             UpdateCustomerVM = new UpdateCustomerViewModel();
             PresentView = ViewCustomerVM;
 
-           AddCustomerViewCommand = new RelayCommand(o =>
-            {
-                PresentView = AddCustomerVM;
-            });
             ViewCustomerViewCommand = new RelayCommand(o =>
             {
                 PresentView = ViewCustomerVM;
+                
             });
+
+            AddCustomerViewCommand = new RelayCommand(o =>
+            {
+                PresentView = AddCustomerVM;
+                
+            });
+
             UpdateCustomerViewCommand = new RelayCommand(o =>
             {
                 PresentView = UpdateCustomerVM;
             });
+
         }
     }
 }

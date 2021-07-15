@@ -43,9 +43,6 @@ namespace DemoInterface1.MVVM.ModelView
                 OnPropertyChanged();
             }
         }
-            
-
-
 
         public MainViewModel()
         {
