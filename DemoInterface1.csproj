@@ -152,6 +152,7 @@
   <ItemGroup>
     <Compile Include="MVVM\ModelView\AccountsViewModel.cs" />
     <Compile Include="MVVM\ModelView\AddCustomerViewModel.cs" />
+    <Compile Include="MVVM\ModelView\AddVehicleViewModel.cs" />
     <Compile Include="MVVM\ModelView\CustomerViewModel.cs" />
     <Compile Include="MVVM\ModelView\HomeViewModel.cs" />
     <Compile Include="MVVM\ModelView\MainViewModel.cs" />
@@ -161,8 +162,10 @@
     <Compile Include="MVVM\ModelView\ReportsViewModel.cs" />
     <Compile Include="MVVM\ModelView\ServiceViewModel.cs" />
     <Compile Include="MVVM\ModelView\UpdateCustomerViewModel.cs" />
+    <Compile Include="MVVM\ModelView\UpdateVehicleViewModel.cs" />
     <Compile Include="MVVM\ModelView\VehicleViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewCustomerViewModel.cs" />
+    <Compile Include="MVVM\ModelView\ViewVehicleViewModel.cs" />
     <Compile Include="MVVM\View\AccountsView.xaml.cs">
       <DependentUpon>AccountsView.xaml</DependentUpon>
     </Compile>
