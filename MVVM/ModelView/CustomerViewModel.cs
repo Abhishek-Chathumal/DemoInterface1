@@ -18,14 +18,14 @@ namespace DemoInterface1.MVVM.ModelView
         public AddCustomerViewModel AddCustomerVM { get; set; }
         public UpdateCustomerViewModel UpdateCustomerVM { get; set; }
 
-        private object _presentView;
+        private object _presentCusView;
 
-        public object PresentView
+        public object PresentCustomerView
         {
-            get { return _presentView; }
+            get { return _presentCusView; }
             set
             {
-                _presentView = value;
+                _presentCusView = value;
                 OnPropertyChanged();
             }
         }
@@ -35,23 +35,23 @@ namespace DemoInterface1.MVVM.ModelView
             AddCustomerVM = new AddCustomerViewModel();
             ViewCustomerVM = new ViewCustomerViewModel();
             UpdateCustomerVM = new UpdateCustomerViewModel();
-            PresentView = ViewCustomerVM;
+            PresentCustomerView = ViewCustomerVM;
 
             ViewCustomerViewCommand = new RelayCommand(o =>
             {
-                PresentView = ViewCustomerVM;
+                PresentCustomerView = ViewCustomerVM;
                 
             });
 
             AddCustomerViewCommand = new RelayCommand(o =>
             {
-                PresentView = AddCustomerVM;
+                PresentCustomerView = AddCustomerVM;
                 
             });
 
             UpdateCustomerViewCommand = new RelayCommand(o =>
             {
-                PresentView = UpdateCustomerVM;
+                PresentCustomerView = UpdateCustomerVM;
             });
 
         }
