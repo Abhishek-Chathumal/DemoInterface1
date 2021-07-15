@@ -46,15 +46,15 @@ namespace DemoInterface1.MVVM.View
             PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
             DataContext = this;
             SolidColorBrush brush1 = new SolidColorBrush();
-            brush1.Color = Color.FromRgb(34, 19, 119);
+            brush1.Color = Color.FromRgb(173, 9, 255);
             SolidColorBrush brush2 = new SolidColorBrush();
-            brush2.Color = Color.FromRgb(136, 170, 255);
+            brush2.Color = Color.FromRgb(107, 8, 240);
             SolidColorBrush brush3 = new SolidColorBrush();
-            brush3.Color = Color.FromRgb(0, 51, 238);
+            brush3.Color = Color.FromRgb(199, 76, 255);
             SolidColorBrush brush4 = new SolidColorBrush();
-            brush4.Color = Color.FromRgb(68, 34, 238);
+            brush4.Color = Color.FromRgb(67, 3, 150);
             SolidColorBrush brush5 = new SolidColorBrush();
-            brush5.Color = Color.FromRgb(34, 119, 170);
+            brush5.Color = Color.FromRgb(102, 0, 153);
             piechart.Series = new SeriesCollection
         {
             new PieSeries
