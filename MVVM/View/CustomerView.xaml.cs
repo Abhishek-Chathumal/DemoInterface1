@@ -24,21 +24,21 @@ namespace DemoInterface1.MVVM.View
         public CustomerView()
         {
             InitializeComponent();
+
+            
         }
+        CustomerViewModel obj = new CustomerViewModel();
 
         private void rBtn_cusUpdte_Checked(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void rBtn_cusAdd_Checked(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void rBtn_cusView_Checked(object sender, RoutedEventArgs e)
         {
-            
         }
     }
 }
