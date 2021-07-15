@@ -47,7 +47,6 @@ namespace DemoInterface1.MVVM.View
             appStartPath = String.Format(dir + "\\" + cmb_nic.Text + ".jpg");
             return appStartPath;
         }
-
         public void loadData()
         {
             dt = customer.viewCustomer();
@@ -55,12 +54,24 @@ namespace DemoInterface1.MVVM.View
             cmb_nic.DisplayMemberPath = "NIC";
             cmb_nic.SelectedValuePath = "NIC";
         }
+        public bool IsValid(string emailaddress)
+        {
+            try
+            {
+                System.Net.Mail.MailAddress m = new System.Net.Mail.MailAddress(emailaddress);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
 
         private void cmb_nic_DropDownClosed(object sender, EventArgs e)
         {
             if (cmb_nic.SelectedItem == null)
             {
-                //error_msg.Text = "Please Select NIC";
+                error_msg.Text = "Please Select NIC";
             }
 
             else
@@ -121,15 +132,62 @@ namespace DemoInterface1.MVVM.View
             }
             catch (Exception ex)
             {
-               /* MessageBox msg = new MessageBox();
+                ExternalForms.Message msg = new ExternalForms.Message();
                 msg.errorMsg("Oops soomething went worng. " + ex.Message);
-                msg.Show();*/
+                msg.Show();
             }
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
-
+            if (error_msg.Text == "")
+            {
+                try
+                {
+                    string name = System.IO.Path.GetFileName(path);
+                    string destinationPath = GetDestinationPath(name);
+                    /*var folder = new DirectoryInfo(destinationPath);
+                    folder.Delete(true);*/
+                    File.Copy(path, destinationPath, true);
+                    Customer upCustomer = new Customer(txt_CusFname.Text, txt_CusLname.Text, cmb_nic.Text, txt_CusEmail.Text, txt_CusResAdrs.Text, Int32.Parse(txt_CusTelHome.Text), Int32.Parse(txt_CusTelMobile.Text), txt_CusProfession.Text, txt_CusWorkAdrs.Text, Int32.Parse(txt_CusTelWork.Text), txt_CusKinName.Text, txt_CusKinkAdrs.Text, Int32.Parse(txt_CusKinConatct.Text), destinationPath); ;
+                    int i = upCustomer.updateCustomer();
+                    if (i == 1)
+                    {
+                        ExternalForms.Message msg = new ExternalForms.Message();
+                        msg.Show();
+                    }
+                    else
+                    {
+                        ExternalForms.Message msg = new ExternalForms.Message();
+                        msg.errorMsg("Could not save data,Please try agian");
+                        msg.Show();
+                    }
+                }
+                catch (ArgumentNullException)
+                {
+                    ExternalForms.Message msg = new ExternalForms.Message();
+                    msg.errorMsg("Please upload a photo");
+                    msg.Show();
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    ExternalForms.Message msg = new ExternalForms.Message();
+                    msg.errorMsg("Please fill the form correctly. Database Error");
+                    msg.Show();
+                }
+                catch (Exception ex)
+                {
+                    ExternalForms.Message msg = new ExternalForms.Message();
+                    msg.errorMsg("Oops something went worng. " + ex.Message);
+                    msg.Show();
+                }
+            }
+            else
+            {
+                ExternalForms.Message msg = new ExternalForms.Message();
+                msg.errorMsg("Please fill the form correctly. Database Error");
+                msg.Show();
+            }
         }
 
         private void btn_clear_Click(object sender, RoutedEventArgs e)
@@ -147,6 +205,143 @@ namespace DemoInterface1.MVVM.View
             txt_CusKinName.Clear();
             txt_CusKinkAdrs.Clear();
             txt_CusKinConatct.Clear();
+            error_msg.Text = "";
+        }
+
+        private void txt_CusFname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusFname.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer First Name  ";
+            else if (txt_CusFname.Text.Any(char.IsDigit))
+                error_msg.Text = "First Name cannot have Numbers";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusLname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusLname.Text.Length == 0)
+                error_msg.Text = "Please Enter Custoer last Name  ";
+            else if (txt_CusLname.Text.Any(char.IsDigit))
+                error_msg.Text = "Last Name cannot have Numbers";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusEmail.Text.Length == 0)
+                error_msg.Text = "Please Enter Custoer Email  ";
+            else if (!IsValid(txt_CusEmail.Text))
+                error_msg.Text = "Please enter a valid email address ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusResAdrs_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusResAdrs.Text.Length == 0)
+                error_msg.Text = "Please Enter Custoer Home Addrss  ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusTelHome_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusTelHome.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer  Home Telephone ";
+            else if (!Regex.IsMatch(txt_CusTelHome.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+                error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusTelMobile_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusTelMobile.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer Mobile Number ";
+            else if (!Regex.IsMatch(txt_CusTelMobile.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+
+                error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusProfession_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusProfession.Text.Length == 0)
+                error_msg.Text = "Please Enter Custoer Profession  ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusWorkAdrs_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusWorkAdrs.Text.Length == 0)
+                error_msg.Text = "Please Enter Custoer Work Address  ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusTelWork_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusTelWork.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer Work Telephone Number ";
+            else if (!Regex.IsMatch(txt_CusTelWork.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+                error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusKinName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusKinName.Text.Length == 0)
+                error_msg.Text = "Please Enter Custoer Kin Name ";
+            else if (txt_CusKinName.Text.Any(char.IsDigit))
+                error_msg.Text = "Last Name cannot have Numbers";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusKinkAdrs_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusKinkAdrs.Text.Length == 0)
+                error_msg.Text = "Please Enter Custoer Kin Address ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusKinConatct_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusKinConatct.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer Kin Contact Number ";
+            else if (!Regex.IsMatch(txt_CusKinConatct.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
+                error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void btn_delete_Click(object sender, RoutedEventArgs e)
+        {
+            int line = customer.deleteCustomer(cmb_nic.Text);
+            if (line == 1)
+            {
+                String appStartPath = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+                string dir = appStartPath + "\\Customers\\" + cmb_nic.Text;
+                var folder = new DirectoryInfo(dir);
+                folder.Delete(true);
+                ExternalForms.Message msg = new ExternalForms.Message();
+                msg.errorMsg("Data deleted successfully");
+                msg.Show();
+                btn_clear_Click(this, null);
+            }
+
+            else
+            {
+                ExternalForms.Message msg = new ExternalForms.Message();
+                msg.errorMsg("Could not save data,Please try agian");
+                msg.Show();
+            }
         }
     }
 }
