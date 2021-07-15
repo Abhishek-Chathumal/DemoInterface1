@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <LinearGradientBrush x:Key="HorizontalButtonBackgrund" EndPoint="1,0.5" StartPoint="0,0.5" Opacity="0.42" SpreadMethod="Reflect">
-        <GradientStop Color="#202020" Offset="0.01"/>
-        <GradientStop Color="#202020" Offset="0.99"/>
+    <LinearGradientBrush x:Key="HorizontalButtonBackgrund" EndPoint="1,0.5" StartPoint="0,0.5" Opacity="0.8" SpreadMethod="Reflect">
+        <GradientStop Color="#191919" Offset="0.01"/>
+        <GradientStop Color="#191919" Offset="0.99"/>
         <GradientStop Color="#673ab7" Offset="0.40"/>
         <GradientStop Color="#673ab7" Offset="0.60"/>
     </LinearGradientBrush>
@@ -33,9 +33,6 @@
         </Style.Setters>
 
         <Style.Triggers>
-            <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="{StaticResource HorizontalButtonBackgrund}" />
-            </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{StaticResource HorizontalButtonBackgrund}" />
             </Trigger>
