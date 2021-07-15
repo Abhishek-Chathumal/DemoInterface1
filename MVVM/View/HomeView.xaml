@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              xmlns:local="clr-namespace:DemoInterface1.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="520" d:DesignWidth="780">
@@ -31,6 +32,12 @@
                                 <GradientStop Color="#FF1C3F73" Offset="0.833"/>
                             </LinearGradientBrush>
                         </Border.Background>
+                        <Grid>
+                            <Image HorizontalAlignment="Left" Height="69" Margin="32,10,0,0" VerticalAlignment="Top" Width="78" Source="/IconsAndImages/Total.png"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="145,10,0,0" TextWrapping="Wrap" Text="TOTAL" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold" FontFamily="Tahoma" Opacity="0.6"/>
+                            <TextBlock x:Name="txt_totV" HorizontalAlignment="Left" Margin="165,52,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold" FontFamily="Tahoma" Opacity="0.6"/>
+                        </Grid>
+
                     </Border>
                     <Border VerticalAlignment="Top" HorizontalAlignment="Left"
                             Width="250" Height="90" CornerRadius="10">
@@ -44,6 +51,11 @@
                                 <GradientStop Color="#FFB6490C" Offset="0.833"/>
                             </LinearGradientBrush>
                         </Border.Background>
+                        <Grid>
+                            <Image HorizontalAlignment="Left" Height="69" Margin="32,10,0,0" VerticalAlignment="Top" Width="78" Source="/DemoInterface1;component/IconsAndImages/Available2.png"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="115,10,0,0" TextWrapping="Wrap" Text="AVAILABLE" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold" FontFamily="Tahoma" Opacity="0.6" Width="128"/>
+                            <TextBlock x:Name="txt_available" HorizontalAlignment="Left" Margin="165,52,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold" FontFamily="Tahoma" Opacity="0.6"/>
+                        </Grid>
 
                     </Border>
                     <Border VerticalAlignment="Top" HorizontalAlignment="Left"
@@ -58,6 +70,11 @@
                                 <GradientStop Color="#FF400A49" Offset="0.843"/>
                             </LinearGradientBrush>
                         </Border.Background>
+                        <Grid>
+                            <Image HorizontalAlignment="Left" Height="69" Margin="23,10,0,0" VerticalAlignment="Top" Width="78" Source="/DemoInterface1;component/IconsAndImages/Customer1.png"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="101,10,0,0" TextWrapping="Wrap" Text="CUSTOMERS" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold" FontFamily="Tahoma" Opacity="0.6" Width="139"/>
+                            <TextBlock x:Name="txt_customers" HorizontalAlignment="Left" Margin="165,52,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Foreground="White" FontSize="22" FontWeight="Bold" FontFamily="Tahoma" Opacity="0.6"/>
+                        </Grid>
 
                     </Border>
                 </StackPanel>
@@ -68,6 +85,33 @@
                         <Border.Clip>
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 460 300"/>
                         </Border.Clip>
+                        <Grid>
+                            <lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Foreground="White" Margin="20">
+                                <lvc:PieChart.Series>
+                                    <lvc:PieSeries Title="SEDAN" Values="10" DataLabels="True" LabelPoint="{Binding PointLabel}" >
+                                        <lvc:PieSeries.Fill>
+                                            <SolidColorBrush Color="#FF88AAFF" Opacity="1"/>
+                                        </lvc:PieSeries.Fill>
+                                    </lvc:PieSeries>
+                                    <lvc:PieSeries Title="HATCHBACK" Values="20" DataLabels="True" LabelPoint="{Binding PointLabel}">
+                                        <lvc:PieSeries.Fill>
+                                            <SolidColorBrush Color="#FF1100BB" Opacity="1"/>
+                                        </lvc:PieSeries.Fill>
+                                    </lvc:PieSeries>
+                                    <lvc:PieSeries Title="SUV" Values="15" DataLabels="True" LabelPoint="{Binding PointLabel}">
+                                        <lvc:PieSeries.Fill>
+                                            <SolidColorBrush Color="#FF2277AA" Opacity="1"/>
+                                        </lvc:PieSeries.Fill>
+                                    </lvc:PieSeries>
+                                    <lvc:PieSeries Title="MINIVAN" Values="35" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+                                    <lvc:PieSeries Title="VAN" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}">
+                                        <lvc:PieSeries.Fill>
+                                            <SolidColorBrush Color="#FF221177" Opacity="1"/>
+                                        </lvc:PieSeries.Fill>
+                                    </lvc:PieSeries>
+                                </lvc:PieChart.Series>
+                            </lvc:PieChart>
+                        </Grid>
                     </Border>
                     <Border VerticalAlignment="Top" HorizontalAlignment="Left"
                         Width="300" Height="300" CornerRadius="10" Background="#191919" Margin="10 30 0 0">
@@ -77,7 +121,7 @@
                         </Border.Clip>
                     </Border>
                 </StackPanel>
-                
+
 
             </StackPanel>
         </ScrollViewer>

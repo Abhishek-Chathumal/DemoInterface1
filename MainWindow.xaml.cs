@@ -48,5 +48,6 @@ namespace DemoInterface1
         {
             this.WindowState = WindowState.Minimized;
         }
+
     }
 }

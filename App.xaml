@@ -56,8 +56,9 @@
             <DataTemplate DataType="{x:Type viewModel:UpdateCustomerViewModel}">
                 <view:UpdateCustomerView/>
             </DataTemplate>
-            
-            
+           
+
+
             <Style x:Key="FocusVisual">
                 <Setter Property="Control.Template">
                     <Setter.Value>
