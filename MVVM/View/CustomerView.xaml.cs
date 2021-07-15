@@ -27,7 +27,10 @@ namespace DemoInterface1.MVVM.View
 
             
         }
+
+        Database db = new Database();
         CustomerViewModel obj = new CustomerViewModel();
+
 
         private void rBtn_cusUpdte_Checked(object sender, RoutedEventArgs e)
         {
