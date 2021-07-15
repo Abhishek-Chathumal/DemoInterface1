@@ -16,14 +16,14 @@ namespace DemoInterface1.CrystalReports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crvVehicleBooking : ReportClass {
+    public class crvMaintenance : ReportClass {
         
-        public crvVehicleBooking() {
+        public crvMaintenance() {
         }
         
         public override string ResourceName {
             get {
-                return "crvVehicleBooking.rpt";
+                return "crvMaintenance.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DemoInterface1.CrystalReports {
         
         public override string FullResourceName {
             get {
-                return "DemoInterface1.CrystalReports.crvVehicleBooking.rpt";
+                return "DemoInterface1.CrystalReports.crvMaintenance.rpt";
             }
             set {
                 // Do nothing
@@ -90,17 +90,25 @@ namespace DemoInterface1.CrystalReports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_vno {
+        public CrystalDecisions.Shared.IParameterField Parameter_start {
             get {
                 return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_end {
+            get {
+                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedcrvVehicleBooking : Component, ICachedReport {
+    public class CachedcrvMaintenance : Component, ICachedReport {
         
-        public CachedcrvVehicleBooking() {
+        public CachedcrvMaintenance() {
         }
         
         [Browsable(false)]
@@ -137,7 +145,7 @@ namespace DemoInterface1.CrystalReports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crvVehicleBooking rpt = new crvVehicleBooking();
+            crvMaintenance rpt = new crvMaintenance();
             rpt.Site = this.Site;
             return rpt;
         }

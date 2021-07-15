@@ -16,14 +16,14 @@ namespace DemoInterface1.CrystalReports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crvCustomerBookings : ReportClass {
+    public class crvAccident : ReportClass {
         
-        public crvCustomerBookings() {
+        public crvAccident() {
         }
         
         public override string ResourceName {
             get {
-                return "crvCustomerBookings.rpt";
+                return "crvAccident.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DemoInterface1.CrystalReports {
         
         public override string FullResourceName {
             get {
-                return "DemoInterface1.CrystalReports.crvCustomerBookings.rpt";
+                return "DemoInterface1.CrystalReports.crvAccident.rpt";
             }
             set {
                 // Do nothing
@@ -90,17 +90,25 @@ namespace DemoInterface1.CrystalReports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_cno {
+        public CrystalDecisions.Shared.IParameterField Parameter_start {
             get {
                 return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_end {
+            get {
+                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedcrvCustomerBookings : Component, ICachedReport {
+    public class CachedcrvAccident : Component, ICachedReport {
         
-        public CachedcrvCustomerBookings() {
+        public CachedcrvAccident() {
         }
         
         [Browsable(false)]
@@ -137,7 +145,7 @@ namespace DemoInterface1.CrystalReports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crvCustomerBookings rpt = new crvCustomerBookings();
+            crvAccident rpt = new crvAccident();
             rpt.Site = this.Site;
             return rpt;
         }

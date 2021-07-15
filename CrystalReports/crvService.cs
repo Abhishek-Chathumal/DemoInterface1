@@ -16,14 +16,14 @@ namespace DemoInterface1.CrystalReports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crvBooking : ReportClass {
+    public class crvService : ReportClass {
         
-        public crvBooking() {
+        public crvService() {
         }
         
         public override string ResourceName {
             get {
-                return "crvBooking.rpt";
+                return "crvService.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DemoInterface1.CrystalReports {
         
         public override string FullResourceName {
             get {
-                return "DemoInterface1.CrystalReports.crvBooking.rpt";
+                return "DemoInterface1.CrystalReports.crvService.rpt";
             }
             set {
                 // Do nothing
@@ -106,9 +106,9 @@ namespace DemoInterface1.CrystalReports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedcrvBooking : Component, ICachedReport {
+    public class CachedcrvService : Component, ICachedReport {
         
-        public CachedcrvBooking() {
+        public CachedcrvService() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace DemoInterface1.CrystalReports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crvBooking rpt = new crvBooking();
+            crvService rpt = new crvService();
             rpt.Site = this.Site;
             return rpt;
         }

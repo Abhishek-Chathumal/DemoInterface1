@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Malshi_Rent_A_Car.CrystalReports {
+namespace DemoInterface1.CrystalReports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace Malshi_Rent_A_Car.CrystalReports {
         
         public override string FullResourceName {
             get {
-                return "Malshi_Rent_A_Car.CrystalReports.crvCustomerBookings.rpt";
+                return "DemoInterface1.CrystalReports.crvCustomerBookings.rpt";
             }
             set {
                 // Do nothing

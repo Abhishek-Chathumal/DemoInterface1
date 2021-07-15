@@ -88,11 +88,82 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CrystalReports\crvAccident.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crvAccident.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReports\crvBooking.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crvBooking.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReports\crvCustomerBookings.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crvCustomerBookings.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReports\crvMaintenance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crvMaintenance.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReports\crvService.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crvService.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReports\crvVehicleBooking.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crvVehicleBooking.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReports\crvVehicleStatus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crvVehicleStatus.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RViewAccidentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RViewAccidentHistory.Designer.cs">
+      <DependentUpon>RViewAccidentHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\RViewBookingHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\RViewBookingHistory.Designer.cs">
       <DependentUpon>RViewBookingHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RViewCustomerBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RViewCustomerBooking.Designer.cs">
+      <DependentUpon>RViewCustomerBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RViewMaintenanceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RViewMaintenanceHistory.Designer.cs">
+      <DependentUpon>RViewMaintenanceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RViewServiceHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RViewServiceHistory.Designer.cs">
+      <DependentUpon>RViewServiceHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RViewVehicleBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RViewVehicleBooking.Designer.cs">
+      <DependentUpon>RViewVehicleBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RViewVehicleStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RViewVehicleStatus.Designer.cs">
+      <DependentUpon>RViewVehicleStatus.cs</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -118,42 +189,6 @@
     <Compile Include="Class\Vehicle.cs" />
     <Compile Include="Core\observableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
-    <Compile Include="CrystalReports\crvBooking.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReports\crvBooking1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crvBooking.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReports\crvCustomerBookings.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReports\crvCustomerBookings1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crvCustomerBookings.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReports\crvVehicleBooking.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReports\crvVehicleBooking1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crvVehicleBooking.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReports\crvVehicleStatus.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="CrystalReports\crvVehicleStatus1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crvVehicleStatus.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -286,28 +321,58 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="CrystalReports\crvAccident.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crvAccident.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReports\crvBooking.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crvBooking1.cs</LastGenOutput>
+      <LastGenOutput>crvBooking.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReports\crvCustomerBookings.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crvCustomerBookings1.cs</LastGenOutput>
+      <LastGenOutput>crvCustomerBookings.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crvMaintenance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crvMaintenance.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crvService.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crvService.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReports\crvVehicleBooking.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crvVehicleBooking1.cs</LastGenOutput>
+      <LastGenOutput>crvVehicleBooking.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReports\crvVehicleStatus.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crvVehicleStatus1.cs</LastGenOutput>
+      <LastGenOutput>crvVehicleStatus.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RViewAccidentHistory.resx">
+      <DependentUpon>RViewAccidentHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\RViewBookingHistory.resx">
       <DependentUpon>RViewBookingHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RViewCustomerBooking.resx">
+      <DependentUpon>RViewCustomerBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RViewMaintenanceHistory.resx">
+      <DependentUpon>RViewMaintenanceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RViewServiceHistory.resx">
+      <DependentUpon>RViewServiceHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RViewVehicleBooking.resx">
+      <DependentUpon>RViewVehicleBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RViewVehicleStatus.resx">
+      <DependentUpon>RViewVehicleStatus.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
