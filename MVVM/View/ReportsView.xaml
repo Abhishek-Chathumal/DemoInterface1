@@ -1,12 +1,23 @@
-﻿<UserControl x:Class="DemoInterface1.MVVM.View.ReportsView"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DemoInterface1.MVVM.View"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="DemoInterface1.MVVM.View.ReportsView"
              mc:Ignorable="d" 
              d:DesignHeight="520" d:DesignWidth="780">
     <Grid>
-        <TextBlock Foreground="white" Text="Reports" FontSize="50"/>            
+        <TextBlock Foreground="white" FontSize="50"><Run Text="Reports"/></TextBlock>
+        <Button x:Name="btn_status" Content="Vehicle Status" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,217,0,0" Click="btn_status_Click"/>
+        <Button x:Name="btn_cus_book" Content="Customer Booking History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,179,0,0" Click="btn_cus_book_Click"/>
+        <Button x:Name="btn_vehicle_book" Content="Vehicle Booking History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,141,0,0" Click="btn_vehicle_book_Click"/>
+        <Button x:Name="btn_book" Content="Booking History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,103,0,0" Click="btn_book_Click"/>
+        <Button x:Name="btn_service" Content="Service History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,255,0,0" Click="btn_service_Click"/>
+        <Button x:Name="btn_vehicle_service" Content="Vehicle Service History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,292,0,0" Click="btn_vehicle_service_Click"/>
+        <Button x:Name="btn_maintenance" Content="Maintenance History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,329,0,0" Click="btn_maintenance_Click"/>
+        <Button x:Name="btn_vehicle_maintenance" Content="Vehicle Maintenance History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,366,0,0" Click="btn_vehicle_maintenance_Click"/>
+        <Button x:Name="btn_acccident" Content="Accident History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,403,0,0" Click="btn_acccident_Click"/>
+        <Button x:Name="btn_vehicle_accident" Content="Vehicle Accident History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,440,0,0" Click="btn_vehicle_accident_Click"/>
     </Grid>
 </UserControl>
