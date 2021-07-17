@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DemoInterface1.MVVM.View
+namespace DemoInterface1
 { 
     class Database
     {

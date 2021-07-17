@@ -130,6 +130,9 @@
       <DependentUpon>crvVehicleStatus.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ExternalForms\BillPrint.xaml.cs">
+      <DependentUpon>BillPrint.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExternalForms\Message.xaml.cs">
       <DependentUpon>Message.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,10 @@
     <Compile Include="Reports\RViewVehicleStatus.Designer.cs">
       <DependentUpon>RViewVehicleStatus.cs</DependentUpon>
     </Compile>
+    <Page Include="ExternalForms\BillPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ExternalForms\Message.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

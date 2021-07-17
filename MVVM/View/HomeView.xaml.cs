@@ -55,6 +55,8 @@ namespace DemoInterface1.MVVM.View
             brush4.Color = Color.FromRgb(67, 3, 150);
             SolidColorBrush brush5 = new SolidColorBrush();
             brush5.Color = Color.FromRgb(102, 0, 153);
+            SolidColorBrush brush6 = new SolidColorBrush();
+            brush6.Color = Color.FromRgb(34, 119, 170);
             piechart.Series = new SeriesCollection
         {
             new PieSeries
@@ -99,6 +101,15 @@ namespace DemoInterface1.MVVM.View
                 DataLabels = true,
                 LabelPoint = PointLabel,
                 Fill = brush5
+            }
+            ,
+            new PieSeries
+            {
+                Title = "PICKUP",
+                Values = new ChartValues<double> {vehicle.getPickup()},
+                DataLabels = true,
+                LabelPoint = PointLabel,
+                Fill = brush6
             }
         };
         }

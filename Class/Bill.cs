@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DemoInterface1.MVVM.View
+namespace DemoInterface1
 { 
     class Bill
     {
@@ -25,10 +25,11 @@ namespace DemoInterface1.MVVM.View
         {
 
         }
-        public int addBill(string bookID)
+        public int addBill(string bookID, string vid)
         {
-            string query = "insert into billing values ('"+bookID+"','"+billID+"','"+billDate+"','"+extraCost+"','"+payMethod+"',)";
-            int i =db.save_update_delete(query);
+            string query = "insert into billing values ('" + bookID + "','" + billID + "','" + billDate + "','" + extraCost + "','" + payMethod + "')";
+            string query2 = "update vehicle set bookingStatus = '0' where plateNumber = '" + vid + "'";
+            int i = db.save_update_delete(query);
             return i;
 
         }
