@@ -15,7 +15,7 @@
         <TextBlock Text="- VIEW CUSTOMERS -" Foreground="White" Opacity="0.8" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"
                    FontSize="16" FontFamily="Tahoma" />
         <StackPanel Grid.Row="1">
-            <DockPanel Margin="0 10 0 0">
+            <DockPanel>
                 <Border Width="600" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#191919" CornerRadius="0 0 10 10"
                     Height="80">
                     <Border.Clip>
@@ -104,13 +104,13 @@
 
             </DockPanel>
             
-            <Border Width="780" Height="349.6" VerticalAlignment="Center" Margin="0 20 0 0" Background="#191919" CornerRadius="10">
-                <Grid Width="760" Height="330" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Border Width="780" Height="359.6" VerticalAlignment="Center" Margin="0 10 0 0" Background="#191919" CornerRadius="10">
+                <Grid Width="760" Height="330" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 10 0 0">
                     <DataGrid
                     ItemsSource="{Binding}"
                     CanUserAddRows="False"
                     SelectionUnit="Cell"
-                    SelectionMode="Extended" Background="Transparent"/>
+                    SelectionMode="Extended" Background="Transparent" Foreground="#9a9a9a"/>
                 </Grid>
             </Border>
         </StackPanel>
