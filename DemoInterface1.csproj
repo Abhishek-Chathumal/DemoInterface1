@@ -133,6 +133,9 @@
     <Compile Include="ExternalForms\BillPrint.xaml.cs">
       <DependentUpon>BillPrint.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExternalForms\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExternalForms\Message.xaml.cs">
       <DependentUpon>Message.xaml</DependentUpon>
     </Compile>
@@ -179,6 +182,10 @@
       <DependentUpon>RViewVehicleStatus.cs</DependentUpon>
     </Compile>
     <Page Include="ExternalForms\BillPrint.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExternalForms\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

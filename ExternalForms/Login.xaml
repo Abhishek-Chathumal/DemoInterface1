@@ -1,0 +1,46 @@
+﻿<Window x:Class="DemoInterface1.ExternalForms.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoInterface1.ExternalForms"
+        mc:Ignorable="d"
+        Title="Login" Height="364" Width="358.429" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,0" StartPoint="0,1">
+                <GradientStop Color="#FFE3D3FF" Offset="0.10"/>
+                <GradientStop Color="White" Offset="0.34"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel>
+            <Grid Height="50" VerticalAlignment="Top" Background="#FF673AB7">
+                <TextBlock Foreground="White" Text="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+            </Grid>
+            <DockPanel>
+                <ListView HorizontalAlignment="Left" Foreground="Black" FontSize="15" Margin="10 10 10 10" FontWeight="DemiBold" BorderBrush="{x:Null}">
+                    <ListViewItem/>
+                    <ListViewItem>
+                        <Label Content="Username" HorizontalAlignment="Left" Margin="40 0 0 0" VerticalAlignment="Top"/>
+                    </ListViewItem>
+                    <ListViewItem>
+                        <Label Content="Password" HorizontalAlignment="Left" Margin="40 10 0 0" VerticalAlignment="Top" RenderTransformOrigin="0.343,0.538"/>
+                    </ListViewItem>
+                </ListView>
+                <ListView HorizontalAlignment="Right" Foreground="Black" FontSize="15" Margin="10 10 30 10" FontWeight="Light" BorderBrush="{x:Null}" Height="151" Width="175">
+                    <ListViewItem Height="59.2">
+                        <TextBox x:Name="txt_uname" HorizontalAlignment="Left" Height="30" Margin="17 10 0 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140" BorderThickness="0,0,0,1"/>
+                    </ListViewItem>
+                    <ListViewItem Height="59.2">
+                        <PasswordBox x:Name="txt_pass" HorizontalAlignment="Left" Margin="17 0 0 0" VerticalAlignment="Top" Width="140" BorderThickness="0,0,0,1"/>
+                    </ListViewItem>
+                </ListView>
+            </DockPanel>
+            <Separator Width="300" Margin="0 10 0 0" Height="1" Background="Black" BorderThickness="0"/>
+            <Label x:Name="lbl_forgot" Content="Forgot Password ?" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="134" FontWeight="Bold" MouseDown="lbl_forgot_MouseDown" Foreground="#FF673AB7" Margin="126,0,92,0" />
+
+        </StackPanel>
+        <Button x:Name="btn_log" Content="LOGIN" HorizontalAlignment="Left" Margin="139,263,0,0" FontWeight="DemiBold" VerticalAlignment="Top" Width="75" Click="btn_log_Click" Style="{StaticResource MaterialDesignRaisedButton}" Height="25" Foreground="White"/>
+    </Grid>
+</Window>
