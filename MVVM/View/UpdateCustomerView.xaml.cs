@@ -69,44 +69,60 @@ namespace DemoInterface1.MVVM.View
 
         private void cmb_nic_DropDownClosed(object sender, EventArgs e)
         {
-            if (cmb_nic.SelectedItem == null)
+            try
             {
-                error_msg.Text = "Please Select NIC";
-            }
-
-            else
-            {
-                dt = customer.viewCustomerNIC(cmb_nic.Text);
-
-                // cmb_nic.Text = dt.Rows[0][0].ToString();
-                txt_CusFname.Text = dt.Rows[0][1].ToString();
-                txt_CusLname.Text = dt.Rows[0][2].ToString();
-                txt_CusResAdrs.Text = dt.Rows[0][3].ToString();
-                txt_CusWorkAdrs.Text = dt.Rows[0][8].ToString();
-                txt_CusTelHome.Text = dt.Rows[0][5].ToString();
-                txt_CusTelMobile.Text = dt.Rows[0][4].ToString();
-                txt_CusTelWork.Text = dt.Rows[0][9].ToString();
-                txt_CusEmail.Text = dt.Rows[0][6].ToString();
-                txt_CusProfession.Text = dt.Rows[0][7].ToString();
-                path = dt.Rows[0][13].ToString();
-                txt_CusKinName.Text = dt.Rows[0][10].ToString();
-                txt_CusKinkAdrs.Text = dt.Rows[0][11].ToString();
-                txt_CusKinConatct.Text = dt.Rows[0][12].ToString();
-
-                if (path != "")
+                if (cmb_nic.SelectedItem == null)
                 {
-                    BitmapImage image = new BitmapImage();
-                    image.BeginInit();
-                    image.CacheOption = BitmapCacheOption.OnLoad;
-                    image.UriSource = new Uri(path);
-                    image.EndInit();
-                    img_customer.Source = image;
+                    error_msg.Text = "Please Select NIC";
                 }
+
                 else
                 {
-                    img_customer.Source = null;
+                    dt = customer.viewCustomerNIC(cmb_nic.Text);
+
+                    txt_CusFname.Text = dt.Rows[0][1].ToString();
+                    txt_CusLname.Text = dt.Rows[0][2].ToString();
+                    txt_CusResAdrs.Text = dt.Rows[0][3].ToString();
+                    txt_CusWorkAdrs.Text = dt.Rows[0][8].ToString();
+                    txt_CusTelHome.Text = dt.Rows[0][5].ToString();
+                    txt_CusTelMobile.Text = dt.Rows[0][4].ToString();
+                    txt_CusTelWork.Text = dt.Rows[0][9].ToString();
+                    txt_CusEmail.Text = dt.Rows[0][6].ToString();
+                    txt_CusProfession.Text = dt.Rows[0][7].ToString();
+                    path = dt.Rows[0][13].ToString();
+                    txt_CusKinName.Text = dt.Rows[0][10].ToString();
+                    txt_CusKinkAdrs.Text = dt.Rows[0][11].ToString();
+                    txt_CusKinConatct.Text = dt.Rows[0][12].ToString();
+
+                    if (path != "")
+                    {
+                        BitmapImage image = new BitmapImage();
+                        image.BeginInit();
+                        image.CacheOption = BitmapCacheOption.OnLoad;
+                        image.UriSource = new Uri(path);
+                        image.EndInit();
+                        img_customer.Source = image;
+                    }
+                    else
+                    {
+                        img_customer.Source = null;
+                    }
                 }
             }
+            catch (FileNotFoundException Ex)
+            {
+                ExternalForms.Message msg = new ExternalForms.Message();
+                msg.errorMsg("Photo could not be located");
+                msg.Show();
+                img_customer.Source = null;
+            }
+            catch (Exception Ex)
+            {
+                ExternalForms.Message msg = new ExternalForms.Message();
+                msg.errorMsg("Oops something went wrong" + Ex.Message);
+                msg.Show();
+            }
+           
         }
 
         private void btn_remove_Click(object sender, RoutedEventArgs e)
@@ -145,14 +161,12 @@ namespace DemoInterface1.MVVM.View
                 try
                 {
                     string name = System.IO.Path.GetFileName(path);
-                    string destinationPath = GetDestinationPath(name);
-                    /*var folder = new DirectoryInfo(destinationPath);
-                    folder.Delete(true);*/
-                    File.Copy(path, destinationPath, true);
+                    string destinationPath = GetDestinationPath(name);                  
                     Customer upCustomer = new Customer(txt_CusFname.Text, txt_CusLname.Text, cmb_nic.Text, txt_CusEmail.Text, txt_CusResAdrs.Text, Int32.Parse(txt_CusTelHome.Text), Int32.Parse(txt_CusTelMobile.Text), txt_CusProfession.Text, txt_CusWorkAdrs.Text, Int32.Parse(txt_CusTelWork.Text), txt_CusKinName.Text, txt_CusKinkAdrs.Text, Int32.Parse(txt_CusKinConatct.Text), destinationPath); ;
                     int i = upCustomer.updateCustomer();
                     if (i == 1)
                     {
+                        File.Copy(path, destinationPath, true);
                         ExternalForms.Message msg = new ExternalForms.Message();
                         msg.Show();
                     }

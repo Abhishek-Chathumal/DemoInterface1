@@ -90,6 +90,7 @@ namespace DemoInterface1.MVVM.View
             txt_kinName.Clear();
             txt_kinAddrs.Clear();
             txt_kinCntkt.Clear();
+            error_msg.Text = "";
         }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
@@ -100,11 +101,11 @@ namespace DemoInterface1.MVVM.View
                 {
                     string name = System.IO.Path.GetFileName(path);
                     string destinationPath = GetDestinationPath(name);
-                    File.Copy(path, destinationPath, true);
                     Customer customer = new Customer(txt_cusFname.Text, txt_cusLname.Text, txt_CusNIC.Text, txt_cusEmail.Text, txt_cusResAddress.Text, Int32.Parse(txt_cusHomeTel.Text), Int32.Parse(txt_cusMobile.Text), txt_cusProfession.Text, txt_cusWorkAddrs.Text, Int32.Parse(txt_cusWorkTel.Text), txt_kinName.Text, txt_kinAddrs.Text, Int32.Parse(txt_kinCntkt.Text), destinationPath);
                     int i = customer.addCustomer();
                     if (i == 1)
                     {
+                        File.Copy(path, destinationPath, true);
                         ExternalForms.Message msg = new ExternalForms.Message();
                         msg.Show();
                         btn_clear_Click(this, null);
