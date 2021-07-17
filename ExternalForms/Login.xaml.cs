@@ -32,9 +32,9 @@ namespace DemoInterface1.ExternalForms
             if (i == 1)
             {
                 string type = user.getUserType();
-                //View.SplashScreen splash = new View.SplashScreen(type, txt_uname.Text);
+                SplashScreen splash = new SplashScreen(type, txt_uname.Text);
                 this.Close();
-                //splash.Show();
+                splash.Show();
             }
             else
             {
