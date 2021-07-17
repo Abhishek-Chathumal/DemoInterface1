@@ -41,11 +41,8 @@ namespace DemoInterface1.ExternalForms
         }
         private void dT_Tick(object sender, EventArgs e)
         {
-            //Dashboard db = new Dashboard(utype, uname);
-            // db.Show
-            MainWindow mw = new MainWindow();
+            MainWindow mw = new MainWindow(utype, uname);
             mw.Show();
-
             dT.Stop();
             this.Close();
         }

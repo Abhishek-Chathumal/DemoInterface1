@@ -21,9 +21,20 @@ namespace DemoInterface1
     /// </summary>
     public partial class MainWindow : Window
     {
+       
         public MainWindow()
         {
             InitializeComponent();
+        }
+        public MainWindow(string utype, string uname)
+        {
+            InitializeComponent();
+            //lbl_user.Text = uname;
+            /*if (utype == "Manager")
+            {
+                list_report.Visibility = Visibility.Visible;
+                list_accounts.Visibility = Visibility.Visible;
+            }*/
         }
 
 

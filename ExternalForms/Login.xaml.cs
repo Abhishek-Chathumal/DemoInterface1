@@ -46,9 +46,9 @@ namespace DemoInterface1.ExternalForms
 
         private void lbl_forgot_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            /*View.ResetPassword obj = new View.ResetPassword();
+            ResetPassword obj = new ResetPassword();
             obj.Show();
-            this.Close();*/
+            this.Close();
         }
     }
 }
