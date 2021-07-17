@@ -28,6 +28,11 @@ namespace DemoInterface1.ExternalForms
             icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.Error;
             txt_msg.Text = msg;
         }
+        public void informationMsg(string msg)
+        {
+            icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.InfoCircle;
+            txt_msg.Text = msg;
+        }
 
         private void btn_ok_Click(object sender, RoutedEventArgs e)
         {

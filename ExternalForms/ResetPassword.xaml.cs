@@ -50,8 +50,8 @@ namespace DemoInterface1.ExternalForms
         {
             if (txt_vcode.Text == randomCode.ToString())
             {
-                /*manageAccount ma = new manageAccount(txt_uname.Text);
-                ma.Show();*/
+                ManageAccount ma = new ManageAccount(txt_uname.Text);
+                ma.Show();
             }
             else
             {

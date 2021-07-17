@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:DemoInterface1"
              xmlns:viewModel="clr-namespace:DemoInterface1.MVVM.ModelView"
              xmlns:view="clr-namespace:DemoInterface1.MVVM.View"
-             StartupUri="/ExternalForms/Login.xaml">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
