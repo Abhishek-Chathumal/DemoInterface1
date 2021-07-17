@@ -25,7 +25,7 @@ namespace DemoInterface1.ExternalForms
         }
         public void errorMsg(string msg)
         {
-            // icon-error
+            icon.Kind = MaterialDesignThemes.Wpf.PackIconKind.Error;
             txt_msg.Text = msg;
         }
 
