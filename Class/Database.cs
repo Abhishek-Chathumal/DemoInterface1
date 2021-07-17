@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DemoInterface1.MVVM.View
+namespace DemoInterface1
 { 
     class Database
     {
@@ -23,7 +23,7 @@ namespace DemoInterface1.MVVM.View
         }
         public Database()
         {
-            con = new SqlConnection("Data Source=LAPTOP-10GAKV7V;Initial Catalog=Malshi_Rent_a_Car;Integrated Security=True");
+            con = new SqlConnection("Data Source=LAPTOP-MQN2RJ5N;Initial Catalog=Malshi_Rent_a_Car;Integrated Security=True");
         }
         public int save_update_delete(string q)
         {

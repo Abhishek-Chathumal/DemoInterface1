@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 
-namespace Malshi_Rent_A_Car
+namespace DemoInterface1
 {
     class HashCode
     {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
-namespace DemoInterface1.MVVM.View
+namespace DemoInterface1
 {
     class MaintenanceRepair : Repair
     {

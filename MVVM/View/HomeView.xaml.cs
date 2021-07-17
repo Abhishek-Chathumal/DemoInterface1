@@ -46,6 +46,7 @@ namespace DemoInterface1.MVVM.View
             PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
             DataContext = this;
             SolidColorBrush brush1 = new SolidColorBrush();
+
             brush1.Color = Color.FromRgb(74,20,140);
             SolidColorBrush brush2 = new SolidColorBrush();
             brush2.Color = Color.FromRgb(123, 31, 162);
@@ -57,6 +58,8 @@ namespace DemoInterface1.MVVM.View
             brush5.Color = Color.FromRgb(225,190,231);
             SolidColorBrush brushStroke = new SolidColorBrush();
             brush5.Color = Color.FromRgb(25, 25, 25);
+            SolidColorBrush brush6 = new SolidColorBrush();
+            brush6.Color = Color.FromRgb(34, 119, 170);
             piechart.Series = new SeriesCollection
         {
             new PieSeries
@@ -105,6 +108,15 @@ namespace DemoInterface1.MVVM.View
                 LabelPoint = PointLabel,
                 Fill = brush4,
                 StrokeThickness=0
+            }
+            ,
+            new PieSeries
+            {
+                Title = "PICKUP",
+                Values = new ChartValues<double> {vehicle.getPickup()},
+                DataLabels = true,
+                LabelPoint = PointLabel,
+                Fill = brush6
             }
         };
         }

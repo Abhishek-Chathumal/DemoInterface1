@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 
-namespace DemoInterface1.MVVM.View
+namespace DemoInterface1
 {
     class Vehicle
     {
@@ -149,6 +149,12 @@ namespace DemoInterface1.MVVM.View
         public int getVan()
         {
             dt = db.getData("select count(plateNumber) from Vehicle where vType='Van'");
+            int count = Int32.Parse(dt.Rows[0][0].ToString());
+            return count;
+        }
+        public int getPickup()
+        {
+            dt = db.getData("select count(plateNumber) from Vehicle where vType='Pickup'");
             int count = Int32.Parse(dt.Rows[0][0].ToString());
             return count;
         }
