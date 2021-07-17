@@ -56,6 +56,18 @@
             <DataTemplate DataType="{x:Type viewModel:UpdateCustomerViewModel}">
                 <view:UpdateCustomerView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ViewVehiclesViewModel}">
+                <view:ViewVehiclesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddVehiclesViewModel}">
+                <view:AddVehiclesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UpdateVehiclesViewModel}">
+                <view:UpdateVehiclesView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:InsuranceViewModel}">
+                <view:InsuranceView/>
+            </DataTemplate>
            
 
 

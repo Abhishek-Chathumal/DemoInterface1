@@ -93,7 +93,7 @@
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=txt_CusFname}" Value="">
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusFname}" Value="">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                             </DataTrigger>
                                         </Style.Triggers>
@@ -114,7 +114,7 @@
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=txt_CusLname}" Value="">
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusLname}" Value="">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                             </DataTrigger>
                                         </Style.Triggers>
@@ -136,7 +136,7 @@
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=txt_CusEmail}" Value="">
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusEmail}" Value="">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                             </DataTrigger>
                                         </Style.Triggers>
@@ -180,7 +180,7 @@
                                     <TextBlock.Style>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Text, ElementName=txt_CusTelHome}" Value="">
+                                                <DataTrigger Binding="{Binding Text, ElementName=txt_cusHomeTel}" Value="">
                                                     <Setter Property="Visibility" Value="Visible"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
@@ -206,7 +206,7 @@
                                     <TextBlock.Style>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Text, ElementName=txt_CusTelMobile}" Value="">
+                                                <DataTrigger Binding="{Binding Text, ElementName=txt_cusMobile}" Value="">
                                                     <Setter Property="Visibility" Value="Visible"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
@@ -215,11 +215,85 @@
                                     </TextBlock.Style>
                                 </TextBlock>
                                 <TextBox x:Name="txt_CusTelMobile" Width="155" TextChanged="txt_CusTelMobile_TextChanged"/>
+
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Mobile.png"/>
                         </StackPanel>
                     </Border>
+                    <Separator Background="#9a9a9a" Margin="10 10 10 0" Opacity="0.5"/>
+                    <TextBlock Text="RESIDENTIAL ADDRESS" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#9a9a9a" Opacity="0.8"
+                               FontSize="10" FontFamily="Tahoma" FontWeight="DemiBold" Margin="0 5 0 0"/>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+
+                            <TextBlock Text="House No." VerticalAlignment="Center" Opacity="0.5" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusHouseNo}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_cusHouseNo"/>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+
+                            <TextBlock Text="Street Name" VerticalAlignment="Center" Opacity="0.5" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusStreetNme}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_cusStreetNme"/>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+
+                            <TextBlock Text="City" VerticalAlignment="Center" Opacity="0.5" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusCity}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_cusCity"/>
+                        </Grid>
+                    </Border>
+
+                    <Separator Background="#9a9a9a" Margin="10 10 10 0" Opacity="0.5"/>
+                    <TextBlock Text="WORKING ADDRESS" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#9a9a9a" Opacity="0.8"
+                               FontSize="10" FontFamily="Tahoma" FontWeight="DemiBold" Margin="0 5 0 0"/>
                     <Border>
                         <Border.Clip>
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
@@ -231,7 +305,7 @@
                                     <TextBlock.Style>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Text, ElementName=txt_CusProfession}" Value="">
+                                                <DataTrigger Binding="{Binding Text, ElementName=txt_cusProfession}" Value="">
                                                     <Setter Property="Visibility" Value="Visible"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
@@ -250,12 +324,12 @@
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
                         </Border.Clip>
                         <Grid>
-                            <TextBlock Text="Work Address" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                            <TextBlock Text="Institution" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
                                            IsHitTestVisible="False" Margin="10 0 0 0">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=txt_CusWorkAdrs}" Value="">
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusWorkInstitute}" Value="">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                             </DataTrigger>
                                         </Style.Triggers>
@@ -270,6 +344,49 @@
                         <Border.Clip>
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
                         </Border.Clip>
+                        <Grid>
+                            <TextBlock Text="Street Name" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusWorkStrNme}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_cusWorkStrNme"/>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBlock Text="City" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusWorkCity}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_cusWorkCity"/>
+                        </Grid>
+                    </Border>
+
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Grid>
                                 <TextBlock Text="Tel.(Work)" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
@@ -277,7 +394,7 @@
                                     <TextBlock.Style>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Text, ElementName=txt_CusTelWork}" Value="">
+                                                <DataTrigger Binding="{Binding Text, ElementName=txt_cusWorkTel}" Value="">
                                                     <Setter Property="Visibility" Value="Visible"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
@@ -291,6 +408,7 @@
                             <Image Source="/IconsAndImages/Contact.png"/>
                         </StackPanel>
                     </Border>
+                    <Separator Background="#9a9a9a" Margin="10 10 10 0" Opacity="0.5"/>
                     <Border>
                         <Border.Clip>
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>

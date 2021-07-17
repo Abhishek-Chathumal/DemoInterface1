@@ -13,9 +13,9 @@ namespace DemoInterface1.MVVM.ModelView
         public RelayCommand AddVehicleViewCommand { get; set; }
         public RelayCommand UpdateVehicleViewCommand { get; set; }
 
-        public ViewCustomerViewModel ViewVehicleVM { get; set; }
-        public AddCustomerViewModel AddVehicleVM { get; set; }
-        public UpdateCustomerViewModel UpdateVehicleVM { get; set; }
+        public ViewVehiclesViewModel ViewVehicleVM { get; set; }
+        public AddVehiclesViewModel AddVehicleVM { get; set; }
+        public UpdateVehiclesViewModel UpdateVehicleVM { get; set; }
 
         private object _presentVehView;
 
@@ -31,9 +31,9 @@ namespace DemoInterface1.MVVM.ModelView
 
         public VehicleViewModel()
         {
-            AddVehicleVM = new AddCustomerViewModel();
-            ViewVehicleVM = new ViewCustomerViewModel();
-            UpdateVehicleVM = new UpdateCustomerViewModel();
+            AddVehicleVM = new AddVehiclesViewModel();
+            ViewVehicleVM = new ViewVehiclesViewModel();
+            UpdateVehicleVM = new UpdateVehiclesViewModel();
             PresentVehicleView = ViewVehicleVM;
 
             ViewVehicleViewCommand = new RelayCommand(o =>
