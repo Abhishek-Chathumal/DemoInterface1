@@ -10,7 +10,7 @@
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
-        Background="{DynamicResource MaterialDesignPaper}"
+        Background="Transparent"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         Height="600" Width="1000"
@@ -228,6 +228,12 @@
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
                                      Style="{StaticResource MenuButtonTheme}" Command="{Binding ModelsViewCommand}"/>
+                                <RadioButton Content="Insurance"
+                                     Height="50"
+                                     BorderThickness="0"
+                                     BorderBrush="{x:Null}"
+                                     Foreground="White"
+                                     Style="{StaticResource MenuButtonTheme}" Command="{Binding InsuranceViewCommand}"/>
                                 <RadioButton Content="Repairs"
                                      Height="50"
                                      BorderThickness="0"
@@ -300,6 +306,15 @@
                                         Height="50" HorizontalAlignment="Stretch"
                                         BorderBrush="Transparent" BorderThickness="0">
                                     <Image Source="IconsAndImages/Models.png"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left"
+                                        Height="20"
+                                        Width="20" Margin="10 0 0 0"/>
+                                </Border>
+                                <Border Background="Transparent"
+                                        Height="50" HorizontalAlignment="Stretch"
+                                        BorderBrush="Transparent" BorderThickness="0">
+                                    <Image Source="/IconsAndImages/Insurance.png"
                                         VerticalAlignment="Center"
                                         HorizontalAlignment="Left"
                                         Height="20"

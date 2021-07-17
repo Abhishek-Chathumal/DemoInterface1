@@ -123,6 +123,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>crvVehicleStatus.rpt</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\ModelView\AddVehiclesViewModel.cs" />
+    <Compile Include="MVVM\ModelView\InsuranceViewModel.cs" />
+    <Compile Include="MVVM\ModelView\UpdateVehiclesViewModel.cs" />
+    <Compile Include="MVVM\ModelView\ViewVehiclesViewModel.cs" />
+    <Compile Include="MVVM\View\AddVehiclesView.xaml.cs">
+      <DependentUpon>AddVehiclesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\InsuranceView.xaml.cs">
+      <DependentUpon>InsuranceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UpdateVehiclesView.xaml.cs">
+      <DependentUpon>UpdateVehiclesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ViewVehiclesView.xaml.cs">
+      <DependentUpon>ViewVehiclesView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reports\RViewAccidentHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,11 +217,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\AddVehiclesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\CustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\InsuranceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -233,11 +257,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\UpdateVehiclesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\VehicleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\ViewCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ViewVehiclesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -451,6 +483,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="IconsAndImages\Mobile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IconsAndImages\Transmission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IconsAndImages\Engine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IconsAndImages\fuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IconsAndImages\Passengers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IconsAndImages\Insurance.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

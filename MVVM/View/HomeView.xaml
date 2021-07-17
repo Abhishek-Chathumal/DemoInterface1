@@ -86,29 +86,19 @@
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 460 300"/>
                         </Border.Clip>
                         <Grid>
-                            <lvc:PieChart x:Name="piechart" Hoverable="False" LegendLocation="Bottom" Foreground="White" Margin="20">
+                            <lvc:PieChart x:Name="piechart" Hoverable="True"
+                                          InnerRadius="60" LegendLocation="Bottom" Foreground="White" Margin="20">
                                 <lvc:PieChart.Series>
-                                    <lvc:PieSeries Title="SEDAN" Values="10" DataLabels="True" LabelPoint="{Binding PointLabel}" >
-                                        <lvc:PieSeries.Fill>
-                                            <SolidColorBrush Color="#FF88AAFF" Opacity="1"/>
-                                        </lvc:PieSeries.Fill>
-                                    </lvc:PieSeries>
-                                    <lvc:PieSeries Title="HATCHBACK" Values="20" DataLabels="True" LabelPoint="{Binding PointLabel}">
-                                        <lvc:PieSeries.Fill>
-                                            <SolidColorBrush Color="#FF1100BB" Opacity="1"/>
-                                        </lvc:PieSeries.Fill>
-                                    </lvc:PieSeries>
-                                    <lvc:PieSeries Title="SUV" Values="15" DataLabels="True" LabelPoint="{Binding PointLabel}">
-                                        <lvc:PieSeries.Fill>
-                                            <SolidColorBrush Color="#FF2277AA" Opacity="1"/>
-                                        </lvc:PieSeries.Fill>
-                                    </lvc:PieSeries>
+                                    <lvc:PieSeries Title="SEDAN" Values="10" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+
+                                    <lvc:PieSeries Title="HATCHBACK" Values="20" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+
+                                    <lvc:PieSeries Title="SUV" Values="15" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+
                                     <lvc:PieSeries Title="MINIVAN" Values="35" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
-                                    <lvc:PieSeries Title="VAN" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}">
-                                        <lvc:PieSeries.Fill>
-                                            <SolidColorBrush Color="#FF221177" Opacity="1"/>
-                                        </lvc:PieSeries.Fill>
-                                    </lvc:PieSeries>
+                                    
+                                    <lvc:PieSeries Title="VAN" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+
                                 </lvc:PieChart.Series>
                             </lvc:PieChart>
                         </Grid>
