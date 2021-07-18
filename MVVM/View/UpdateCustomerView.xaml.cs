@@ -125,7 +125,7 @@ namespace DemoInterface1.MVVM.View
                     }
                 }
             }
-            catch (FileNotFoundException Ex)
+            catch (FileNotFoundException)
             {
                 ExternalForms.Message msg = new ExternalForms.Message();
                 msg.errorMsg("Photo could not be located");

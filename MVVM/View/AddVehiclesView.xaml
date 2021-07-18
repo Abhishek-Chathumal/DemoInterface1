@@ -75,7 +75,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_modelID_DropDownClosed">
                             <ComboBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                             </ComboBox.Resources>
@@ -184,7 +184,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_trans_DropDownClosed">
                                 <ComboBox.Resources>
                                     <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                                 </ComboBox.Resources>
@@ -199,23 +199,30 @@
                         <Border.Clip>
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
                         </Border.Clip>
-                        <Grid>
-
-                            <TextBlock Text="Color" VerticalAlignment="Center" Opacity="0.5" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
-                                           IsHitTestVisible="False" Margin="10 0 0 0">
-                                <TextBlock.Style>
-                                    <Style TargetType="{x:Type TextBlock}">
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=txt_color}" Value="">
-                                                <Setter Property="Visibility" Value="Visible"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                        <Setter Property="Visibility" Value="Hidden"/>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <TextBox x:Name="txt_color"/>
-                        </Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <ComboBox x:Name="cmb_color" Margin="3,0" Height="30" Width="150"
+                                      materialDesign:HintAssist.Hint="Color"
+                                      materialDesign:HintAssist.HintOpacity="0.5"
+                                      materialDesign:HintAssist.Foreground="#FF9A9A9A"
+                                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                                      Foreground="#FF9A9A9A"
+                                      FontSize="15" Background="Transparent"
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_color_DropDownClosed">
+                                <ComboBox.Resources>
+                                    <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
+                                </ComboBox.Resources>
+                                <ComboBoxItem Content="Red" HorizontalAlignment="Left" Width="148"/>
+                                <ComboBoxItem Content="Blue" HorizontalAlignment="Left" Width="148"/>
+                                <ComboBoxItem Content="Silver" HorizontalAlignment="Left" Width="148"/>
+                                <ComboBoxItem Content="Black" HorizontalAlignment="Left" Width="148"/>
+                                <ComboBoxItem Content="Maroon" HorizontalAlignment="Left" Width="148"/>
+                                <ComboBoxItem Content="White" HorizontalAlignment="Left" Width="148"/>
+                                <ComboBoxItem Content="Green" HorizontalAlignment="Left" Width="148"/>
+                                <ComboBoxItem Content="Yelllow" HorizontalAlignment="Left" Width="148"/>
+                            </ComboBox>
+                            <Rectangle/>
+                            <materialDesign:PackIcon Kind="ColorLens" Height="30" Width="18" Foreground="#5c5b5b"/>
+                        </StackPanel>
                     </Border>
                     
                     <Border>
@@ -230,7 +237,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_Ecapacity_DropDownClosed">
                                 <ComboBox.Resources>
                                     <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                                 </ComboBox.Resources>
@@ -258,7 +265,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_Ftype_DropDownClosed">
                                 <ComboBox.Resources>
                                     <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                                 </ComboBox.Resources>
@@ -283,7 +290,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_noPassengers_DropDownClosed">
                                 <ComboBox.Resources>
                                     <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                                 </ComboBox.Resources>
@@ -313,7 +320,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_ins_DropDownClosed">
                             <ComboBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                             </ComboBox.Resources>
@@ -328,7 +335,7 @@
                             Width="185" Height="30" BorderBrush="#9a9a9a"
                             materialDesign:HintAssist.Hint="Starting Date"
                             materialDesign:HintAssist.Foreground="#9a9a9a"
-                            materialDesign:HintAssist.HintOpacity="0.5">
+                            materialDesign:HintAssist.HintOpacity="0.5" CalendarClosed="date_InsuranceStart_CalendarClosed">
 
                             <DatePicker.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#191919"/>
@@ -346,7 +353,7 @@
                             Width="185" Height="30" BorderBrush="#9a9a9a"
                             materialDesign:HintAssist.Hint="Expiry Date"
                             materialDesign:HintAssist.Foreground="#9a9a9a"
-                            materialDesign:HintAssist.HintOpacity="0.5">
+                            materialDesign:HintAssist.HintOpacity="0.5" CalendarClosed="date_InsuranceEnd_CalendarClosed">
 
                             <DatePicker.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#191919"/>
@@ -376,7 +383,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_Lplate"/>
+                            <TextBox x:Name="txt_Lplate" TextChanged="txt_Lplate_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -388,7 +395,7 @@
                             Width="185" Height="30" BorderBrush="#9a9a9a"
                             materialDesign:HintAssist.Hint="Expiry Date"
                             materialDesign:HintAssist.Foreground="#9a9a9a"
-                            materialDesign:HintAssist.HintOpacity="0.5">
+                            materialDesign:HintAssist.HintOpacity="0.5" CalendarClosed="date_licenseStart_CalendarClosed">
 
                             <DatePicker.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#191919"/>
@@ -405,7 +412,7 @@
                             Width="185" Height="30" BorderBrush="#9a9a9a"
                             materialDesign:HintAssist.Hint="Expiry Date"
                             materialDesign:HintAssist.Foreground="#9a9a9a"
-                            materialDesign:HintAssist.HintOpacity="0.5">
+                            materialDesign:HintAssist.HintOpacity="0.5" CalendarClosed="date_LicenseEnd_CalendarClosed">
 
                             <DatePicker.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#191919"/>
@@ -425,7 +432,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_ownerNIC_DropDownClosed">
                             <ComboBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                             </ComboBox.Resources>
@@ -461,7 +468,7 @@
                             Width="185" Height="30" BorderBrush="#9a9a9a"
                             materialDesign:HintAssist.Hint="Lend Date"
                             materialDesign:HintAssist.Foreground="#9a9a9a"
-                            materialDesign:HintAssist.HintOpacity="0.5">
+                            materialDesign:HintAssist.HintOpacity="0.5" CalendarClosed="date_lend_CalendarClosed">
 
                             <DatePicker.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#191919"/>
@@ -487,7 +494,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_oPay"/>
+                            <TextBox x:Name="txt_oPay" TextChanged="txt_oPay_TextChanged"/>
                         </Grid>
                     </Border>
                     <Separator Background="#9a9a9a" Margin="10 10 10 0" Opacity="0.5"/>
@@ -511,7 +518,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_wName"/>
+                            <TextBox x:Name="txt_wName" TextChanged="txt_wName_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -532,7 +539,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_wAdd"/>
+                            <TextBox x:Name="txt_wAdd" TextChanged="txt_wAdd_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -554,7 +561,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBox x:Name="txt_wContact" Width="155"/>
+                                <TextBox x:Name="txt_wContact" Width="155" TextChanged="txt_wContact_TextChanged"/>
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Contact.png"/>
@@ -573,25 +580,26 @@
                     <Border.Clip>
                         <RectangleGeometry RadiusX="15" RadiusY="15" Rect="0 0 300 250"/>
                     </Border.Clip>
-                    <Image Height="250" Width="300"/>
+                    <Image x:Name="img_vehicle" Height="250" Width="300"/>
                 </Border>
                 <Separator Margin="50 30 50 5" Background="#9a9a9a" Opacity="0.5"/>
                 <DockPanel>
-                    <Button Content="UPLOAD" FontSize="12" Height="25" Width="100" HorizontalAlignment="Left" Margin="50 10 0 0"/>
-                    <Button Content="REMOVE" FontSize="12" Height="25" Width="100" HorizontalAlignment="Right" Margin="0 10 50 0"/>
+                    <Button x:Name="btn_upload" Content="UPLOAD" FontSize="12" Height="25" Width="100" HorizontalAlignment="Left" Margin="50 10 0 0" Click="btn_upload_Click"/>
+                    <Button x:Name="btn_remove" Content="REMOVE" FontSize="12" Height="25" Width="100" HorizontalAlignment="Right" Margin="0 10 50 0" Click="btn_remove_Click"/>
                 </DockPanel>
             </StackPanel>
         </Border>
         <Border Height="50" Width="400" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" >
             <DockPanel>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
+                <Button x:Name="btn_save" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Left"
                     BorderThickness="0" Margin="50 0 0 0"/>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
+                <Button x:Name="btn_cls" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Right"
-                    BorderThickness="0" Margin="0 0 50 0"/>
+                    BorderThickness="0" Margin="0 0 50 0" Click="btn_cls_Click"/>
             </DockPanel>
         </Border>
         <Separator Grid.Row="1" Grid.Column="1" Width="300" Background="#9a9a9a" Opacity="0.5" VerticalAlignment="Bottom" Margin="0 0 0 35"/>
+        <TextBlock x:Name="error_msg" Grid.Column="1" HorizontalAlignment="Left" Margin="90,430,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="23" Foreground="#FFFF4949" TextAlignment="Center" FontSize="15"/>
     </Grid>
 </UserControl>

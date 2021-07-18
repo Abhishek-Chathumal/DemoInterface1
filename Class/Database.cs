@@ -37,7 +37,7 @@ namespace DemoInterface1
         public DataTable getData(string a)
         {
             opencon();
-            SqlDataAdapter da = new SqlDataAdapter(a, con);
+            da = new SqlDataAdapter(a, con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             closecon();

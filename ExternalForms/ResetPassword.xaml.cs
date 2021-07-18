@@ -38,7 +38,7 @@ namespace DemoInterface1.ExternalForms
                 txt_vcode.IsEnabled = true;
                 btn_verify.IsEnabled = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Message msg = new Message();
                 msg.errorMsg("Invalid username.Please try again");
