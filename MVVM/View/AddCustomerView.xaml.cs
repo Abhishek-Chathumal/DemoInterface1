@@ -69,6 +69,11 @@ namespace DemoInterface1.MVVM.View
                 return false;
             }
         }
+        public string getAddress(string no, string street, string city)
+        {
+            string address = (no + "," + street + "," + city);
+            return address;
+        }
 
         private void btn_remove_Click(object sender, RoutedEventArgs e)
         {
@@ -81,11 +86,15 @@ namespace DemoInterface1.MVVM.View
             txt_cusLname.Clear();
             txt_CusNIC.Clear();
             txt_cusEmail.Clear();
-            txt_cusResAddress.Clear();
+            txt_cusHouseNo.Clear();
+            txt_cusStreetNme.Clear();
+            txt_cusCity.Clear();
             txt_cusHomeTel.Clear();
             txt_cusMobile.Clear();
             txt_cusProfession.Clear();
-            txt_cusWorkAddrs.Clear();
+            txt_cusWorkInstitute.Clear();
+            txt_cusWorkStrNme.Clear();
+            txt_cusWorkCity.Clear();
             txt_cusWorkTel.Clear();
             txt_kinName.Clear();
             txt_kinAddrs.Clear();
@@ -101,7 +110,7 @@ namespace DemoInterface1.MVVM.View
                 {
                     string name = System.IO.Path.GetFileName(path);
                     string destinationPath = GetDestinationPath(name);
-                    Customer customer = new Customer(txt_cusFname.Text, txt_cusLname.Text, txt_CusNIC.Text, txt_cusEmail.Text, txt_cusResAddress.Text, Int32.Parse(txt_cusHomeTel.Text), Int32.Parse(txt_cusMobile.Text), txt_cusProfession.Text, txt_cusWorkAddrs.Text, Int32.Parse(txt_cusWorkTel.Text), txt_kinName.Text, txt_kinAddrs.Text, Int32.Parse(txt_kinCntkt.Text), destinationPath);
+                    Customer customer = new Customer(txt_cusFname.Text, txt_cusLname.Text, txt_CusNIC.Text, txt_cusEmail.Text, getAddress(txt_cusHouseNo.Text,txt_cusStreetNme.Text,txt_cusCity.Text), Int32.Parse(txt_cusHomeTel.Text), Int32.Parse(txt_cusMobile.Text), txt_cusProfession.Text, getAddress(txt_cusWorkInstitute.Text,txt_cusWorkStrNme.Text,txt_cusWorkCity.Text), Int32.Parse(txt_cusWorkTel.Text), txt_kinName.Text, txt_kinAddrs.Text, Int32.Parse(txt_kinCntkt.Text), destinationPath);
                     int i = customer.addCustomer();
                     if (i == 1)
                     {
@@ -109,6 +118,7 @@ namespace DemoInterface1.MVVM.View
                         ExternalForms.Message msg = new ExternalForms.Message();
                         msg.Show();
                         btn_clear_Click(this, null);
+                        img_customer.Source = null;
                     }
                     else
                     {
@@ -188,15 +198,7 @@ namespace DemoInterface1.MVVM.View
                 error_msg.Text = "Please enter a valid email address ";
             else
                 error_msg.Text = "";
-        }
-
-        private void txt_cusResAddress_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txt_cusResAddress.Text.Length == 0)
-                error_msg.Text = "Please Enter Custoer Home Addrss  ";
-            else
-                error_msg.Text = "";
-        }
+        }   
 
         private void txt_cusHomeTel_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -226,14 +228,6 @@ namespace DemoInterface1.MVVM.View
                 error_msg.Text = "";
         }
 
-        private void txt_cusWorkAddrs_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txt_cusWorkAddrs.Text.Length == 0)
-                error_msg.Text = "Please Enter Custoer Work Address  ";
-            else
-                error_msg.Text = "";
-        }
-
         private void txt_cusWorkTel_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_cusWorkTel.Text.Length == 0)
@@ -257,7 +251,7 @@ namespace DemoInterface1.MVVM.View
         private void txt_kinAddrs_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_kinAddrs.Text.Length == 0)
-                error_msg.Text = "Please Enter Custoer Kin Address ";
+                error_msg.Text = "Please Enter Customer Kin Address ";
             else
                 error_msg.Text = "";
         }
@@ -268,6 +262,54 @@ namespace DemoInterface1.MVVM.View
                 error_msg.Text = "Please Enter Customer Kin Contact Number ";
             else if (!Regex.IsMatch(txt_kinCntkt.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
                 error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cusHouseNo_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cusHouseNo.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer House No ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cusStreetNme_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cusStreetNme.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer Street Name ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cusCity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cusCity.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer City ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cusWorkInstitute_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cusWorkInstitute.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer Working Institute";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cusWorkStrNme_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cusWorkStrNme.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer Working Street Address";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cusWorkCity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cusWorkCity.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer Working City";
             else
                 error_msg.Text = "";
         }
