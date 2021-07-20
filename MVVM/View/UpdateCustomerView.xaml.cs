@@ -66,6 +66,16 @@ namespace DemoInterface1.MVVM.View
                 return false;
             }
         }
+        public string getAddress(string no, string street, string city)
+        {
+            string address = (no + "," + street + "," + city);
+            return address;
+        }
+        public string[] seperateAddress(string address)
+        {
+            string[] fields = address.Split(',');
+            return fields;
+        }
 
         private void cmb_nic_DropDownClosed(object sender, EventArgs e)
         {
@@ -82,8 +92,14 @@ namespace DemoInterface1.MVVM.View
 
                     txt_CusFname.Text = dt.Rows[0][1].ToString();
                     txt_CusLname.Text = dt.Rows[0][2].ToString();
-                    txt_CusResAdrs.Text = dt.Rows[0][3].ToString();
-                    txt_CusWorkAdrs.Text = dt.Rows[0][8].ToString();
+                    string[] fields = seperateAddress(dt.Rows[0][3].ToString());
+                    txt_cusHouseNo.Text = fields[0];
+                    txt_cusStreetNme.Text = fields[1];
+                    txt_cusCity.Text = fields[2];
+                    string[] wfields = seperateAddress(dt.Rows[0][8].ToString());
+                    txt_CusWorkIns.Text = fields[0];
+                    txt_cusWorkStrNme.Text = fields[1];
+                    txt_cusWorkCity.Text = fields[2];
                     txt_CusTelHome.Text = dt.Rows[0][5].ToString();
                     txt_CusTelMobile.Text = dt.Rows[0][4].ToString();
                     txt_CusTelWork.Text = dt.Rows[0][9].ToString();
@@ -109,7 +125,7 @@ namespace DemoInterface1.MVVM.View
                     }
                 }
             }
-            catch (FileNotFoundException Ex)
+            catch (FileNotFoundException)
             {
                 ExternalForms.Message msg = new ExternalForms.Message();
                 msg.errorMsg("Photo could not be located");
@@ -162,7 +178,7 @@ namespace DemoInterface1.MVVM.View
                 {
                     string name = System.IO.Path.GetFileName(path);
                     string destinationPath = GetDestinationPath(name);                  
-                    Customer upCustomer = new Customer(txt_CusFname.Text, txt_CusLname.Text, cmb_nic.Text, txt_CusEmail.Text, txt_CusResAdrs.Text, Int32.Parse(txt_CusTelHome.Text), Int32.Parse(txt_CusTelMobile.Text), txt_CusProfession.Text, txt_CusWorkAdrs.Text, Int32.Parse(txt_CusTelWork.Text), txt_CusKinName.Text, txt_CusKinkAdrs.Text, Int32.Parse(txt_CusKinConatct.Text), destinationPath); ;
+                    Customer upCustomer = new Customer(txt_CusFname.Text, txt_CusLname.Text, cmb_nic.Text, txt_CusEmail.Text, getAddress(txt_cusHouseNo.Text,txt_cusStreetNme.Text,txt_cusCity.Text), Int32.Parse(txt_CusTelHome.Text), Int32.Parse(txt_CusTelMobile.Text), txt_CusProfession.Text, getAddress(txt_CusWorkIns.Text,txt_cusWorkStrNme.Text,txt_cusWorkCity.Text), Int32.Parse(txt_CusTelWork.Text), txt_CusKinName.Text, txt_CusKinkAdrs.Text, Int32.Parse(txt_CusKinConatct.Text), destinationPath); ;
                     int i = upCustomer.updateCustomer();
                     if (i == 1)
                     {
@@ -209,8 +225,13 @@ namespace DemoInterface1.MVVM.View
             cmb_nic.SelectedIndex = -1;
             txt_CusFname.Clear();
             txt_CusLname.Clear();
-            txt_CusResAdrs.Clear();
-            txt_CusWorkAdrs.Clear();
+
+            txt_cusHouseNo.Clear();
+            txt_cusStreetNme.Clear();
+            txt_cusCity.Clear();
+            txt_CusWorkIns.Clear();
+            txt_cusWorkStrNme.Clear();
+            txt_cusWorkCity.Clear();
             txt_CusTelHome.Clear();
             txt_CusTelMobile.Clear();
             txt_CusTelWork.Clear();
@@ -226,8 +247,8 @@ namespace DemoInterface1.MVVM.View
         {
             if (txt_CusFname.Text.Length == 0)
                 error_msg.Text = "Please Enter Customer First Name  ";
-            else if (txt_CusFname.Text.Any(char.IsDigit))
-                error_msg.Text = "First Name cannot have Numbers";
+            else if (!Regex.IsMatch(txt_CusFname.Text, @"^[A-Za-z]+$"))
+                error_msg.Text = "First name is not Valid";
             else
                 error_msg.Text = "";
         }
@@ -236,8 +257,8 @@ namespace DemoInterface1.MVVM.View
         {
             if (txt_CusLname.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer last Name  ";
-            else if (txt_CusLname.Text.Any(char.IsDigit))
-                error_msg.Text = "Last Name cannot have Numbers";
+            else if (!Regex.IsMatch(txt_CusLname.Text, @"^[A-Za-z]+$"))
+                error_msg.Text = "Last name is not Valid";
             else
                 error_msg.Text = "";
         }
@@ -252,13 +273,6 @@ namespace DemoInterface1.MVVM.View
                 error_msg.Text = "";
         }
 
-        private void txt_CusResAdrs_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txt_CusResAdrs.Text.Length == 0)
-                error_msg.Text = "Please Enter Custoer Home Addrss  ";
-            else
-                error_msg.Text = "";
-        }
 
         private void txt_CusTelHome_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -289,13 +303,7 @@ namespace DemoInterface1.MVVM.View
                 error_msg.Text = "";
         }
 
-        private void txt_CusWorkAdrs_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txt_CusWorkAdrs.Text.Length == 0)
-                error_msg.Text = "Please Enter Custoer Work Address  ";
-            else
-                error_msg.Text = "";
-        }
+
 
         private void txt_CusTelWork_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -311,8 +319,8 @@ namespace DemoInterface1.MVVM.View
         {
             if (txt_CusKinName.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer Kin Name ";
-            else if (txt_CusKinName.Text.Any(char.IsDigit))
-                error_msg.Text = "Last Name cannot have Numbers";
+            else if (!Regex.IsMatch(txt_CusKinName.Text, @"^[A-Za-z]+$"))
+                error_msg.Text = "Kin name is not Valid";
             else
                 error_msg.Text = "";
         }
@@ -356,6 +364,54 @@ namespace DemoInterface1.MVVM.View
                 msg.errorMsg("Could not save data,Please try agian");
                 msg.Show();
             }
+        }
+
+        private void txt_cusHouseNo_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cusHouseNo.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer House No ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cusStreetNme_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cusStreetNme.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer Street Name ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cusCity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cusCity.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer City ";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_CusWorkIns_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_CusWorkIns.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer Working Institute";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cusWorkStrNme_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cusWorkStrNme.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer Working Street Address";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_cusWorkCity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_cusWorkCity.Text.Length == 0)
+                error_msg.Text = "Please Enter Customer Working City";
+            else
+                error_msg.Text = "";
         }
     }
 }

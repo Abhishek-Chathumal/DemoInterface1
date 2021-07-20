@@ -105,7 +105,7 @@ namespace DemoInterface1
         }
         public int deleteVehicle(string plate)
         {
-            string query = "delete from Vehicle where plateNumber = '" + plate + "'";
+            string query = "exec delete_vehicle '" + plate + "'";
             int i = db.save_update_delete(query);
             return i;
         }

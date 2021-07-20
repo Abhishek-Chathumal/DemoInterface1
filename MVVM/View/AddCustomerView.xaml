@@ -153,28 +153,6 @@
                         <Border.Clip>
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
                         </Border.Clip>
-                        <Grid>
-
-                            <TextBlock Text="Residential Address" VerticalAlignment="Center" Opacity="0.5" Background="Transparent" Foreground="#FF9A9A9A" FontSize="15"
-                                           IsHitTestVisible="False" Margin="10 0 0 0">
-                                <TextBlock.Style>
-                                    <Style TargetType="{x:Type TextBlock}">
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cusResAddress}" Value="">
-                                                <Setter Property="Visibility" Value="Visible"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                        <Setter Property="Visibility" Value="Hidden"/>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <TextBox x:Name="txt_cusResAddress" TextChanged="txt_cusResAddress_TextChanged"/>
-                        </Grid>
-                    </Border>
-                    <Border>
-                        <Border.Clip>
-                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
-                        </Border.Clip>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Grid>
                                 <TextBlock Text="Tel.(Home)" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
@@ -244,7 +222,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusHouseNo"/>
+                            <TextBox x:Name="txt_cusHouseNo" TextChanged="txt_cusHouseNo_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -266,7 +244,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusStreetNme"/>
+                            <TextBox x:Name="txt_cusStreetNme" TextChanged="txt_cusStreetNme_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -288,7 +266,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusCity"/>
+                            <TextBox x:Name="txt_cusCity" TextChanged="txt_cusCity_TextChanged"/>
                         </Grid>
                     </Border>
                     
@@ -338,7 +316,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusWorkInstitute"/>
+                            <TextBox x:Name="txt_cusWorkInstitute" TextChanged="txt_cusWorkInstitute_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -359,7 +337,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusWorkStrNme"/>
+                            <TextBox x:Name="txt_cusWorkStrNme" TextChanged="txt_cusWorkStrNme_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -380,10 +358,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-
-                            <TextBox x:Name="txt_cusWorkAddrs" TextChanged="txt_cusWorkAddrs_TextChanged"/>
-
-                            <TextBox x:Name="txt_cusWorkCity"/>
+                            <TextBox x:Name="txt_cusWorkCity" TextChanged="txt_cusWorkCity_TextChanged"/>
 
                         </Grid>
                     </Border>
