@@ -16,5 +16,23 @@ namespace DemoInterface1.Reports
         {
             InitializeComponent();
         }
+        DataTable dt = new DataTable();
+        Vehicle vehicle = new Vehicle();
+
+        private void RViewVehicleAccident_Load(object sender, EventArgs e)
+        {
+            dt = vehicle.viewVehicle();
+            cmb_vehicle.DataSource = dt.DefaultView;
+            cmb_vehicle.DisplayMember = "Plate No";
+            cmb_vehicle.ValueMember = "Plate No";
+        }
+
+        private void cmb_vehicle_DropDownClosed(object sender, EventArgs e)
+        {
+            CrystalReports.crvVehicleAccident vAcc = new CrystalReports.crvVehicleAccident();
+            vAcc.SetParameterValue("@vehicle", cmb_vehicle.Text);
+            crvVehicleAccident.ReportSource = null;
+            crvVehicleAccident.ReportSource = vAcc;
+        }
     }
 }

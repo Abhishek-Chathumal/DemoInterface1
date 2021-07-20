@@ -16,14 +16,14 @@ namespace DemoInterface1.CrystalReports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crVehicleStatus : ReportClass {
+    public class crvVehicleMaintenance : ReportClass {
         
-        public crVehicleStatus() {
+        public crvVehicleMaintenance() {
         }
         
         public override string ResourceName {
             get {
-                return "crVehicleStatus.rpt";
+                return "crvVehicleMaintenance.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DemoInterface1.CrystalReports {
         
         public override string FullResourceName {
             get {
-                return "DemoInterface1.CrystalReports.crVehicleStatus.rpt";
+                return "DemoInterface1.CrystalReports.crvVehicleMaintenance.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,20 @@ namespace DemoInterface1.CrystalReports {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_vehicle {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedcrVehicleStatus : Component, ICachedReport {
+    public class CachedcrvVehicleMaintenance : Component, ICachedReport {
         
-        public CachedcrVehicleStatus() {
+        public CachedcrvVehicleMaintenance() {
         }
         
         [Browsable(false)]
@@ -129,7 +137,7 @@ namespace DemoInterface1.CrystalReports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crVehicleStatus rpt = new crVehicleStatus();
+            crvVehicleMaintenance rpt = new crvVehicleMaintenance();
             rpt.Site = this.Site;
             return rpt;
         }

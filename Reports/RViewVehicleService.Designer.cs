@@ -51,6 +51,7 @@
             this.cmb_vehicle.Size = new System.Drawing.Size(155, 29);
             this.cmb_vehicle.TabIndex = 7;
             this.cmb_vehicle.UseSelectable = true;
+            this.cmb_vehicle.DropDownClosed += new System.EventHandler(this.cmb_vehicle_DropDownClosed);
             // 
             // crvVehicleService
             // 
@@ -76,6 +77,7 @@
             this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Vehicle Service";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.RViewVehicleService_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
