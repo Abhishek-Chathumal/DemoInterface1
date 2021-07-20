@@ -63,7 +63,8 @@ namespace DemoInterface1.MVVM.View
 
         private void btn_vehicle_service_Click(object sender, RoutedEventArgs e)
         {
-            
+            Reports.RViewVehicleService obj = new Reports.RViewVehicleService();
+            obj.Show();
         }
 
         private void btn_maintenance_Click(object sender, RoutedEventArgs e)
@@ -74,12 +75,14 @@ namespace DemoInterface1.MVVM.View
 
         private void btn_vehicle_accident_Click(object sender, RoutedEventArgs e)
         {
-            
+            Reports.RViewVehicleAccident obj = new Reports.RViewVehicleAccident();
+            obj.Show();
         }
 
         private void btn_vehicle_maintenance_Click(object sender, RoutedEventArgs e)
         {
-
+            Reports.RVIewVehicleMaintenance obj = new Reports.RVIewVehicleMaintenance();
+            obj.Show();
         }
     }
 }

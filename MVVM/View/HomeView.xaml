@@ -100,6 +100,8 @@
                                     
                                     <lvc:PieSeries Title="VAN" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
 
+                                    <lvc:PieSeries Title="Pickup" Values="5" DataLabels="True" LabelPoint="{Binding PointLabel}"/>
+
                                 </lvc:PieChart.Series>
                             </lvc:PieChart>
                         </Grid>

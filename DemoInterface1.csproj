@@ -109,6 +109,11 @@
       <DependentUpon>crvCustomerBookings.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReports\crVehicleStatus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crVehicleStatus.rpt</DependentUpon>
+    </Compile>
     <Compile Include="CrystalReports\crvMaintenance.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -197,11 +202,29 @@
     <Compile Include="Reports\RViewServiceHistory.Designer.cs">
       <DependentUpon>RViewServiceHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\RViewVehicleAccident.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RViewVehicleAccident.Designer.cs">
+      <DependentUpon>RViewVehicleAccident.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\RViewVehicleBooking.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\RViewVehicleBooking.Designer.cs">
       <DependentUpon>RViewVehicleBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RVIewVehicleMaintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RVIewVehicleMaintenance.Designer.cs">
+      <DependentUpon>RVIewVehicleMaintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RViewVehicleService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\RViewVehicleService.Designer.cs">
+      <DependentUpon>RViewVehicleService.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\RViewVehicleStatus.cs">
       <SubType>Form</SubType>
@@ -421,6 +444,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crvCustomerBookings.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crVehicleStatus.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crVehicleStatus.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReports\crvMaintenance.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crvMaintenance.cs</LastGenOutput>
@@ -456,8 +483,17 @@
     <EmbeddedResource Include="Reports\RViewServiceHistory.resx">
       <DependentUpon>RViewServiceHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RViewVehicleAccident.resx">
+      <DependentUpon>RViewVehicleAccident.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\RViewVehicleBooking.resx">
       <DependentUpon>RViewVehicleBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RVIewVehicleMaintenance.resx">
+      <DependentUpon>RVIewVehicleMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RViewVehicleService.resx">
+      <DependentUpon>RViewVehicleService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\RViewVehicleStatus.resx">
       <DependentUpon>RViewVehicleStatus.cs</DependentUpon>

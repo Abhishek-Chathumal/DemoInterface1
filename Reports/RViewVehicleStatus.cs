@@ -16,5 +16,12 @@ namespace DemoInterface1.Reports
         {
             InitializeComponent();
         }
+
+        private void RViewVehicleStatus_Load(object sender, EventArgs e)
+        {
+            CrystalReports.crvVehicleStatus status = new CrystalReports.crvVehicleStatus();
+            crvStatus.ReportSource = null;
+            crvStatus.ReportSource = status;
+        }
     }
 }

@@ -59,7 +59,7 @@ namespace DemoInterface1.MVVM.View
             SolidColorBrush brushStroke = new SolidColorBrush();
             brush5.Color = Color.FromRgb(25, 25, 25);
             SolidColorBrush brush6 = new SolidColorBrush();
-            brush6.Color = Color.FromRgb(34, 119, 170);
+            brush6.Color = Color.FromRgb(138, 1, 254);
             piechart.Series = new SeriesCollection
         {
             new PieSeries
