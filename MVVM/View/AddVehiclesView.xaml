@@ -188,7 +188,7 @@
                                 <ComboBox.Resources>
                                     <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                                 </ComboBox.Resources>
-                                <ComboBoxItem Content="Automatic" HorizontalAlignment="Left" Width="150" />
+                                <ComboBoxItem Content="Auto" HorizontalAlignment="Left" Width="150" />
                                 <ComboBoxItem Content="Manual" HorizontalAlignment="Left" Width="150"/>
                             </ComboBox>
                             <Rectangle/>
@@ -241,13 +241,13 @@
                                 <ComboBox.Resources>
                                     <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                                 </ComboBox.Resources>
-                                <ComboBoxItem Content="800 cc" HorizontalAlignment="Left" Width="150"/>
-                                <ComboBoxItem Content="1000 cc" HorizontalAlignment="Left" Width="150"/>
-                                <ComboBoxItem Content="1200 cc" HorizontalAlignment="Left" Width="150"/>
-                                <ComboBoxItem Content="1500 cc" HorizontalAlignment="Left" Width="150"/>
-                                <ComboBoxItem Content="1800 cc" HorizontalAlignment="Left" Width="150"/>
-                                <ComboBoxItem Content="2000 cc" HorizontalAlignment="Left" Width="150"/>
-                                <ComboBoxItem Content="2500 cc" HorizontalAlignment="Left" Width="150"/>
+                                <ComboBoxItem Content="800" HorizontalAlignment="Left" Width="150"/>
+                                <ComboBoxItem Content="1000" HorizontalAlignment="Left" Width="150"/>
+                                <ComboBoxItem Content="1200" HorizontalAlignment="Left" Width="150"/>
+                                <ComboBoxItem Content="1500" HorizontalAlignment="Left" Width="150"/>
+                                <ComboBoxItem Content="1800" HorizontalAlignment="Left" Width="150"/>
+                                <ComboBoxItem Content="2000" HorizontalAlignment="Left" Width="150"/>
+                                <ComboBoxItem Content="2500" HorizontalAlignment="Left" Width="150"/>
                             </ComboBox>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Engine.png"/>
@@ -593,7 +593,7 @@
             <DockPanel>
                 <Button x:Name="btn_save" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Left"
-                    BorderThickness="0" Margin="50 0 0 0"/>
+                    BorderThickness="0" Margin="50 0 0 0" Click="btn_save_Click"/>
                 <Button x:Name="btn_cls" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Right"
                     BorderThickness="0" Margin="0 0 50 0" Click="btn_cls_Click"/>

@@ -141,6 +141,7 @@ namespace DemoInterface1.MVVM.View
             img_vehicle.Source = null;
             cmb_trans.SelectedIndex = -1;
             date_lend.SelectedDate = null;
+            error_msg.Text = "";
         }
 
         private void cmb_ins_DropDownClosed(object sender, EventArgs e)
@@ -355,6 +356,54 @@ namespace DemoInterface1.MVVM.View
                 error_msg.Text = "Please Select a Lend Date";
             }
             else { error_msg.Text = ""; }
+        }
+
+        private void btn_save_Click(object sender, RoutedEventArgs e)
+        {
+            if (error_msg.Text == "")
+            {
+                try
+                {
+
+                    string name = System.IO.Path.GetFileName(filepath);
+                    string destinationPath = GetDestinationPath(name);
+                    Vehicle vehicle = new Vehicle(txt_Lplate.Text, txt_catagory.Text, cmb_color.Text, destinationPath, cmb_trans.Text, Int32.Parse(cmb_Ecapacity.Text), Int32.Parse(cmb_noPassengers.Text), date_licenseStart.Text, date_LicenseEnd.Text, date_InsuranceEnd.Text, date_InsuranceStart.Text, cmb_Ftype.Text, date_lend.Text, Int32.Parse(txt_oPay.Text), txt_wName.Text, txt_wAdd.Text, Int32.Parse(txt_wContact.Text));
+                    int i = vehicle.addVehicle(modelID, insID, cmb_ownerNIC.Text);
+                    if (i == 1)
+                    {
+                        File.Copy(filepath, destinationPath, true);
+                        ExternalForms.Message msg = new ExternalForms.Message();
+                        msg.errorMsg("Data Saved Successfully");
+                        msg.Show();
+                        btn_cls_Click(this, null);
+                        btn_remove_Click(this, null);
+                    }
+                    else
+                    {
+                        ExternalForms.Message msg = new ExternalForms.Message();
+                        msg.errorMsg("Could not save data,Please try again");
+                        msg.Show();
+                    }
+                }
+                catch (ArgumentNullException)
+                {
+                    ExternalForms.Message msg = new ExternalForms.Message();
+                    msg.errorMsg("Please upload a photo");
+                    msg.Show();
+                }
+                catch (System.Data.SqlClient.SqlException)
+                {
+                    ExternalForms.Message msg = new ExternalForms.Message();
+                    msg.errorMsg("Please fill the form correctly. ");
+                    msg.Show();
+                }
+                catch (Exception ex)
+                {
+                    ExternalForms.Message msg = new ExternalForms.Message();
+                    msg.errorMsg("Oops something went worng. " + ex.Message);
+                    msg.Show();
+                }
+            }
         }
     }
 }
