@@ -174,8 +174,8 @@ namespace DemoInterface1.MVVM.View
         {
             if (txt_cusFname.Text.Length == 0)
                 error_msg.Text = "Please Enter Customer First Name  ";
-            else if (txt_cusFname.Text.Any(char.IsDigit))
-                error_msg.Text = "First Name cannot have Numbers";
+            else if (!Regex.IsMatch(txt_cusFname.Text, @"^[A-Za-z]+$"))
+                error_msg.Text = "First name is not Valid";
             else
                 error_msg.Text = "";
         }
@@ -184,8 +184,8 @@ namespace DemoInterface1.MVVM.View
         {
             if (txt_cusLname.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer last Name  ";
-            else if (txt_cusLname.Text.Any(char.IsDigit))
-                error_msg.Text = "Last Name cannot have Numbers";
+            else if (!Regex.IsMatch(txt_cusLname.Text, @"^[A-Za-z]+$"))
+                error_msg.Text = "Last name is not Valid";
             else
                 error_msg.Text = "";
         }
@@ -242,8 +242,8 @@ namespace DemoInterface1.MVVM.View
         {
             if (txt_kinName.Text.Length == 0)
                 error_msg.Text = "Please Enter Custoer Kin Name ";
-            else if (txt_kinName.Text.Any(char.IsDigit))
-                error_msg.Text = "Last Name cannot have Numbers";
+            else if (!Regex.IsMatch(txt_kinName.Text, @"^[A-Za-z]+$"))
+                error_msg.Text = "Kin name is not Valid";
             else
                 error_msg.Text = "";
         }

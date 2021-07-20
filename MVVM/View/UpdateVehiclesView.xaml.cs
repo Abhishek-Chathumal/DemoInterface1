@@ -208,8 +208,8 @@ namespace DemoInterface1.MVVM.View
         {
             if (txt_wName.Text.Length == 0)
                 error_msg.Text = "Please Enter Witness Name";
-            else if (txt_wName.Text.Any(char.IsDigit))
-                error_msg.Text = "Witness Name cannot have Numbers";
+            else if (!Regex.IsMatch(txt_wName.Text, @"^[A-Za-z]+$"))
+                error_msg.Text = "Witness name is not Valid";
             else
                 error_msg.Text = "";
         }
@@ -227,7 +227,6 @@ namespace DemoInterface1.MVVM.View
             if (txt_wContact.Text.Length == 0)
                 error_msg.Text = "Please Enter Witness Contact Number ";
             else if (!Regex.IsMatch(txt_wContact.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
-
                 error_msg.Text = "Contact No not Valid";
             else
                 error_msg.Text = "";
@@ -408,8 +407,8 @@ namespace DemoInterface1.MVVM.View
 
         private void btn_delete_Click(object sender, RoutedEventArgs e)
         {
-           /* try
-            {*/
+            try
+            {
                 int i = vehicle.deleteVehicle(cmb_plateNo.Text);
                 if (i == 1)
                 {
@@ -433,7 +432,7 @@ namespace DemoInterface1.MVVM.View
                     msg.errorMsg("Could not delete data,Please try agian");
                     msg.Show();
                 }
-            /*}
+            }
             catch (System.Data.SqlClient.SqlException)
             {
                 ExternalForms.Message msg = new ExternalForms.Message();
@@ -445,7 +444,7 @@ namespace DemoInterface1.MVVM.View
                 ExternalForms.Message msg = new ExternalForms.Message();
                 msg.errorMsg("Oops something went worng. " + ex.Message);
                 msg.Show();
-            }*/
+            }
 
         }
 

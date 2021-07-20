@@ -184,8 +184,8 @@ namespace DemoInterface1.MVVM.View
         {
             if (txt_wName.Text.Length == 0)
                 error_msg.Text = "Please Enter Witness Name";
-            else if (txt_wName.Text.Any(char.IsDigit))
-                error_msg.Text = "Witness Name cannot have Numbers";
+            else if (!Regex.IsMatch(txt_wName.Text, @"^[A-Za-z]+$"))
+                error_msg.Text = "Witness name is not Valid";
             else
                 error_msg.Text = "";
         }
