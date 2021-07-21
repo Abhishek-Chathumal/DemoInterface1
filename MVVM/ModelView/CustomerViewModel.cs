@@ -1,15 +1,10 @@
 ﻿using DemoInterface1.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DemoInterface1.MVVM.ModelView
 {
-    class CustomerViewModel:observableObject
+    class CustomerViewModel : observableObject
     {
-        
+
         public RelayCommand ViewCustomerViewCommand { get; set; }
         public RelayCommand AddCustomerViewCommand { get; set; }
         public RelayCommand UpdateCustomerViewCommand { get; set; }
@@ -40,13 +35,13 @@ namespace DemoInterface1.MVVM.ModelView
             ViewCustomerViewCommand = new RelayCommand(o =>
             {
                 PresentCustomerView = ViewCustomerVM;
-                
+
             });
 
             AddCustomerViewCommand = new RelayCommand(o =>
             {
                 PresentCustomerView = AddCustomerVM;
-                
+
             });
 
             UpdateCustomerViewCommand = new RelayCommand(o =>

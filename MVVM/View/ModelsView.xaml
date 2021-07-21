@@ -3,10 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:DemoInterface1.MVVM.View"
+             xmlns:local="clr-namespace:DemoInterface1.MVVM.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="520" d:DesignWidth="780">
     <Grid>
-        <TextBlock Foreground="white" Text="Models" FontSize="50"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#202020" Offset="0.01"/>
+                    <GradientStop Color="#202020" Offset="0.99"/>
+                    <GradientStop Color="#FF191919" Offset="0.25"/>
+                    <GradientStop Color="#191919" Offset="0.75"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel Opacity="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <RadioButton Content="View Models" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
+                 Command="{Binding ViewModelsViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}"/>
+                <Rectangle Height="24" Width="1" VerticalAlignment="Center" Fill="White" Stroke="White" StrokeThickness="1"/>
+                <RadioButton Content="Add Models" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Command="{Binding AddModelsViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}"/>
+                <Rectangle Height="24" Width="1" VerticalAlignment="Center" Fill="White" Stroke="White" StrokeThickness="1"/>
+                <RadioButton Content="Update Models" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Command="{Binding}" Style="{StaticResource HorizontalMenuButtonTheme}"/>
+            </StackPanel>
+        </Border>
+        <ContentControl Grid.Row="1" Content="{Binding PresentModelsView}"/>
     </Grid>
 </UserControl>

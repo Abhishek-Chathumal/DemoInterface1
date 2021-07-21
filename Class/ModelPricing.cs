@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace DemoInterface1
 {
@@ -23,7 +18,7 @@ namespace DemoInterface1
         public ModelPricing()
         {
         }
-        public ModelPricing(string pID,string vType,int vYear,string vMake,string vModel,int shortRent,int longRent,float extraMilageCost)
+        public ModelPricing(string pID, string vType, int vYear, string vMake, string vModel, int shortRent, int longRent, float extraMilageCost)
         {
             this.pID = pID;
             this.vType = vType;
@@ -36,14 +31,14 @@ namespace DemoInterface1
         }
 
         public DataTable viewPricing()
-        {            
+        {
             dt = db.getData("exec view_pricing");
             return dt;
         }
 
         public DataTable viewPricing(string modelID)
         {
-            dt = db.getData("exec view_pricing_id '"+modelID+"'");
+            dt = db.getData("exec view_pricing_id '" + modelID + "'");
             return dt;
         }
 
@@ -65,5 +60,5 @@ namespace DemoInterface1
 
     }
 
-   
+
 }

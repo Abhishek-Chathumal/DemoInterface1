@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace DemoInterface1
 {
@@ -13,7 +8,7 @@ namespace DemoInterface1
         Database db = new Database();
 
 
-        public MaintenanceRepair(string id,string date,string location,int cost,string details,string next)
+        public MaintenanceRepair(string id, string date, string location, int cost, string details, string next)
         {
             RepairID = id;
             repairDate = date;
@@ -39,14 +34,14 @@ namespace DemoInterface1
         }
         public override DataTable viewRepair(string id)
         {
-                string query = "select * from Maintenance_Repair where main_RID = '" + id + "'";
-                DataTable dt = new DataTable();
-                dt = db.getData(query);
-                return dt;         
+            string query = "select * from Maintenance_Repair where main_RID = '" + id + "'";
+            DataTable dt = new DataTable();
+            dt = db.getData(query);
+            return dt;
         }
         public DataTable viewRepairVehicle(string vehicle)
         {
-            string query = "exec view_maintenanceVehicle '"+vehicle+"'";
+            string query = "exec view_maintenanceVehicle '" + vehicle + "'";
             DataTable dt = new DataTable();
             dt = db.getData(query);
             return dt;
@@ -60,7 +55,7 @@ namespace DemoInterface1
         }
         public override int updateRepair(string vid)
         {
-            string query = "update Maintenance_Repair set V_ID = '"+vid+ "',repairDate = '" + repairDate+ "',repairLocation='" + repairLocation+ "',repiarDetails='" + repairDetails + "',repairCost='" + repairCost+ "',nxtCheck ='" + nxtCheck+"' where main_RID='"+RepairID+"'";
+            string query = "update Maintenance_Repair set V_ID = '" + vid + "',repairDate = '" + repairDate + "',repairLocation='" + repairLocation + "',repiarDetails='" + repairDetails + "',repairCost='" + repairCost + "',nxtCheck ='" + nxtCheck + "' where main_RID='" + RepairID + "'";
             int i = db.save_update_delete(query);
             return i;
         }

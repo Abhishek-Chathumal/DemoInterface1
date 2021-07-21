@@ -30,7 +30,7 @@
                                       FontSize="15" Background="Transparent"
                                       IsEditable="True" BorderBrush="White" MaxDropDownHeight="277" DropDownClosed="cmb_plateNo_DropDownClosed">
                 <ComboBox.Resources>
-                    <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
+                    <SolidColorBrush x:Key="MaterialDesignPaper" Color="#57319a"/>
                 </ComboBox.Resources>
             </ComboBox>
 

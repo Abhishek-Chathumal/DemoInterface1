@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace DemoInterface1
 {
@@ -71,7 +66,7 @@ namespace DemoInterface1
         }
         public int updatePassword(string newPass)
         {
-            string query = "update UserAcc set Upass='"+newPass+"' where Uname='" + uname + "'";
+            string query = "update UserAcc set Upass='" + newPass + "' where Uname='" + uname + "'";
             int i = db.save_update_delete(query);
             return i;
         }
@@ -81,6 +76,6 @@ namespace DemoInterface1
             int i = db.save_update_delete(query);
             return i;
         }
-       
+
     }
 }

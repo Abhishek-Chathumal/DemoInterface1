@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace DemoInterface1
         string payMethod;
         Database db = new Database();
 
-        public Bill(string id,string date,int cost,string method)
+        public Bill(string id, string date, int cost, string method)
         {
             billID = id;
             billDate = date;
