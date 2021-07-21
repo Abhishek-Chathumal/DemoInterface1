@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace DemoInterface1.Core
 {
-    class RelayCommand: ICommand
+    class RelayCommand : ICommand
     {
         private Action<object> _execute;
         private Func<object, bool> _canExecute;
@@ -14,7 +14,7 @@ namespace DemoInterface1.Core
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public RelayCommand(Action<object> execute, Func<object, bool> canExecute=null)
+        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {
             _execute = execute;
             _canExecute = canExecute;

@@ -1,3 +1,4 @@
+﻿using System.Windows.Controls;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace DemoInterface1.MVVM.View
     /// Interaction logic for ViewCustomerView.xaml
     /// </summary>
     public partial class ViewCustomerView : UserControl
-    { 
+    {
         public ViewCustomerView()
         {
             InitializeComponent();

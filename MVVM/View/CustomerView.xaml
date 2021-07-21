@@ -24,7 +24,7 @@
             </Border.Background>
             <StackPanel Opacity="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <RadioButton x:Name="rBtn_cusView" Content="View Customers" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
-                 Style="{StaticResource HorizontalMenuButtonTheme}" Command="{Binding ViewCustomerViewCommand}" Checked="rBtn_cusView_Checked"/>
+                 Command="{Binding ViewCustomerViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}" Checked="rBtn_cusView_Checked"/>
                 <Rectangle Height="24" Width="1" VerticalAlignment="Center" Fill="White" Stroke="White" StrokeThickness="1"/>
                 <RadioButton x:Name="rBtn_cusAdd" Content="Add Customers" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
                 Command="{Binding AddCustomerViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}" Checked="rBtn_cusAdd_Checked"/>

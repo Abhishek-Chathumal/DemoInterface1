@@ -19,11 +19,27 @@
 
         <TextBlock Text="- UPDATE CUSTOMERS -" Foreground="White" Opacity="0.8" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"
                    FontSize="16" FontFamily="Tahoma" />
+        <Border Grid.Row="1" CornerRadius="10 10 0 0" Background="#57319a" Margin="0 10 0 0" Height="45"
+                VerticalAlignment="Top" >
+            <ComboBox x:Name="cmb_nic" Margin="0 10 0 5" Height="30" Width="185" VerticalAlignment="Top"
+                                      materialDesign:HintAssist.Hint="NIC No."
+                                      materialDesign:HintAssist.HintOpacity="0.5"
+                                      materialDesign:HintAssist.Foreground="White"
+                                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                                      Foreground="White"
+                                      FontSize="15" Background="Transparent"
+                                      IsEditable="True" BorderBrush="White" MaxDropDownHeight="277">
+                <ComboBox.Resources>
+                    <SolidColorBrush x:Key="MaterialDesignPaper" Color="#57319a"/>
+                </ComboBox.Resources>
+            </ComboBox>
 
-        <Border Grid.Row="1" CornerRadius="10" Background="#191919" Margin="0 10 0 10">
+        </Border>
+
+        <Border Grid.Row="1" CornerRadius="0 0 10 10" Background="#191919" Margin="0 55 0 10" VerticalAlignment="Top">
             <Border.Clip>
                 <RectangleGeometry RadiusX="10" RadiusY="10"
-                                   Rect="0 0 300 469.6"/>
+                                   Rect="0 -10 300 415.6"/>
             </Border.Clip>
             <ScrollViewer Margin="10 10 10 10" Grid.Column="0" VerticalScrollBarVisibility="Auto" Template="{DynamicResource ScrollViewerSubMenu}">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
@@ -64,7 +80,6 @@
                             <Setter Property="FontSize" Value="15"/>
                         </Style>
                     </StackPanel.Resources>
-
                     <Border Margin="0 0 0 0">
                         <Border.Clip>
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>

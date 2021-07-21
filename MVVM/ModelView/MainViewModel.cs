@@ -1,13 +1,8 @@
 ﻿using DemoInterface1.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DemoInterface1.MVVM.ModelView
 {
-    class MainViewModel:observableObject
+    class MainViewModel : observableObject
     {
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand VehicleViewCommand { get; set; }
@@ -22,9 +17,9 @@ namespace DemoInterface1.MVVM.ModelView
 
 
 
-        public HomeViewModel HomeVM {get; set;}
-        public VehicleViewModel VehicleVM { get; set;}
-        public CustomerViewModel CustomerVM { get; set;}
+        public HomeViewModel HomeVM { get; set; }
+        public VehicleViewModel VehicleVM { get; set; }
+        public CustomerViewModel CustomerVM { get; set; }
         public OwnerViewModel OwnerVM { get; set; }
         public ModelsViewModel ModelVM { get; set; }
         public RepairsViewModel RepairsVM { get; set; }
@@ -58,10 +53,10 @@ namespace DemoInterface1.MVVM.ModelView
             AccountsVM = new AccountsViewModel();
             ReportsVM = new ReportsViewModel();
             InsuranceVM = new InsuranceViewModel();
-            
+
             CurrentView = HomeVM;
 
-            HomeViewCommand = new RelayCommand(o => 
+            HomeViewCommand = new RelayCommand(o =>
             {
                 CurrentView = HomeVM;
             });
@@ -73,7 +68,7 @@ namespace DemoInterface1.MVVM.ModelView
             {
                 CurrentView = CustomerVM;
             });
-            OwnerViewCommand = new RelayCommand(o => 
+            OwnerViewCommand = new RelayCommand(o =>
             {
                 CurrentView = OwnerVM;
             });

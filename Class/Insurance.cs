@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace DemoInterface1
 {
@@ -16,7 +11,7 @@ namespace DemoInterface1
         public Insurance()
         {
         }
-        public Insurance(string insID,string insName)
+        public Insurance(string insID, string insName)
         {
             this.insID = insID;
             this.insName = insName;
@@ -30,13 +25,13 @@ namespace DemoInterface1
         public DataTable viewInsurance(string insName)
         {
             DataTable dt = new DataTable();
-            dt = db.getData("select * from Insurance where insName = '"+insName+"'");
+            dt = db.getData("select * from Insurance where insName = '" + insName + "'");
             return dt;
         }
         public int addInsurance()
         {
             string query = "insert into insurance values ('" + insID + "','" + insName + "')";
-            int i =db.save_update_delete(query);
+            int i = db.save_update_delete(query);
             return i;
         }
         public int updateInsurance()

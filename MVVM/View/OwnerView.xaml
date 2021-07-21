@@ -7,6 +7,30 @@
              mc:Ignorable="d" 
              d:DesignHeight="520" d:DesignWidth="780">
     <Grid>
-        <TextBlock Foreground="white" Text="Owners" FontSize="50"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#202020" Offset="0.01"/>
+                    <GradientStop Color="#202020" Offset="0.99"/>
+                    <GradientStop Color="#FF191919" Offset="0.25"/>
+                    <GradientStop Color="#191919" Offset="0.75"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel Opacity="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <RadioButton Content="View Owners" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
+                 Style="{StaticResource HorizontalMenuButtonTheme}" Command="{Binding ViewOwnerViewCommand}"/>
+                <Rectangle Height="24" Width="1" VerticalAlignment="Center" Fill="White" Stroke="White" StrokeThickness="1"/>
+                <RadioButton Content="Add Owners" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Command="{Binding AddOwnerViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}"/>
+                <Rectangle Height="24" Width="1" VerticalAlignment="Center" Fill="White" Stroke="White" StrokeThickness="1"/>
+                <RadioButton Content="Update Owners" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
+                Command="{Binding UpdateOwnerViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}"/>
+            </StackPanel>
+        </Border>
+        <ContentControl Grid.Row="1" Content="{Binding PresentOwnerView}"/>
     </Grid>
 </UserControl>

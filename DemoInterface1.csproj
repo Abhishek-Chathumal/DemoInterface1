@@ -132,6 +132,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>crvVehicleStatus.rpt</DependentUpon>
       <SubType>Component</SubType>
+
     </Compile>
     <Compile Include="ExternalForms\BillPrint.xaml.cs">
       <DependentUpon>BillPrint.xaml</DependentUpon>
@@ -150,19 +151,52 @@
     </Compile>
     <Compile Include="ExternalForms\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
+
     </Compile>
+    <Compile Include="MVVM\ModelView\AddInsuranceViewModel.cs" />
+    <Compile Include="MVVM\ModelView\AddModelsViewModel.cs" />
+    <Compile Include="MVVM\ModelView\AddOwnersViewModel.cs" />
     <Compile Include="MVVM\ModelView\AddVehiclesViewModel.cs" />
     <Compile Include="MVVM\ModelView\InsuranceViewModel.cs" />
+    <Compile Include="MVVM\ModelView\UpdateInsuranceViewModel.cs" />
+    <Compile Include="MVVM\ModelView\UpdateOwnersViewModel.cs" />
     <Compile Include="MVVM\ModelView\UpdateVehiclesViewModel.cs" />
+    <Compile Include="MVVM\ModelView\ViewInsuranceViewModel.cs" />
+    <Compile Include="MVVM\ModelView\ViewModelsViewModel.cs" />
+    <Compile Include="MVVM\ModelView\ViewOwnersViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewVehiclesViewModel.cs" />
+    <Compile Include="MVVM\View\AddInsuranceView.xaml.cs">
+      <DependentUpon>AddInsuranceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AddModelsView.xaml.cs">
+      <DependentUpon>AddModelsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AddOwnersView.xaml.cs">
+      <DependentUpon>AddOwnersView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\AddVehiclesView.xaml.cs">
       <DependentUpon>AddVehiclesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\InsuranceView.xaml.cs">
       <DependentUpon>InsuranceView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\UpdateInsuranceView.xaml.cs">
+      <DependentUpon>UpdateInsuranceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\UpdateOwnersView.xaml.cs">
+      <DependentUpon>UpdateOwnersView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\UpdateVehiclesView.xaml.cs">
       <DependentUpon>UpdateVehiclesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ViewInsuranceView.xaml.cs">
+      <DependentUpon>ViewInsuranceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ViewModelsView.xaml.cs">
+      <DependentUpon>ViewModelsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ViewOwnersView.xaml.cs">
+      <DependentUpon>ViewOwnersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\ViewVehiclesView.xaml.cs">
       <DependentUpon>ViewVehiclesView.xaml</DependentUpon>
@@ -269,6 +303,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\AddInsuranceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\AddModelsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\AddOwnersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\AddVehiclesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -309,6 +355,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\UpdateInsuranceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\UpdateOwnersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\UpdateVehiclesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -318,6 +372,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\ViewCustomerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ViewInsuranceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ViewModelsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ViewOwnersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

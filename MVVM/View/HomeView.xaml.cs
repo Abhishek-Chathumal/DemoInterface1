@@ -1,20 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using LiveCharts;
+﻿using LiveCharts;
 using LiveCharts.Wpf;
-using LiveCharts.Charts;
+using System;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace DemoInterface1.MVVM.View
 {
@@ -46,16 +34,15 @@ namespace DemoInterface1.MVVM.View
             PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
             DataContext = this;
             SolidColorBrush brush1 = new SolidColorBrush();
-
             brush1.Color = Color.FromRgb(74,20,140);
             SolidColorBrush brush2 = new SolidColorBrush();
             brush2.Color = Color.FromRgb(123, 31, 162);
             SolidColorBrush brush3 = new SolidColorBrush();
             brush3.Color = Color.FromRgb(159, 36, 176);
             SolidColorBrush brush4 = new SolidColorBrush();
-            brush4.Color = Color.FromRgb(186,104,200);
+            brush4.Color = Color.FromRgb(186, 104, 200);
             SolidColorBrush brush5 = new SolidColorBrush();
-            brush5.Color = Color.FromRgb(225,190,231);
+            brush5.Color = Color.FromRgb(225, 190, 231);
             SolidColorBrush brushStroke = new SolidColorBrush();
             brush5.Color = Color.FromRgb(25, 25, 25);
             SolidColorBrush brush6 = new SolidColorBrush();
@@ -94,7 +81,7 @@ namespace DemoInterface1.MVVM.View
             {
                 Title = "VAN",
                 Values = new ChartValues<double> {vehicle.getVan()},
-                DataLabels = true,     
+                DataLabels = true,
                 LabelPoint = PointLabel,
                 Fill = brush5,
                 StrokeThickness=0
