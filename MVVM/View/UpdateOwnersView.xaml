@@ -413,5 +413,6 @@
             </DockPanel>
         </Border>
         <Separator Grid.Row="1" Grid.Column="1" Width="300" Background="#9a9a9a" Opacity="0.5" VerticalAlignment="Bottom" Margin="0 0 0 35"/>
+        <TextBlock x:Name="error_msg" Grid.Column="1" HorizontalAlignment="Left" Margin="90,430,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="23" Foreground="#FFFF4949" TextAlignment="Center" FontSize="15"/>
     </Grid>
 </UserControl>

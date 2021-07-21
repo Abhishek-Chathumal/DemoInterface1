@@ -193,7 +193,7 @@ namespace DemoInterface1.MVVM.View
         private void txt_cusEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_cusEmail.Text.Length == 0)
-                error_msg.Text = "Please Enter Custoer Email  ";
+                error_msg.Text = "Please Enter Customer Email  ";
             else if (!IsValid(txt_cusEmail.Text))
                 error_msg.Text = "Please enter a valid email address ";
             else

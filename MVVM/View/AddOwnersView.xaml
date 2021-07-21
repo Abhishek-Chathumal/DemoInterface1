@@ -81,7 +81,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_OwnNIC"/>
+                            <TextBox x:Name="txt_OwnNIC" TextChanged="txt_OwnNIC_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -102,7 +102,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_OwnFname"/>
+                            <TextBox x:Name="txt_OwnFname" TextChanged="txt_OwnFname_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -123,7 +123,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_OwnLname"/>
+                            <TextBox x:Name="txt_OwnLname" TextChanged="txt_OwnLname_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -145,7 +145,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_OwnEmail"/>
+                            <TextBox x:Name="txt_OwnEmail" TextChanged="txt_OwnEmail_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -167,7 +167,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBox x:Name="txt_OwnTelHome" Width="155"/>
+                                <TextBox x:Name="txt_OwnTelHome" Width="155" TextChanged="txt_OwnTelHome_TextChanged"/>
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Contact.png"/>
@@ -193,7 +193,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBox x:Name="txt_OwnTelMobile" Width="155"/>
+                                <TextBox x:Name="txt_OwnTelMobile" Width="155" TextChanged="txt_OwnTelMobile_TextChanged"/>
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Mobile.png"/>
@@ -221,7 +221,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_OwnHouseNo"/>
+                            <TextBox x:Name="txt_OwnHouseNo" TextInput="txt_OwnHouseNo_TextInput"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -243,7 +243,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_OwnStreetNme"/>
+                            <TextBox x:Name="txt_OwnStreetNme" TextChanged="txt_OwnStreetNme_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -265,7 +265,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_OwnCity"/>
+                            <TextBox x:Name="txt_OwnCity" TextChanged="txt_OwnCity_TextChanged"/>
                         </Grid>
                     </Border>
 
@@ -291,7 +291,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBox x:Name="txt_OwnProfession" Width="155"/>
+                                <TextBox x:Name="txt_OwnProfession" Width="155" TextChanged="txt_OwnProfession_TextChanged"/>
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Profession.png"/>
@@ -315,7 +315,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_OwnWorkInstitute"/>
+                            <TextBox x:Name="txt_OwnWorkInstitute" TextChanged="txt_OwnWorkInstitute_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -336,7 +336,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_OwnWorkStrNme"/>
+                            <TextBox x:Name="txt_OwnWorkStrNme" TextChanged="txt_OwnWorkStrNme_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -357,7 +357,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_OwnWorkCity"/>
+                            <TextBox x:Name="txt_OwnWorkCity" TextChanged="txt_OwnWorkCity_TextChanged"/>
                         </Grid>
                     </Border>
 
@@ -380,7 +380,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBox x:Name="txt_OwnTelWork" Width="155"/>
+                                <TextBox x:Name="txt_OwnTelWork" Width="155" TextChanged="txt_OwnTelWork_TextChanged"/>
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Contact.png"/>
@@ -397,25 +397,26 @@
                     <Border.Clip>
                         <RectangleGeometry RadiusX="125" RadiusY="125" Rect="0 0 250 250"/>
                     </Border.Clip>
-                    <Image Height="250" Width="250"/>
+                    <Image x:Name="img_owner" Height="250" Width="250"/>
                 </Border>
                 <Separator Margin="50 30 50 5" Background="#9a9a9a" Opacity="0.5"/>
                 <DockPanel>
-                    <Button Content="UPLOAD" FontSize="12" Height="25" Width="100" HorizontalAlignment="Left" Margin="50 10 0 0"/>
-                    <Button Content="REMOVE" FontSize="12" Height="25" Width="100" HorizontalAlignment="Right" Margin="0 10 50 0"/>
+                    <Button x:Name="btn_upload" Content="UPLOAD" FontSize="12" Height="25" Width="100" HorizontalAlignment="Left" Margin="50 10 0 0" Click="btn_upload_Click"/>
+                    <Button x:Name="btn_remove" Content="REMOVE" FontSize="12" Height="25" Width="100" HorizontalAlignment="Right" Margin="0 10 50 0" Click="btn_remove_Click"/>
                 </DockPanel>
             </StackPanel>
         </Border>
         <Border Height="50" Width="400" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" >
             <DockPanel>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
+                <Button x:Name="btn_save" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Left"
-                    BorderThickness="0" Margin="50 0 0 0"/>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
+                    BorderThickness="0" Margin="50 0 0 0" Click="btn_save_Click"/>
+                <Button x:Name="btn_cls" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Right"
-                    BorderThickness="0" Margin="0 0 50 0"/>
+                    BorderThickness="0" Margin="0 0 50 0" Click="btn_cls_Click"/>
             </DockPanel>
         </Border>
         <Separator Grid.Row="1" Grid.Column="1" Width="300" Background="#9a9a9a" Opacity="0.5" VerticalAlignment="Bottom" Margin="0 0 0 35"/>
+        <TextBlock x:Name="error_msg" Grid.Column="1" HorizontalAlignment="Left" Margin="90,430,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="23" Foreground="#FFFF4949" TextAlignment="Center" FontSize="15"/>
     </Grid>
 </UserControl>
