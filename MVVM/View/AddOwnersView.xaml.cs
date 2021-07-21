@@ -222,14 +222,6 @@ namespace DemoInterface1.MVVM.View
                 error_msg.Text = "";
         }
 
-        private void txt_OwnHouseNo_TextInput(object sender, TextCompositionEventArgs e)
-        {
-            if (txt_OwnHouseNo.Text.Length == 0)
-                error_msg.Text = "Please Enter House Number";
-            else
-                error_msg.Text = "";
-        }
-
         private void txt_OwnStreetNme_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (txt_OwnStreetNme.Text.Length == 0)
@@ -284,6 +276,14 @@ namespace DemoInterface1.MVVM.View
                 error_msg.Text = "Please Enter Owner Work Number ";
             else if (!Regex.IsMatch(txt_OwnTelWork.Text, @"^(?:7|0|(?:\+94))[0-9]{8,9}$"))
                 error_msg.Text = "Contact No not Valid";
+            else
+                error_msg.Text = "";
+        }
+
+        private void txt_OwnHouseNo_TextChanged(object sender, TextChangedEventArgs e)
+        { 
+            if (txt_OwnHouseNo.Text.Length == 0)
+                error_msg.Text = "Please Enter House Number";
             else
                 error_msg.Text = "";
         }

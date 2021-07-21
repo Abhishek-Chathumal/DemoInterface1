@@ -221,7 +221,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_OwnHouseNo" TextInput="txt_OwnHouseNo_TextInput"/>
+                            <TextBox x:Name="txt_OwnHouseNo" TextChanged="txt_OwnHouseNo_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
