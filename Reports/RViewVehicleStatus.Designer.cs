@@ -28,39 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.crvVehicleStatus1 = new DemoInterface1.CrystalReports.crvVehicleStatus();
+            this.crvStatus = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // crvStatus
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(20, 60);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.crvVehicleStatus1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(760, 370);
-            this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crvStatus.ActiveViewIndex = -1;
+            this.crvStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crvStatus.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crvStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crvStatus.Location = new System.Drawing.Point(20, 60);
+            this.crvStatus.Name = "crvStatus";
+            this.crvStatus.Size = new System.Drawing.Size(760, 370);
+            this.crvStatus.TabIndex = 0;
+            this.crvStatus.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // RViewVehicleStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.Controls.Add(this.crvStatus);
             this.Name = "RViewVehicleStatus";
+            this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Vehicle Status";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.RViewVehicleStatus_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private CrystalReports.crvVehicleStatus crvVehicleStatus1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvStatus;
     }
 }

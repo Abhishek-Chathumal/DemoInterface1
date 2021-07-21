@@ -18,7 +18,7 @@ namespace DemoInterface1
         }
         public Database()
         {
-            con = new SqlConnection("Data Source=LAPTOP-MQN2RJ5N;Initial Catalog=Malshi_Rent_a_Car;Integrated Security=True");
+            con = new SqlConnection("Server=tcp:malshi.database.windows.net,1433;Initial Catalog=MalshiRent;Persist Security Info=False;User ID=malshi;Password=Bawa@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
         public int save_update_delete(string q)
         {

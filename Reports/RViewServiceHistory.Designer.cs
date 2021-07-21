@@ -41,9 +41,11 @@
             this.btn_generate.Location = new System.Drawing.Point(691, 19);
             this.btn_generate.Name = "btn_generate";
             this.btn_generate.Size = new System.Drawing.Size(87, 36);
+            this.btn_generate.Style = MetroFramework.MetroColorStyle.Purple;
             this.btn_generate.TabIndex = 17;
             this.btn_generate.Text = "GENERATE";
             this.btn_generate.UseSelectable = true;
+            this.btn_generate.Click += new System.EventHandler(this.btn_generate_Click);
             // 
             // date_end
             // 
@@ -93,8 +95,10 @@
             this.Controls.Add(this.date_start);
             this.Controls.Add(this.crvService);
             this.Name = "RViewServiceHistory";
+            this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Service History";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.RViewServiceHistory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

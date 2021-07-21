@@ -3,6 +3,14 @@ using LiveCharts.Wpf;
 using System;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using LiveCharts;
+using LiveCharts.Wpf;
+using LiveCharts.Charts;
+using System.Data;
+
 
 namespace DemoInterface1.MVVM.View
 {
@@ -19,12 +27,16 @@ namespace DemoInterface1.MVVM.View
         }
         Vehicle vehicle = new Vehicle();
         Customer customer = new Customer();
+        Booking book = new Booking();
+        DataTable dt = new DataTable();
 
         public void labelData()
         {
             txt_totV.Text = vehicle.getTotalVehicleCount().ToString();
             txt_available.Text = vehicle.getAvaialableVehicleCount().ToString();
             txt_customers.Text = customer.getCustomerCount().ToString();
+            dt = book.viewReturn();
+            dg_return.ItemsSource = dt.DefaultView;
         }
 
         public Func<ChartPoint, string> PointLabel { get; set; }
@@ -46,7 +58,7 @@ namespace DemoInterface1.MVVM.View
             SolidColorBrush brushStroke = new SolidColorBrush();
             brush5.Color = Color.FromRgb(25, 25, 25);
             SolidColorBrush brush6 = new SolidColorBrush();
-            brush6.Color = Color.FromRgb(34, 119, 170);
+            brush6.Color = Color.FromRgb(138, 1, 254);
             piechart.Series = new SeriesCollection
         {
             new PieSeries
@@ -103,7 +115,8 @@ namespace DemoInterface1.MVVM.View
                 Values = new ChartValues<double> {vehicle.getPickup()},
                 DataLabels = true,
                 LabelPoint = PointLabel,
-                Fill = brush6
+                Fill = brush6,
+                StrokeThickness=0
             }
         };
         }

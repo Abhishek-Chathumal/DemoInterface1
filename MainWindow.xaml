@@ -16,7 +16,7 @@
         Height="600" Width="1000"
         WindowStyle="None"
         ResizeMode="NoResize"
-        AllowsTransparency="True">
+        AllowsTransparency="True" WindowStartupLocation="CenterScreen">
 
     <Window.DataContext>
         <viewModel:MainViewModel/>

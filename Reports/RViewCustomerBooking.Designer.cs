@@ -65,6 +65,7 @@
             this.cmb_cus.TabIndex = 3;
             this.cmb_cus.Theme = MetroFramework.MetroThemeStyle.Light;
             this.cmb_cus.UseSelectable = true;
+            this.cmb_cus.DropDownClosed += new System.EventHandler(this.cmb_cus_DropDownClosed);
             // 
             // RViewCustomerBooking
             // 
@@ -75,8 +76,10 @@
             this.Controls.Add(this.crvCustomerBooking);
             this.Controls.Add(this.cmb_cus);
             this.Name = "RViewCustomerBooking";
+            this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Customer Booking";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.RViewCustomerBooking_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
