@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace DemoInterface1.MVVM.View
 {
@@ -51,7 +46,7 @@ namespace DemoInterface1.MVVM.View
         public DataTable viewService(string vid)
         {
             DataTable dt = new DataTable();
-            dt = db.getData("exec viewServiceVehicle '" + vid+"'");
+            dt = db.getData("exec viewServiceVehicle '" + vid + "'");
             return dt;
         }
         public DataTable viewServiceID(string sid)
@@ -67,7 +62,7 @@ namespace DemoInterface1.MVVM.View
             int i = db.save_update_delete(query);
             return i;
         }
-        public int deleteService (string sid)
+        public int deleteService(string sid)
         {
             string query = "delete from Service  where sID = '" + sid + "'";
             int i = db.save_update_delete(query);

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace DemoInterface1.MVVM.View
 {
@@ -14,12 +9,12 @@ namespace DemoInterface1.MVVM.View
         string NIC;
         string homeAddress, offAddress;
         string email;
-        int mobileContact, homeContact ,offContact;
+        int mobileContact, homeContact, offContact;
         string profession;
         string photo;
         Database db = new Database();
 
-        public Owner(string fName, string lName, string NIC, string homeAddress, string offAddress, string email, int mobileContact, int homeContact,int offContact, string profession,string photo)
+        public Owner(string fName, string lName, string NIC, string homeAddress, string offAddress, string email, int mobileContact, int homeContact, int offContact, string profession, string photo)
         {
             this.fName = fName;
             this.lName = lName;
@@ -41,7 +36,7 @@ namespace DemoInterface1.MVVM.View
 
         public int addOwner()
         {
-            string query = "insert into Owner values ('" + NIC + "','" + fName + "','" + lName + "','" + homeAddress + "','" + homeContact + "','" + mobileContact + "','" + profession + "','" + offAddress + "','"+offContact+"','" + email + "','"+photo+"')";
+            string query = "insert into Owner values ('" + NIC + "','" + fName + "','" + lName + "','" + homeAddress + "','" + homeContact + "','" + mobileContact + "','" + profession + "','" + offAddress + "','" + offContact + "','" + email + "','" + photo + "')";
             int i = db.save_update_delete(query);
             return i;
         }
@@ -56,28 +51,28 @@ namespace DemoInterface1.MVVM.View
         public DataTable viewOwner(string NIC)
         {
             DataTable dt = new DataTable();
-            dt = db.getData("exec view_owners_nic '"+NIC+"'");
+            dt = db.getData("exec view_owners_nic '" + NIC + "'");
             return dt;
         }
 
         public DataTable searchOwner(string name)
         {
             DataTable dt = new DataTable();
-            dt = db.getData("exec view_owners_name '"+name+"'");
+            dt = db.getData("exec view_owners_name '" + name + "'");
             return dt;
         }
-       
+
 
         public int updateOwner()
         {
-            string query = "exec update_owner '"+NIC+"','"+fName+"','"+lName+"','"+homeAddress+"','"+homeContact+"','"+mobileContact+"','"+profession+"','"+offAddress+"','"+offContact+"','"+email+"','"+photo+"'";
+            string query = "exec update_owner '" + NIC + "','" + fName + "','" + lName + "','" + homeAddress + "','" + homeContact + "','" + mobileContact + "','" + profession + "','" + offAddress + "','" + offContact + "','" + email + "','" + photo + "'";
             int i = db.save_update_delete(query);
             return i;
         }
 
         public int deleteOwner(string NIC)
         {
-            string query = "delete from Owner where O_NIC = '"+NIC+"'";
+            string query = "delete from Owner where O_NIC = '" + NIC + "'";
             int i = db.save_update_delete(query);
             return i;
         }

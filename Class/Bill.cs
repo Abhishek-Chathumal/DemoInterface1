@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DemoInterface1.MVVM.View
-{ 
+﻿namespace DemoInterface1.MVVM.View
+{
     class Bill
     {
         string billID;
@@ -14,7 +8,7 @@ namespace DemoInterface1.MVVM.View
         string payMethod;
         Database db = new Database();
 
-        public Bill(string id,string date,int cost,string method)
+        public Bill(string id, string date, int cost, string method)
         {
             billID = id;
             billDate = date;
@@ -27,8 +21,8 @@ namespace DemoInterface1.MVVM.View
         }
         public int addBill(string bookID)
         {
-            string query = "insert into billing values ('"+bookID+"','"+billID+"','"+billDate+"','"+extraCost+"','"+payMethod+"',)";
-            int i =db.save_update_delete(query);
+            string query = "insert into billing values ('" + bookID + "','" + billID + "','" + billDate + "','" + extraCost + "','" + payMethod + "',)";
+            int i = db.save_update_delete(query);
             return i;
 
         }

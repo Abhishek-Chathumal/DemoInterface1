@@ -68,10 +68,32 @@
             <DataTemplate DataType="{x:Type viewModel:InsuranceViewModel}">
                 <view:InsuranceView/>
             </DataTemplate>
-           
+            <DataTemplate DataType="{x:Type viewModel:ViewInsuranceViewModel}">
+                <view:ViewInsuranceView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddInsuranceViewModel}">
+                <view:AddInsuranceView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UpdateInsuranceViewModel}">
+                <view:UpdateInsuranceView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddOwnersViewModel}">
+                <view:AddOwnersView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ViewOwnersViewModel}">
+                <view:ViewOwnersView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UpdateOwnersViewModel}">
+                <view:UpdateOwnersView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ViewModelsViewModel}">
+                <view:ViewModelsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddModelsViewModel}">
+                <view:AddModelsView/>
+            </DataTemplate>
 
-
-            <Style x:Key="FocusVisual">
+                <Style x:Key="FocusVisual">
                 <Setter Property="Control.Template">
                     <Setter.Value>
                         <ControlTemplate>

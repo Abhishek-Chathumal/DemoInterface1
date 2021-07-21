@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 
 namespace DemoInterface1.MVVM.View
 {
@@ -13,7 +8,7 @@ namespace DemoInterface1.MVVM.View
         int reapirDuration;
         Database db = new Database();
 
-        public AccidentRepair(string id, string date, string location, int cost, string details, int claim,int duration)
+        public AccidentRepair(string id, string date, string location, int cost, string details, int claim, int duration)
         {
             RepairID = id;
             repairDate = date;
@@ -28,7 +23,7 @@ namespace DemoInterface1.MVVM.View
 
         public override int addRepair(string vehicle)
         {
-            string query = "insert into Accident_Repair values ('" + vehicle+"','"+RepairID+"','"+repairDate+"','"+repairLocation+"','"+repairDetails+"','"+repairCost+"','"+repairClaim+"','"+reapirDuration+"')";
+            string query = "insert into Accident_Repair values ('" + vehicle + "','" + RepairID + "','" + repairDate + "','" + repairLocation + "','" + repairDetails + "','" + repairCost + "','" + repairClaim + "','" + reapirDuration + "')";
             int i = db.save_update_delete(query);
             return i;
         }
@@ -62,7 +57,7 @@ namespace DemoInterface1.MVVM.View
         }
         public override int updateRepair(string vid)
         {
-            string query = "update Accident_Repair set Vno = '" + vid + "',repairDate = '" + repairDate + "',repairLocation='" + repairLocation + "',repiarDetails='" + repairDetails + "',repairCost='" + repairCost + "',repairClaim ='" + repairClaim + "',repairDuration = '" + reapirDuration+"' where acc_RID='" + RepairID + "'";
+            string query = "update Accident_Repair set Vno = '" + vid + "',repairDate = '" + repairDate + "',repairLocation='" + repairLocation + "',repiarDetails='" + repairDetails + "',repairCost='" + repairCost + "',repairClaim ='" + repairClaim + "',repairDuration = '" + reapirDuration + "' where acc_RID='" + RepairID + "'";
             int i = db.save_update_delete(query);
             return i;
         }
