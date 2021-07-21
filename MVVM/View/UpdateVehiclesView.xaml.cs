@@ -1,4 +1,3 @@
-﻿using System.Windows.Controls;
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -123,7 +122,7 @@ namespace DemoInterface1.MVVM.View
                     }
                 }
             }
-            catch (FileNotFoundException Ex)
+            catch (FileNotFoundException)
             {
                 ExternalForms.Message msg = new ExternalForms.Message();
                 msg.errorMsg("Photo could not be located");
