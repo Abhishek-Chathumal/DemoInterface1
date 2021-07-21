@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace DemoInterface1.MVVM.View
+namespace DemoInterface1
 {
     class User
     {

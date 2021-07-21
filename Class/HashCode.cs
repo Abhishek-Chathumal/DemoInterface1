@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace Malshi_Rent_A_Car
+namespace DemoInterface1
 {
     class HashCode
     {

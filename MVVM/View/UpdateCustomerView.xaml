@@ -80,6 +80,24 @@
                             <Setter Property="FontSize" Value="15"/>
                         </Style>
                     </StackPanel.Resources>
+                    <Border Margin="0 0 0 0">
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <ComboBox x:Name="cmb_nic" Margin="5 0 5 0" Height="30" Width="185"
+                                      materialDesign:HintAssist.Hint="NIC"
+                                      materialDesign:HintAssist.HintOpacity="0.5"
+                                      materialDesign:HintAssist.Foreground="#FF9A9A9A"
+                                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                                      Foreground="#FF9A9A9A"
+                                      FontSize="15" Background="Transparent"
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_nic_DropDownClosed">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
+                            </ComboBox.Resources>
+
+                        </ComboBox>
+                    </Border>
                     <Border>
                         <Border.Clip>
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
@@ -98,7 +116,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusFname"/>
+                            <TextBox x:Name="txt_CusFname" TextChanged="txt_CusFname_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -119,7 +137,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusLname"/>
+                            <TextBox x:Name="txt_CusLname" TextChanged="txt_CusLname_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -141,7 +159,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusEmail"/>
+                            <TextBox x:Name="txt_CusEmail" TextChanged="txt_CusEmail_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -163,7 +181,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBox x:Name="txt_cusHomeTel" Width="155"/>
+                                <TextBox x:Name="txt_CusTelHome" Width="155" TextChanged="txt_CusTelHome_TextChanged"/>
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Contact.png"/>
@@ -189,7 +207,8 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBox x:Name="txt_cusMobile" Width="155"/>
+                                <TextBox x:Name="txt_CusTelMobile" Width="155" TextChanged="txt_CusTelMobile_TextChanged"/>
+
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Mobile.png"/>
@@ -217,7 +236,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusHouseNo"/>
+                            <TextBox x:Name="txt_cusHouseNo" TextChanged="txt_cusHouseNo_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -239,7 +258,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusStreetNme"/>
+                            <TextBox x:Name="txt_cusStreetNme" TextChanged="txt_cusStreetNme_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -261,7 +280,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusCity"/>
+                            <TextBox x:Name="txt_cusCity" TextChanged="txt_cusCity_TextChanged"/>
                         </Grid>
                     </Border>
 
@@ -287,7 +306,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBox x:Name="txt_cusProfession" Width="155"/>
+                                <TextBox x:Name="txt_CusProfession" Width="155" TextChanged="txt_CusProfession_TextChanged"/>
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Profession.png"/>
@@ -311,7 +330,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusWorkInstitute"/>
+                            <TextBox x:Name="txt_CusWorkIns" TextChanged="txt_CusWorkIns_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -332,7 +351,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusWorkStrNme"/>
+                            <TextBox x:Name="txt_cusWorkStrNme" TextChanged="txt_cusWorkStrNme_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -353,7 +372,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cusWorkCity"/>
+                            <TextBox x:Name="txt_cusWorkCity" TextChanged="txt_cusWorkCity_TextChanged"/>
                         </Grid>
                     </Border>
 
@@ -376,7 +395,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBox x:Name="txt_cusWorkTel" Width="155"/>
+                                <TextBox x:Name="txt_CusTelWork" Width="155" TextChanged="txt_CusTelWork_TextChanged"/>
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Contact.png"/>
@@ -401,7 +420,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_CusKinName"/>
+                            <TextBox x:Name="txt_CusKinName" TextChanged="txt_CusKinName_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -422,7 +441,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_CusKinkAdrs"/>
+                            <TextBox x:Name="txt_CusKinkAdrs" TextChanged="txt_CusKinkAdrs_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -444,13 +463,13 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBox x:Name="txt_CusKinConatct" Width="155"/>
+                                <TextBox x:Name="txt_CusKinConatct" Width="155" TextChanged="txt_CusKinConatct_TextChanged"/>
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Contact.png"/>
                         </StackPanel>
                     </Border>
-                    
+
                 </StackPanel>
             </ScrollViewer>
 
@@ -462,26 +481,30 @@
                     <Border.Clip>
                         <RectangleGeometry RadiusX="125" RadiusY="125" Rect="0 0 250 250"/>
                     </Border.Clip>
-                    <Image Height="250" Width="250"/>
+                    <Image x:Name="img_customer" Height="250" Width="250"/>
                 </Border>
                 <Separator Margin="50 30 50 5" Background="#9a9a9a" Opacity="0.5"/>
                 <DockPanel>
-                    <Button Content="UPLOAD" FontSize="12" Height="25" Width="100" HorizontalAlignment="Left" Margin="50 10 0 0"/>
-                    <Button Content="REMOVE" FontSize="12" Height="25" Width="100" HorizontalAlignment="Right" Margin="0 10 50 0"/>
+                    <Button x:Name="btn_upload" Content="UPLOAD" FontSize="12" Height="25" Width="100" HorizontalAlignment="Left" Margin="50 10 0 0" Click="btn_upload_Click"/>
+                    <Button x:Name="btn_remove" Content="REMOVE" FontSize="12" Height="25" Width="100" HorizontalAlignment="Right" Margin="0 10 50 0" Click="btn_remove_Click"/>
                 </DockPanel>
             </StackPanel>
         </Border>
         <Border Height="50" Width="400" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" >
             <DockPanel>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
+                <Button x:Name="btn_save" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Left"
-                    BorderThickness="0" Margin="50 0 0 0"/>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
+                    BorderThickness="0" Margin="40 0 0 0" Click="btn_save_Click"/>
+                <Button x:Name="btn_delete" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="DELETE"
+                    Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="26" HorizontalAlignment="Left"
+                    BorderThickness="0" Margin="10 10 0 10" Click="btn_delete_Click"/>
+                <Button x:Name="btn_clear" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Right"
-                    BorderThickness="0" Margin="0 0 50 0"/>
+                    BorderThickness="0" Margin="0 0 40 0" Click="btn_clear_Click"/>
             </DockPanel>
         </Border>
         <Separator Grid.Row="1" Grid.Column="1" Width="300" Background="#9a9a9a" Opacity="0.5" VerticalAlignment="Bottom" Margin="0 0 0 35"/>
-        
+        <TextBlock x:Name="error_msg" Grid.Column="1" HorizontalAlignment="Left" Margin="40,430,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Height="20" Foreground="#FFFF4949" TextAlignment="Center" FontSize="15"/>
+
     </Grid>
 </UserControl>

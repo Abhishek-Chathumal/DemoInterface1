@@ -1,0 +1,13 @@
+﻿<Window x:Class="DemoInterface1.ExternalForms.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:gif ="http://wpfanimatedgif.codeplex.com"
+        xmlns:local="clr-namespace:DemoInterface1.ExternalForms"
+        mc:Ignorable="d"
+         Title="SplashScreen" Height="413.584" Width="555.491" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="558" gif:ImageBehavior.AnimatedSource="E:\Downloads\loading1.gif"/>
+    </Grid>
+</Window>
