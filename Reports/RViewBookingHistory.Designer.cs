@@ -53,6 +53,7 @@
             this.btn_generate.Location = new System.Drawing.Point(834, 14);
             this.btn_generate.Name = "btn_generate";
             this.btn_generate.Size = new System.Drawing.Size(97, 37);
+            this.btn_generate.Style = MetroFramework.MetroColorStyle.Purple;
             this.btn_generate.TabIndex = 1;
             this.btn_generate.Text = "GENERATE";
             this.btn_generate.UseSelectable = true;
@@ -97,6 +98,7 @@
             this.Controls.Add(this.btn_generate);
             this.Controls.Add(this.crvBook);
             this.Name = "RViewBookingHistory";
+            this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Report Booking History";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.RViewBookingHistory_Load);

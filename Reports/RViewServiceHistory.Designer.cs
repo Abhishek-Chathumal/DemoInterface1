@@ -45,6 +45,7 @@
             this.btn_generate.TabIndex = 17;
             this.btn_generate.Text = "GENERATE";
             this.btn_generate.UseSelectable = true;
+            this.btn_generate.Click += new System.EventHandler(this.btn_generate_Click);
             // 
             // date_end
             // 
@@ -97,6 +98,7 @@
             this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Service History";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.RViewServiceHistory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

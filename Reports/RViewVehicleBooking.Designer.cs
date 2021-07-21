@@ -51,6 +51,7 @@
             this.cmb_vehicle.Size = new System.Drawing.Size(155, 29);
             this.cmb_vehicle.TabIndex = 4;
             this.cmb_vehicle.UseSelectable = true;
+            this.cmb_vehicle.DropDownClosed += new System.EventHandler(this.cmb_vehicle_DropDownClosed);
             // 
             // crvVehicleBooking
             // 
@@ -73,8 +74,10 @@
             this.Controls.Add(this.cmb_vehicle);
             this.Controls.Add(this.crvVehicleBooking);
             this.Name = "RViewVehicleBooking";
+            this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Vehicle Booking";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.RViewVehicleBooking_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

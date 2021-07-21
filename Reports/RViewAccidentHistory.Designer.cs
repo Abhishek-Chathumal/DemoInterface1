@@ -41,6 +41,7 @@
             this.btn_generate.Location = new System.Drawing.Point(691, 19);
             this.btn_generate.Name = "btn_generate";
             this.btn_generate.Size = new System.Drawing.Size(87, 36);
+            this.btn_generate.Style = MetroFramework.MetroColorStyle.Purple;
             this.btn_generate.TabIndex = 13;
             this.btn_generate.Text = "GENERATE";
             this.btn_generate.UseSelectable = true;
@@ -94,6 +95,7 @@
             this.Controls.Add(this.date_start);
             this.Controls.Add(this.crvAccident);
             this.Name = "RViewAccidentHistory";
+            this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Accident History";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.RViewAccidentHistory_Load);
