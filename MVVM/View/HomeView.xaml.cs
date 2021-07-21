@@ -116,7 +116,8 @@ namespace DemoInterface1.MVVM.View
                 Values = new ChartValues<double> {vehicle.getPickup()},
                 DataLabels = true,
                 LabelPoint = PointLabel,
-                Fill = brush6
+                Fill = brush6,
+                StrokeThickness=0
             }
         };
         }
