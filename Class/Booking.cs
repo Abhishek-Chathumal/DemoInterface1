@@ -114,5 +114,12 @@ namespace DemoInterface1
             dt = db.getData(query);
             return dt;
         }
+        public DataTable viewReturn()
+        {
+            DateTime today = DateTime.Today;
+            DateTime monthAfter = today.AddDays(-61);
+            dt = db.getData("exec viewReturns '"+ monthAfter + "','"+today+"'");
+            return dt;
+        }
     }
 }

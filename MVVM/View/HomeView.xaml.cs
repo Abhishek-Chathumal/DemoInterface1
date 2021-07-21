@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using LiveCharts;
 using LiveCharts.Wpf;
 using LiveCharts.Charts;
+using System.Data;
 
 namespace DemoInterface1.MVVM.View
 {
@@ -31,12 +32,16 @@ namespace DemoInterface1.MVVM.View
         }
         Vehicle vehicle = new Vehicle();
         Customer customer = new Customer();
+        Booking book = new Booking();
+        DataTable dt = new DataTable();
 
         public void labelData()
         {
             txt_totV.Text = vehicle.getTotalVehicleCount().ToString();
             txt_available.Text = vehicle.getAvaialableVehicleCount().ToString();
             txt_customers.Text = customer.getCustomerCount().ToString();
+            dt = book.viewReturn();
+            dg_return.ItemsSource = dt.DefaultView;
         }
 
         public Func<ChartPoint, string> PointLabel { get; set; }
