@@ -80,6 +80,15 @@
             <DataTemplate DataType="{x:Type viewModel:UpdateInsuranceViewModel}">
                 <view:UpdateInsuranceView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ViewBookingViewModel}">
+                <view:ViewBookingView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddBookingViewModel}">
+                <view:AddBookingView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UpdateBookingViewModel}">
+                <view:UpdateBookingView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:AddOwnersViewModel}">
                 <view:AddOwnersView/>
             </DataTemplate>
@@ -95,8 +104,17 @@
             <DataTemplate DataType="{x:Type viewModel:AddModelsViewModel}">
                 <view:AddModelsView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ViewRepairViewModel}">
+                <view:ViewRepairView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddRepairViewModel}">
+                <view:AddRepairView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UpdateRepairViewModel}">
+                <view:UpdateRepairView/>
+            </DataTemplate>
 
-                <Style x:Key="FocusVisual">
+            <Style x:Key="FocusVisual">
                 <Setter Property="Control.Template">
                     <Setter.Value>
                         <ControlTemplate>

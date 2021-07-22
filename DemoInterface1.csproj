@@ -169,19 +169,28 @@
     <Compile Include="ExternalForms\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\ModelView\AddBookingViewModel.cs" />
     <Compile Include="MVVM\ModelView\AddInsuranceViewModel.cs" />
     <Compile Include="MVVM\ModelView\AddModelsViewModel.cs" />
     <Compile Include="MVVM\ModelView\AddOwnersViewModel.cs" />
+    <Compile Include="MVVM\ModelView\AddRepairViewModel.cs" />
     <Compile Include="MVVM\ModelView\AddVehiclesViewModel.cs" />
     <Compile Include="MVVM\ModelView\BookingViewModel.cs" />
     <Compile Include="MVVM\ModelView\InsuranceViewModel.cs" />
+    <Compile Include="MVVM\ModelView\UpdateBookingViewModel.cs" />
     <Compile Include="MVVM\ModelView\UpdateInsuranceViewModel.cs" />
     <Compile Include="MVVM\ModelView\UpdateOwnersViewModel.cs" />
+    <Compile Include="MVVM\ModelView\UpdateRepairViewModel.cs" />
     <Compile Include="MVVM\ModelView\UpdateVehiclesViewModel.cs" />
+    <Compile Include="MVVM\ModelView\ViewBookingViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewInsuranceViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewModelsViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewOwnersViewModel.cs" />
+    <Compile Include="MVVM\ModelView\ViewRepairViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewVehiclesViewModel.cs" />
+    <Compile Include="MVVM\View\AddBookingView.xaml.cs">
+      <DependentUpon>AddBookingView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\AddInsuranceView.xaml.cs">
       <DependentUpon>AddInsuranceView.xaml</DependentUpon>
     </Compile>
@@ -190,6 +199,9 @@
     </Compile>
     <Compile Include="MVVM\View\AddOwnersView.xaml.cs">
       <DependentUpon>AddOwnersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AddRepairView.xaml.cs">
+      <DependentUpon>AddRepairView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\AddVehiclesView.xaml.cs">
       <DependentUpon>AddVehiclesView.xaml</DependentUpon>
@@ -200,14 +212,23 @@
     <Compile Include="MVVM\View\InsuranceView.xaml.cs">
       <DependentUpon>InsuranceView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\UpdateBookingView.xaml.cs">
+      <DependentUpon>UpdateBookingView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\UpdateInsuranceView.xaml.cs">
       <DependentUpon>UpdateInsuranceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\UpdateOwnersView.xaml.cs">
       <DependentUpon>UpdateOwnersView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\UpdateRepairView.xaml.cs">
+      <DependentUpon>UpdateRepairView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\UpdateVehiclesView.xaml.cs">
       <DependentUpon>UpdateVehiclesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ViewBookingView.xaml.cs">
+      <DependentUpon>ViewBookingView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\ViewInsuranceView.xaml.cs">
       <DependentUpon>ViewInsuranceView.xaml</DependentUpon>
@@ -217,6 +238,9 @@
     </Compile>
     <Compile Include="MVVM\View\ViewOwnersView.xaml.cs">
       <DependentUpon>ViewOwnersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ViewRepairView.xaml.cs">
+      <DependentUpon>ViewRepairView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\ViewVehiclesView.xaml.cs">
       <DependentUpon>ViewVehiclesView.xaml</DependentUpon>
@@ -337,6 +361,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\AddBookingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\AddCustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -350,6 +378,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\AddOwnersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\AddRepairView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -393,6 +425,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\UpdateBookingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\UpdateCustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -405,11 +441,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\UpdateRepairView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\UpdateVehiclesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\VehicleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ViewBookingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -426,6 +470,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\ViewOwnersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ViewRepairView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
