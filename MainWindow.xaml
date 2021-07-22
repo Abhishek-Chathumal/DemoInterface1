@@ -225,6 +225,12 @@
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
                                      Style="{StaticResource MenuButtonTheme}" Command="{Binding CustomerViewCommand}"/>
+                                <RadioButton Content="Bookings"                                              
+                                     Height="50"
+                                     BorderThickness="0"
+                                     BorderBrush="{x:Null}"
+                                     Foreground="White"
+                                     Style="{StaticResource MenuButtonTheme}" Command="{Binding BookingViewCommand}"/>
                                 <RadioButton Content="Owners"
                                      Height="50"
                                      BorderThickness="0"
@@ -255,13 +261,13 @@
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
                                      Style="{StaticResource MenuButtonTheme}" Command="{Binding ServiceViewCommand}"/>
-                                <RadioButton Content="Accounts"
+                                <RadioButton x:Name="rbtn_acc" Content="Accounts"
                                      Height="50"
                                      BorderThickness="0"
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
                                      Style="{StaticResource MenuButtonTheme}" Command="{Binding AccountsViewCommand}"/>
-                                <RadioButton Content="Reports"
+                                <RadioButton x:Name="rbtn_report" Content="Reports"
                                                  
                                      Height="50"
                                      BorderThickness="0"
@@ -297,6 +303,15 @@
                                         Height="50" HorizontalAlignment="Stretch"
                                         BorderBrush="Transparent" BorderThickness="0">
                                     <Image Source="IconsAndImages/Customer.png"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left"
+                                        Height="20"
+                                        Width="20" Margin="10 0 0 0"/>
+                                </Border>
+                                <Border Background="Transparent"
+                                        Height="50" HorizontalAlignment="Stretch"
+                                        BorderBrush="Transparent" BorderThickness="0">
+                                    <Image Source="IconsAndImages/Owner.png"
                                         VerticalAlignment="Center"
                                         HorizontalAlignment="Left"
                                         Height="20"

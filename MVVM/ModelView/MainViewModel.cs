@@ -7,6 +7,7 @@ namespace DemoInterface1.MVVM.ModelView
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand VehicleViewCommand { get; set; }
         public RelayCommand CustomerViewCommand { get; set; }
+        public RelayCommand BookingViewCommand { get; set; }
         public RelayCommand OwnerViewCommand { get; set; }
         public RelayCommand ModelsViewCommand { get; set; }
         public RelayCommand RepairsViewCommand { get; set; }
@@ -20,6 +21,7 @@ namespace DemoInterface1.MVVM.ModelView
         public HomeViewModel HomeVM { get; set; }
         public VehicleViewModel VehicleVM { get; set; }
         public CustomerViewModel CustomerVM { get; set; }
+        public BookingViewModel BookingVM { get; set; }
         public OwnerViewModel OwnerVM { get; set; }
         public ModelsViewModel ModelVM { get; set; }
         public RepairsViewModel RepairsVM { get; set; }
@@ -46,6 +48,7 @@ namespace DemoInterface1.MVVM.ModelView
             HomeVM = new HomeViewModel();
             VehicleVM = new VehicleViewModel();
             CustomerVM = new CustomerViewModel();
+            BookingVM = new BookingViewModel();
             OwnerVM = new OwnerViewModel();
             ModelVM = new ModelsViewModel();
             RepairsVM = new RepairsViewModel();
@@ -67,6 +70,10 @@ namespace DemoInterface1.MVVM.ModelView
             CustomerViewCommand = new RelayCommand(o =>
             {
                 CurrentView = CustomerVM;
+            });
+            BookingViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = BookingVM;
             });
             OwnerViewCommand = new RelayCommand(o =>
             {

@@ -34,7 +34,6 @@ namespace DemoInterface1.MVVM.ModelView
             ViewOwnerViewCommand = new RelayCommand(o =>
             {
                 PresentOwnerView = ViewOwnerVM;
-
             });
 
             AddOwnerViewCommand = new RelayCommand(o =>

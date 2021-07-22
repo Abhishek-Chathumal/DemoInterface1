@@ -29,6 +29,9 @@
             <DataTemplate DataType="{x:Type viewModel:CustomerViewModel}">
                 <view:CustomerView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:BookingViewModel}">
+                <view:BookingView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:OwnerViewModel}">
                 <view:OwnerView/>
             </DataTemplate>
