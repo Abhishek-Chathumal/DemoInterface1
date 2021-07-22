@@ -113,6 +113,15 @@
             <DataTemplate DataType="{x:Type viewModel:UpdateRepairViewModel}">
                 <view:UpdateRepairView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ViewServiceViewModel}">
+                <view:ViewServiceView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddServiceViewModel}">
+                <view:AddServiceView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UpdateServiceViewModel}">
+                <view:UpdateServiceView/>
+            </DataTemplate>
 
             <Style x:Key="FocusVisual">
                 <Setter Property="Control.Template">

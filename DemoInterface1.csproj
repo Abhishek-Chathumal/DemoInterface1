@@ -174,6 +174,7 @@
     <Compile Include="MVVM\ModelView\AddModelsViewModel.cs" />
     <Compile Include="MVVM\ModelView\AddOwnersViewModel.cs" />
     <Compile Include="MVVM\ModelView\AddRepairViewModel.cs" />
+    <Compile Include="MVVM\ModelView\AddServiceViewModel.cs" />
     <Compile Include="MVVM\ModelView\AddVehiclesViewModel.cs" />
     <Compile Include="MVVM\ModelView\BookingViewModel.cs" />
     <Compile Include="MVVM\ModelView\InsuranceViewModel.cs" />
@@ -181,12 +182,14 @@
     <Compile Include="MVVM\ModelView\UpdateInsuranceViewModel.cs" />
     <Compile Include="MVVM\ModelView\UpdateOwnersViewModel.cs" />
     <Compile Include="MVVM\ModelView\UpdateRepairViewModel.cs" />
+    <Compile Include="MVVM\ModelView\UpdateServiceViewModel.cs" />
     <Compile Include="MVVM\ModelView\UpdateVehiclesViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewBookingViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewInsuranceViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewModelsViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewOwnersViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewRepairViewModel.cs" />
+    <Compile Include="MVVM\ModelView\ViewServiceViewModel.cs" />
     <Compile Include="MVVM\ModelView\ViewVehiclesViewModel.cs" />
     <Compile Include="MVVM\View\AddBookingView.xaml.cs">
       <DependentUpon>AddBookingView.xaml</DependentUpon>
@@ -202,6 +205,9 @@
     </Compile>
     <Compile Include="MVVM\View\AddRepairView.xaml.cs">
       <DependentUpon>AddRepairView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\AddServiceView.xaml.cs">
+      <DependentUpon>AddServiceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\AddVehiclesView.xaml.cs">
       <DependentUpon>AddVehiclesView.xaml</DependentUpon>
@@ -224,6 +230,9 @@
     <Compile Include="MVVM\View\UpdateRepairView.xaml.cs">
       <DependentUpon>UpdateRepairView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\UpdateServiceView.xaml.cs">
+      <DependentUpon>UpdateServiceView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\UpdateVehiclesView.xaml.cs">
       <DependentUpon>UpdateVehiclesView.xaml</DependentUpon>
     </Compile>
@@ -241,6 +250,9 @@
     </Compile>
     <Compile Include="MVVM\View\ViewRepairView.xaml.cs">
       <DependentUpon>ViewRepairView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\ViewServiceView.xaml.cs">
+      <DependentUpon>ViewServiceView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\ViewVehiclesView.xaml.cs">
       <DependentUpon>ViewVehiclesView.xaml</DependentUpon>
@@ -385,6 +397,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\AddServiceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\AddVehiclesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -445,6 +461,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MVVM\View\UpdateServiceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\UpdateVehiclesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -474,6 +494,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\ViewRepairView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\ViewServiceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

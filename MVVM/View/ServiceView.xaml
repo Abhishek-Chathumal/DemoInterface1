@@ -22,15 +22,15 @@
             </Border.Background>
             <StackPanel Opacity="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <RadioButton  Content="View Service" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
-                 Command="{Binding ViewBookingViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}" />
+                 Command="{Binding ViewServiceViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}" />
                 <Rectangle Height="24" Width="1" VerticalAlignment="Center" Fill="White" Stroke="White" StrokeThickness="1"/>
                 <RadioButton  Content="Add Service" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
-                Command="{Binding AddBookingViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}" />
+                Command="{Binding AddServiceViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}" />
                 <Rectangle Height="24" Width="1" VerticalAlignment="Center" Fill="White" Stroke="White" StrokeThickness="1"/>
                 <RadioButton  Content="Update Service" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
-                Command="{Binding UpdateBookingViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}" />
+                Command="{Binding UpdateServiceViewCommand}" Style="{StaticResource HorizontalMenuButtonTheme}" />
             </StackPanel>
         </Border>
-        <ContentControl x:Name="ctntCtrl" Grid.Row="1" Content="{Binding PresentBookingView}"/>
+        <ContentControl x:Name="ctntCtrl" Grid.Row="1" Content="{Binding PresentServiceView}"/>
     </Grid>
 </UserControl>
