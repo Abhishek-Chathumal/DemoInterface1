@@ -30,7 +30,6 @@ namespace DemoInterface1.MVVM.View
             InitializeComponent();
             loadData();
         }
-        Database db;
         Vehicle vehicle = new Vehicle();
         ModelPricing model = new ModelPricing();
         DataTable dt = new DataTable();
