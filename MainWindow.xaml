@@ -49,7 +49,7 @@
                 <Border Grid.Row="0" HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch" Background="Transparent"
                         MouseDown="Border_MouseDown">
-                    
+
                     <Border Grid.Row="0"
                         Width="180" Margin="50 0 0 0"
                         Height="40"
@@ -77,10 +77,19 @@
                                                        Rect="0 0 34 34"/>
                                 </Border.Clip>
 
-                                <Image Height="36"
+                                <!--" Image Height="36"
                                        Width="36"
-                                       Stretch="Fill"/>
+                                       Stretch="Fill"
+                                       /-->
+                                <materialDesign:PackIcon Kind="User" Height="25" Margin="2,2,0,0" Width="25"/>
                             </Border>
+                            <Border CornerRadius="17"
+                                    BorderThickness="2"
+                                    BorderBrush="#673ab7" Background="{x:Null}" Width="141">
+                                <TextBlock x:Name="txt_user" TextWrapping="Wrap" Text="USER" Foreground="White" FontSize="15" FontFamily="Tahoma" Opacity="0.6" FontWeight="Bold" TextAlignment="Center" Margin="0,8"/>
+
+                            </Border>
+
                         </StackPanel>
                     </Border>
                 </Border>
@@ -116,7 +125,7 @@
 
                             <Image Source="IconsAndImages/Close.png"
                                    Height="20" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            
+
                         </Button>
                     </StackPanel>
 
@@ -139,7 +148,7 @@
                     <RowDefinition Height="350"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                
+
 
                 <Border Grid.Row="0"
                     VerticalAlignment="Stretch"
@@ -216,6 +225,12 @@
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
                                      Style="{StaticResource MenuButtonTheme}" Command="{Binding CustomerViewCommand}"/>
+                                <RadioButton Content="Bookings"                                              
+                                     Height="50"
+                                     BorderThickness="0"
+                                     BorderBrush="{x:Null}"
+                                     Foreground="White"
+                                     Style="{StaticResource MenuButtonTheme}" Command="{Binding BookingViewCommand}"/>
                                 <RadioButton Content="Owners"
                                      Height="50"
                                      BorderThickness="0"
@@ -246,13 +261,13 @@
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
                                      Style="{StaticResource MenuButtonTheme}" Command="{Binding ServiceViewCommand}"/>
-                                <RadioButton Content="Accounts"
+                                <RadioButton x:Name="rbtn_acc" Content="Accounts"
                                      Height="50"
                                      BorderThickness="0"
                                      BorderBrush="{x:Null}"
                                      Foreground="White"
                                      Style="{StaticResource MenuButtonTheme}" Command="{Binding AccountsViewCommand}"/>
-                                <RadioButton Content="Reports"
+                                <RadioButton x:Name="rbtn_report" Content="Reports"
                                                  
                                      Height="50"
                                      BorderThickness="0"
@@ -288,6 +303,15 @@
                                         Height="50" HorizontalAlignment="Stretch"
                                         BorderBrush="Transparent" BorderThickness="0">
                                     <Image Source="IconsAndImages/Customer.png"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left"
+                                        Height="20"
+                                        Width="20" Margin="10 0 0 0"/>
+                                </Border>
+                                <Border Background="Transparent"
+                                        Height="50" HorizontalAlignment="Stretch"
+                                        BorderBrush="Transparent" BorderThickness="0">
+                                    <Image Source="IconsAndImages/Owner.png"
                                         VerticalAlignment="Center"
                                         HorizontalAlignment="Left"
                                         Height="20"
@@ -373,7 +397,7 @@
                 </Grid>
             </Grid>
 
-            
+
 
         </Grid>
     </Border>

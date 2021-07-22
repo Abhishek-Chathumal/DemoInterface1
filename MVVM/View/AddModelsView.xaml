@@ -68,12 +68,12 @@
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
                         </Border.Clip>
                         <Grid>
-                            <TextBlock Text="Category" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                            <TextBlock Text="Model ID" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
                                            IsHitTestVisible="False" Margin="10 0 0 0">
                                 <TextBlock.Style>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cat}" Value="">
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_modelID}" Value="">
                                                 <Setter Property="Visibility" Value="Visible"/>
                                             </DataTrigger>
                                         </Style.Triggers>
@@ -81,29 +81,66 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cat"/>
+                            <TextBox x:Name="txt_modelID" IsEnabled="False"/>
                         </Grid>
                     </Border>
                     <Border>
                         <Border.Clip>
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
                         </Border.Clip>
-                        <Grid>
-                            <TextBlock Text="Make" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
-                                           IsHitTestVisible="False" Margin="10 0 0 0">
-                                <TextBlock.Style>
-                                    <Style TargetType="{x:Type TextBlock}">
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=txt_make}" Value="">
-                                                <Setter Property="Visibility" Value="Visible"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                        <Setter Property="Visibility" Value="Hidden"/>
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <TextBox x:Name="txt_make"/>
-                        </Grid>
+                        <ComboBox x:Name="cmb_cat" Margin="5 0 5 0" Height="30" Width="185"
+                                      materialDesign:HintAssist.Hint="Category"
+                                      materialDesign:HintAssist.HintOpacity="0.5"
+                                      materialDesign:HintAssist.Foreground="#FF9A9A9A"
+                                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                                      Foreground="#FF9A9A9A"
+                                      FontSize="15" Background="Transparent"
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_cat_DropDownClosed">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
+                            </ComboBox.Resources>
+                            <ComboBoxItem Content="Sedan" HorizontalAlignment="Left"/>
+                            <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left"/>
+                            <ComboBoxItem Content="SUV" HorizontalAlignment="Left" />
+                            <ComboBoxItem Content="Pickup" HorizontalAlignment="Left"/>
+                            <ComboBoxItem Content="Van" HorizontalAlignment="Left"/>
+                            <ComboBoxItem Content="Minivan" HorizontalAlignment="Left"/>
+                        </ComboBox>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <ComboBox x:Name="cmb_make" Margin="5 0 5 0" Height="30" Width="185"
+                                      materialDesign:HintAssist.Hint="Make"
+                                      materialDesign:HintAssist.HintOpacity="0.5"
+                                      materialDesign:HintAssist.Foreground="#FF9A9A9A"
+                                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                                      Foreground="#FF9A9A9A"
+                                      FontSize="15" Background="Transparent"
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_make_DropDownClosed">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
+                            </ComboBox.Resources>
+                            <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left"/>
+                            <ComboBoxItem Content="BMW"/>
+                            <ComboBoxItem Content="FORD"/>
+                            <ComboBoxItem Content="HONDA"/>
+                            <ComboBoxItem Content="HYUNDAI"/>
+                            <ComboBoxItem Content="JAGUAR"/>
+                            <ComboBoxItem Content="KIA"/>
+                            <ComboBoxItem Content="LEXUS"/>
+                            <ComboBoxItem Content="MAZDA"/>
+                            <ComboBoxItem Content="MERCEDES"/>
+                            <ComboBoxItem Content="MITSUBISHI"/>
+                            <ComboBoxItem Content="NISSAN"/>
+                            <ComboBoxItem Content="PERADUA"/>
+                            <ComboBoxItem Content="PEUGEOT"/>
+                            <ComboBoxItem Content="RENAULT"/>
+                            <ComboBoxItem Content="SUZUKI"/>
+                            <ComboBoxItem Content="TOYOTA"/>
+                            <ComboBoxItem Content="VOLKSWAGAON"/>
+                        </ComboBox>
                     </Border>
                     <Border>
                         <Border.Clip>
@@ -124,7 +161,7 @@
                                         </Style>
                                     </TextBlock.Style>
                                 </TextBlock>
-                                <TextBox x:Name="txt_model" Width="155"/>
+                                <TextBox x:Name="txt_model" Width="155" TextChanged="txt_model_TextChanged"/>
                             </Grid>
                             <Rectangle/>
                             <Image Source="/IconsAndImages/Models.png" Opacity="0.25"/>
@@ -142,11 +179,46 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_year_DropDownClosed">
                             <ComboBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                             </ComboBox.Resources>
-
+                            <ComboBoxItem Content="2024" HorizontalAlignment="Left" Width="160"/>
+                            <ComboBoxItem Content="2023"/>
+                            <ComboBoxItem Content="2022"/>
+                            <ComboBoxItem Content="2021"/>
+                            <ComboBoxItem Content="2021"/>
+                            <ComboBoxItem Content="2020"/>
+                            <ComboBoxItem Content="2019"/>
+                            <ComboBoxItem Content="2018"/>
+                            <ComboBoxItem Content="2017" />
+                            <ComboBoxItem Content="2016"/>
+                            <ComboBoxItem Content="2015"/>
+                            <ComboBoxItem Content="2014"/>
+                            <ComboBoxItem Content="2013"/>
+                            <ComboBoxItem Content="2012"/>
+                            <ComboBoxItem Content="2011" />
+                            <ComboBoxItem Content="2010"/>
+                            <ComboBoxItem Content="2009"/>
+                            <ComboBoxItem Content="2008"/>
+                            <ComboBoxItem Content="2007"/>
+                            <ComboBoxItem Content="2006"/>
+                            <ComboBoxItem Content="2005" />
+                            <ComboBoxItem Content="2004"/>
+                            <ComboBoxItem Content="2003" />
+                            <ComboBoxItem Content="2002"/>
+                            <ComboBoxItem Content="2001"/>
+                            <ComboBoxItem Content="2000"/>
+                            <ComboBoxItem Content="1999"/>
+                            <ComboBoxItem Content="1998"/>
+                            <ComboBoxItem Content="1997"/>
+                            <ComboBoxItem Content="1996"/>
+                            <ComboBoxItem Content="1995"/>
+                            <ComboBoxItem Content="1994"/>
+                            <ComboBoxItem Content="1993"/>
+                            <ComboBoxItem Content="1992"/>
+                            <ComboBoxItem Content="1991"/>
+                            <ComboBoxItem Content="1990"/>
                         </ComboBox>
                     </Border>
                     <Separator Background="#9a9a9a" Margin="10 10 10 0" Opacity="0.5"/>
@@ -171,7 +243,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_short"/>
+                            <TextBox x:Name="txt_short" TextChanged="txt_short_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -193,7 +265,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_long"/>
+                            <TextBox x:Name="txt_long" TextChanged="txt_long_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -214,7 +286,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_extra"/>
+                            <TextBox x:Name="txt_extra" TextChanged="txt_extra_TextChanged"/>
                         </Grid>
                     </Border>
                 </StackPanel>
@@ -223,24 +295,25 @@
         </Border>
         <Border Grid.Row="1" Grid.Column="1" Background="#191919" CornerRadius="10" Margin="15 10 0 100">
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="444.8" Height="328.8">
-                <DataGrid
+                <DataGrid x:Name="dg_model"
                     ItemsSource="{Binding}"
                     CanUserAddRows="False"
                     SelectionUnit="Cell"
-                    SelectionMode="Extended" Background="Transparent" Foreground="#9a9a9a"/>
+                    SelectionMode="Extended" Background="Transparent" Foreground="#9a9a9a" IsReadOnly="True"/>
             </Grid>
         </Border>
         <Border Height="50" Grid.Row="1" Grid.Column="1" Background="#191919" VerticalAlignment="Bottom" Margin="15 0 0 40"
                 CornerRadius="10">
             <DockPanel>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
+                <Button x:Name="btn_save" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Left"
-                    BorderThickness="0" Margin="50 0 0 0"/>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
+                    BorderThickness="0" Margin="50 0 0 0" Click="btn_save_Click"/>
+                <Button x:Name="btn_cls" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Right"
-                    BorderThickness="0" Margin="0 0 50 0"/>
+                    BorderThickness="0" Margin="0 0 50 0" Click="btn_cls_Click"/>
             </DockPanel>
         </Border>
-            
+        <TextBlock x:Name="txt_error" Grid.Column="1" HorizontalAlignment="Left" Margin="98,430,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="23" Foreground="#FFFF4949" TextAlignment="Center" FontSize="15"/>
+
     </Grid>
 </UserControl>

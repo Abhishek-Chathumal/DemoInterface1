@@ -16,12 +16,17 @@ namespace DemoInterface1
         public MainWindow(string utype, string uname)
         {
             InitializeComponent();
-            //lbl_user.Text = uname;
-            /*if (utype == "Manager")
+            txt_user.Text = uname;
+            if (utype == "Manager")
             {
-                list_report.Visibility = Visibility.Visible;
-                list_accounts.Visibility = Visibility.Visible;
-            }*/
+                rbtn_report.IsEnabled = true;
+                rbtn_acc.IsEnabled = true;
+            }
+            else if (utype == "Employee")
+            {
+                rbtn_report.IsEnabled = false;
+                rbtn_acc.IsEnabled = false;
+            }
         }
 
 

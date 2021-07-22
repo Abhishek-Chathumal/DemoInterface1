@@ -44,12 +44,12 @@
                                     </TextBlock>
                                     <TextBox x:Name="txt_oNIC" Width="170" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"
                                          Background="Transparent" BorderThickness="0" Foreground="#9a9a9a" VerticalContentAlignment="Center"
-                                         FontSize="15" HorizontalContentAlignment="Center"/>
+                                         FontSize="15" HorizontalContentAlignment="Center" GotFocus="txt_oNIC_GotFocus"/>
                                 </Grid>
                                 <Button x:Name="btn_searchOwnNIC"
                                         Height="30" Width="30" Background="Transparent"
                                         BorderThickness="0"
-                                        Style="{StaticResource MenuButtonStyle}">
+                                        Style="{StaticResource MenuButtonStyle}" Click="btn_searchOwnNIC_Click">
                                     <Image Height="15"
                                            Width="15"
                                            Source="/IconsAndImages/Search.png"/>
@@ -81,12 +81,12 @@
                                     </TextBlock>
                                     <TextBox x:Name="txt_OwnName" Width="170" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"
                                          Background="Transparent" BorderThickness="0" Foreground="#9a9a9a" VerticalContentAlignment="Center"
-                                         FontSize="15" HorizontalContentAlignment="Center"/>
+                                         FontSize="15" HorizontalContentAlignment="Center" GotFocus="txt_OwnName_GotFocus"/>
                                 </Grid>
                                 <Button x:Name="btn_searchOwnName"
                                         Height="30" Width="30" Background="Transparent"
                                         BorderThickness="0"
-                                        Style="{StaticResource MenuButtonStyle}">
+                                        Style="{StaticResource MenuButtonStyle}" Click="btn_searchOwnName_Click">
                                     <Image Height="15"
                                            Width="15"
                                            Source="/IconsAndImages/Search.png"/>
@@ -98,15 +98,15 @@
                     </DockPanel>
 
                 </Border>
-                <Button Content="VIEW ALL" FontSize="12" Foreground="White" Height="25" Width="100" HorizontalAlignment="Right"
-                        Margin="0 0 50 10" VerticalAlignment="Bottom" BorderThickness="0"/>
+                <Button x:Name="btn_view" Content="VIEW ALL" FontSize="12" Foreground="White" Height="25" Width="100" HorizontalAlignment="Right"
+                        Margin="0 0 50 10" VerticalAlignment="Bottom" BorderThickness="0" Click="btn_view_Click"/>
 
 
             </DockPanel>
 
             <Border Width="780" Height="359.6" VerticalAlignment="Center" Margin="0 10 0 0" Background="#191919" CornerRadius="10">
                 <Grid Width="760" Height="330" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 10 0 0">
-                    <DataGrid
+                    <DataGrid x:Name="dg_owner"
                     ItemsSource="{Binding}"
                     CanUserAddRows="False"
                     SelectionUnit="Cell"

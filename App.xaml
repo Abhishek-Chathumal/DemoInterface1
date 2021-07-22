@@ -29,6 +29,9 @@
             <DataTemplate DataType="{x:Type viewModel:CustomerViewModel}">
                 <view:CustomerView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:BookingViewModel}">
+                <view:BookingView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:OwnerViewModel}">
                 <view:OwnerView/>
             </DataTemplate>
@@ -77,6 +80,15 @@
             <DataTemplate DataType="{x:Type viewModel:UpdateInsuranceViewModel}">
                 <view:UpdateInsuranceView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ViewBookingViewModel}">
+                <view:ViewBookingView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddBookingViewModel}">
+                <view:AddBookingView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UpdateBookingViewModel}">
+                <view:UpdateBookingView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:AddOwnersViewModel}">
                 <view:AddOwnersView/>
             </DataTemplate>
@@ -92,8 +104,26 @@
             <DataTemplate DataType="{x:Type viewModel:AddModelsViewModel}">
                 <view:AddModelsView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ViewRepairViewModel}">
+                <view:ViewRepairView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddRepairViewModel}">
+                <view:AddRepairView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UpdateRepairViewModel}">
+                <view:UpdateRepairView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ViewServiceViewModel}">
+                <view:ViewServiceView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddServiceViewModel}">
+                <view:AddServiceView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UpdateServiceViewModel}">
+                <view:UpdateServiceView/>
+            </DataTemplate>
 
-                <Style x:Key="FocusVisual">
+            <Style x:Key="FocusVisual">
                 <Setter Property="Control.Template">
                     <Setter.Value>
                         <ControlTemplate>

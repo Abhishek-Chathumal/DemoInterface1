@@ -43,6 +43,11 @@ namespace DemoInterface1
             dt = db.getData("select * from UserAcc where Uname = '" + user + "'");
             return dt;
         }
+        public DataTable viewUser()
+        {
+            dt = db.getData("select Utype as 'Type',Uname as 'Username',email as 'Email' from UserAcc ");
+            return dt;
+        }
 
         public int authorizeAccount()
         {
@@ -67,6 +72,12 @@ namespace DemoInterface1
         public int updatePassword(string newPass)
         {
             string query = "update UserAcc set Upass='" + newPass + "' where Uname='" + uname + "'";
+            int i = db.save_update_delete(query);
+            return i;
+        }
+        public int updateAccount()
+        {
+            string query = "update UserAcc set Upass='" + pass + "',email = '"+email+"',Utype = '"+utype+"' where Uname='" + uname + "'";
             int i = db.save_update_delete(query);
             return i;
         }

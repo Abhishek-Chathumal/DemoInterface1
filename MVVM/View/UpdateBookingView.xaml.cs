@@ -10,29 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data;
-using System.Text.RegularExpressions;
 
 namespace DemoInterface1.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for ViewModelsView.xaml
+    /// Interaction logic for UpdateBookingView.xaml
     /// </summary>
-    public partial class ViewModelsView : UserControl
+    public partial class UpdateBookingView : UserControl
     {
-        public ViewModelsView()
+        public UpdateBookingView()
         {
             InitializeComponent();
-            loadData();
-        }
-        Database db = new Database();
-        DataTable dt = new DataTable();
-        ModelPricing price = new ModelPricing();
-        public void loadData()
-        {
-            dt = price.viewPricing();
-            dg_model.ItemsSource = dt.DefaultView;
         }
     }
 }

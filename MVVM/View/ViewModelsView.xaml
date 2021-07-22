@@ -238,7 +238,7 @@
         </Border>
         <Border Grid.Row="1" Grid.Column="1" Background="#191919" CornerRadius="10" Margin="15 10 0 100">
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="444.8" Height="328.8">
-                <DataGrid
+                <DataGrid x:Name="dg_model"
                     ItemsSource="{Binding}"
                     CanUserAddRows="False"
                     SelectionUnit="Cell"
