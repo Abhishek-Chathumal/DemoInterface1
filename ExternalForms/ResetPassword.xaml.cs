@@ -52,6 +52,7 @@ namespace DemoInterface1.ExternalForms
             {
                 ManageAccount ma = new ManageAccount(txt_uname.Text);
                 ma.Show();
+                this.Close();
             }
             else
             {

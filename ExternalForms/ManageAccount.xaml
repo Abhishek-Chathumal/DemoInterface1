@@ -4,65 +4,54 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoInterface1.ExternalForms"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"      
+        FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-         Title="Manage Account" Height="350" Width="420" WindowStartupLocation="CenterScreen">
+        Height="525.5" Width="500"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid Width="200" HorizontalAlignment="Left" Margin="0 40 0 0" Background="#FF673AB7">
-            <StackPanel>
-                <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent" Foreground="White">
-                    <ListViewItem>
-                        <TextBlock Text="Username" Margin="5 3 0 3"/>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock Text="New password" Margin="5 20 0 3"/>
-                    </ListViewItem>
-                    <ListViewItem>
-                        <TextBlock Text="Confirm password" Margin="5 3 0 3"/>
-                    </ListViewItem>
-                    <ListViewItem/>
-                    <ListViewItem/>
-                </ListView>
-                <DockPanel Height="55">
+        <Border  Background="#202020" 
+            CornerRadius="10">
 
-                    <Button x:Name="btn_del" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="75" Height="25" FontSize="10" Margin="10" Click="btn_del_Click" Foreground="White" Style="{StaticResource MaterialDesignRaisedButton}"/>
-                    <Button x:Name="btn_update" Content="UPDATE" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Height="25" FontSize="10"  Margin="10" Click="btn_update_Click" Foreground="White" Style="{StaticResource MaterialDesignRaisedButton}"/>
 
-                </DockPanel>
+        </Border>
+        <Label Content="Forgot" HorizontalAlignment="Left" Margin="57,24,0,0" VerticalAlignment="Top" Height="58" Width="107" Foreground="#DDFFFFFF" FontSize="30"/>
+        <Label Content="Password ?" HorizontalAlignment="Left" Margin="167,24,0,0" VerticalAlignment="Top" Height="58" Width="162" Foreground="#FF673AB7" FontSize="30" FontWeight="Bold"/>
+        <PasswordBox x:Name="txt_pass" HorizontalAlignment="Left" Margin="102,216,0,0" VerticalAlignment="Top" Width="309" Height="40" FontSize="18" KeyUp="txt_pass_KeyUp" SelectionBrush="#FF673AB7" Foreground="#FF673AB7"/>
+        <PasswordBox x:Name="txt_retype" HorizontalAlignment="Left" Margin="102,333,0,0" VerticalAlignment="Top" Width="309" Height="40" FontSize="18" KeyUp="txt_retype_KeyUp" SelectionBrush="#FF673AB7" Foreground="#FF673AB7"/>
+        <Button x:Name="btn_update" Content="Renew Password" HorizontalAlignment="Left" Margin="176,452,0,0" VerticalAlignment="Top" Width="173" Click="btn_update_Click"/>
+        <Label Content="New Password" HorizontalAlignment="Left" Margin="102,191,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
+        <Label Content="Verify Password" HorizontalAlignment="Left" Margin="102,307,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
+        <TextBox x:Name="txt_uName" HorizontalAlignment="Left" Height="40" Margin="102,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="309" FontSize="18" SelectionBrush="#FF673AB7" Foreground="#FF673AB7" IsEnabled="False"/>
+        <TextBlock x:Name="txt_info" HorizontalAlignment="Left" Margin="125,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="259" Height="31" FontSize="15" TextAlignment="Center" Foreground="#FFFF4949" FontWeight="Bold"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="31" Margin="407,0,0,0" VerticalAlignment="Top" Width="93">
+            <Button VerticalAlignment="Stretch"
+                                HorizontalAlignment="Left"
+                                Height="30" Width="45"
+                                BorderThickness="0" Background="Transparent"
+                                Style="{DynamicResource MenuButtonStyle}"
+                                x:Name="btn_minimize" Click="btn_minimize_Click">
 
-            </StackPanel>
-        </Grid>
-        <Grid Width="200" HorizontalAlignment="Left" Margin="200 40 0 0" >
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
-                    <GradientStop Color="#FFE7EBEE" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-            <StackPanel>
-                <Grid Height="40" VerticalAlignment="Top"/>
-                <ListView FontSize="15" FontWeight="Medium" Background="Transparent" BorderBrush="Transparent">
-                    <ListViewItem Height="40">
-                        <TextBox x:Name="txt_uName" Width="180" IsEnabled="False" TextInput="txt_uName_TextInput" BorderThickness="0,0,0,1" Background="{x:Null}"/>
-                    </ListViewItem>
-                    <ListViewItem Height="62">
-                        <PasswordBox x:Name="txt_pass" Width="180" KeyUp="txt_pass_KeyUp" BorderThickness="0,0,0,1" Background="{x:Null}"/>
-                    </ListViewItem>
-                    <ListViewItem Height="40">
-                        <PasswordBox x:Name="txt_retype" Width="180" KeyUp="txt_retype_KeyUp" BorderThickness="0,0,0,1" Background="{x:Null}"/>
-                    </ListViewItem>
-                </ListView>
-            </StackPanel>
-            <TextBlock x:Name="txt_info" HorizontalAlignment="Left" Margin="10,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="47"/>
-        </Grid>
-        <Grid VerticalAlignment="Top">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
-                    <GradientStop Color="#FF673AB7" Offset="0.319"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
-            <TextBlock Text="MANAGE ACCOUNT" FontSize="30" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" Foreground="White"/>
-        </Grid>
+                <Image Source="/IconsAndImages/Minimize.png"
+                                   Height="20" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Button>
+            <Button VerticalAlignment="Stretch"
+                                HorizontalAlignment="Left"
+                                Height="30" Width="45"
+                                BorderThickness="0" Background="Transparent"
+                                Style="{DynamicResource MenuButtonStyle}"
+                                x:Name="btn_close" Click="btn_close_Click">
+
+                <Image Source="/IconsAndImages/Close.png"
+                                   Height="20" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

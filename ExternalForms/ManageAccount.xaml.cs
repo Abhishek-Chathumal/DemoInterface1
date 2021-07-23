@@ -32,7 +32,7 @@ namespace DemoInterface1.ExternalForms
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-            if (txt_info.Text == "")
+            if (txt_info.Text == "" & txt_retype.Password != "")
             {
                 try
                 {
@@ -71,24 +71,6 @@ namespace DemoInterface1.ExternalForms
             }
         }
 
-        private void btn_del_Click(object sender, RoutedEventArgs e)
-        {
-            User user = new User(txt_uName.Text);
-            int i = user.deleteAccount();
-            if (i == 1)
-            {
-                Message msg = new Message();
-                msg.informationMsg("Account Deleted Successfully!");
-                msg.Show();
-            }
-            else
-            {
-                Message msg = new Message();
-                msg.errorMsg("Error.Please try again");
-                msg.Show();
-            }
-        }
-
         public void clearScreen()
         {
             txt_uName.Clear();
@@ -101,7 +83,7 @@ namespace DemoInterface1.ExternalForms
             if (txt_pass.Password != txt_retype.Password)
                 txt_info.Text = "Passwords do not match";
             else if (txt_pass.Password == txt_retype.Password)
-                txt_info.Text = "Passwords Match";
+                txt_info.Text = "";
         }
 
         private void txt_pass_KeyUp(object sender, KeyEventArgs e)
@@ -109,15 +91,19 @@ namespace DemoInterface1.ExternalForms
             if (!Regex.IsMatch(txt_pass.Password, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$"))
                 txt_info.Text = "Invalid Password";
             else
-                txt_info.Text = "Valid Password";
+                txt_info.Text = "";
         }
 
-        private void txt_uName_TextInput(object sender, TextCompositionEventArgs e)
+        private void btn_close_Click(object sender, RoutedEventArgs e)
         {
-                if (txt_uName.Text.Length == 0)
-                    txt_info.Text = "Username cannot be blank ";
-                else
-                    txt_info.Text = "";
+            this.Close();
+            Login log = new Login();
+            log.Show();
+        }
+
+        private void btn_minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }
