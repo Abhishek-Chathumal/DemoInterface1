@@ -110,7 +110,14 @@
                     ItemsSource="{Binding}"
                     CanUserAddRows="False"
                     SelectionUnit="Cell"
-                    SelectionMode="Extended" Background="Transparent" Foreground="#9a9a9a"/>
+                    SelectionMode="Extended" Background="Transparent" Foreground="#9a9a9a" IsReadOnly="True">
+                        <DataGrid.Resources>
+                            <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#FF4C4C4C"/>
+                                <Setter Property="Foreground" Value="#9a9a9a"/>
+                            </Style>
+                        </DataGrid.Resources>
+                    </DataGrid>
                 </Grid>
             </Border>
         </StackPanel>

@@ -151,7 +151,14 @@
                 <DataGrid x:Name="dg_accounts"
                     ItemsSource="{Binding}"
                     CanUserAddRows="False"
-                    SelectionMode="Extended" Background="Transparent" Foreground="#9a9a9a" IsReadOnly="True" Margin="0,50,0,0" SelectionChanged="dg_accounts_SelectionChanged" IsEnabled="False"/>
+                    SelectionMode="Extended" Background="Transparent" Foreground="#9a9a9a" IsReadOnly="True" Margin="0,50,0,0" SelectionChanged="dg_accounts_SelectionChanged" IsEnabled="False">
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#FF4C4C4C"/>
+                            <Setter Property="Foreground" Value="#9a9a9a"/>
+                        </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
             </Grid>
         </Border>
         <Border Height="55" Background="#191919" VerticalAlignment="Bottom" Margin="298,0,10,35"

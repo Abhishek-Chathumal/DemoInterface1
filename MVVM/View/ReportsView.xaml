@@ -8,16 +8,157 @@
              mc:Ignorable="d" 
              d:DesignHeight="520" d:DesignWidth="780">
     <Grid>
-        <TextBlock Foreground="white" FontSize="50"><Run Text="Reports"/></TextBlock>
-        <Button x:Name="btn_status" Content="Vehicle Status" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,217,0,0" Click="btn_status_Click"/>
-        <Button x:Name="btn_cus_book" Content="Customer Booking History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,179,0,0" Click="btn_cus_book_Click"/>
-        <Button x:Name="btn_vehicle_book" Content="Vehicle Booking History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,141,0,0" Click="btn_vehicle_book_Click"/>
-        <Button x:Name="btn_book" Content="Booking History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,103,0,0" Click="btn_book_Click"/>
-        <Button x:Name="btn_service" Content="Service History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,255,0,0" Click="btn_service_Click"/>
-        <Button x:Name="btn_vehicle_service" Content="Vehicle Service History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,292,0,0" Click="btn_vehicle_service_Click"/>
-        <Button x:Name="btn_maintenance" Content="Maintenance History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,329,0,0" Click="btn_maintenance_Click"/>
-        <Button x:Name="btn_vehicle_maintenance" Content="Vehicle Maintenance History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,366,0,0" Click="btn_vehicle_maintenance_Click"/>
-        <Button x:Name="btn_acccident" Content="Accident History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,403,0,0" Click="btn_acccident_Click"/>
-        <Button x:Name="btn_vehicle_accident" Content="Vehicle Accident History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="555" Margin="127,440,0,0" Click="btn_vehicle_accident_Click"/>
+        <StackPanel>
+            <Border CornerRadius="10" Margin="10 5 10 0" >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                        <GradientStop Color="#FF2F2F2F"/>
+                        <GradientStop Color="#FF202020" Offset="0.689"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel>
+                    <TextBlock Text="BOOKINGS -" Margin="10 5 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"
+                               Foreground="#9a9a9a" Opacity="0.8" FontFamily="Tahoma"/>
+                    <DockPanel Margin="10 10 10 10">
+                        <Button x:Name="btn_cus_book" Width="200" FontSize="20" Height="80" HorizontalAlignment="Left" Margin="50 0 0 0" VerticalAlignment="Top" Click="btn_cus_book_Click" BorderBrush="{x:Null}">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF1B0C35" Offset="0"/>
+                                    <GradientStop Color="#FF4E2790" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <TextBlock Opacity="0.9" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Customer Booking History" FontSize="20" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontFamily="Tahoma"/>
+                        </Button>
+                        <Button x:Name="btn_vehicle_book" Width="200" FontSize="20" Height="80" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Top" Click="btn_vehicle_book_Click" BorderBrush="{x:Null}">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF4E2790" Offset="0"/>
+                                    <GradientStop Color="#FF6F4EA6" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <TextBlock Opacity="0.9" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Vehicle Booking History" FontSize="20" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontFamily="Tahoma"/>
+                        </Button>
+                        <Button x:Name="btn_book" Width="200" FontSize="20" Height="80" HorizontalAlignment="Left" Margin="45 0 0 0" VerticalAlignment="Top" Click="btn_book_Click" BorderBrush="{x:Null}">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                    <GradientStop Color="#FF6F4EA6" Offset="0"/>
+                                    <GradientStop Color="#FF8F75BA" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                            <TextBlock Opacity="0.9" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Booking History" FontSize="20" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontFamily="Tahoma"/>
+                        </Button>
+                    </DockPanel>
+                </StackPanel>
+            </Border>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
+                    <Border CornerRadius="10" Margin="10 10 10 0" Width="485" HorizontalAlignment="Left" >
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                <GradientStop Color="#FF2F2F2F"/>
+                                <GradientStop Color="#FF202020" Offset="0.689"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel>
+                            <TextBlock Text="SERVICE -" Margin="10 5 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"
+                               Foreground="#9a9a9a" Opacity="0.8" FontFamily="Tahoma"/>
+                            <DockPanel Margin="10 10 10 10">
+                                <Button x:Name="btn_service" Width="200" FontSize="20" Height="80" HorizontalAlignment="Left" Margin="50 0 0 0" VerticalAlignment="Top" Click="btn_service_Click" BorderBrush="{x:Null}">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                            <GradientStop Color="#FF030428" Offset="0"/>
+                                            <GradientStop Color="#FF181C6B" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                    <TextBlock Opacity="0.9" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Service History" FontSize="20" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontFamily="Tahoma"/>
+                                </Button>
+                                <Button x:Name="btn_vehicle_service" Width="200" FontSize="20" Height="80" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Top" Click="btn_vehicle_service_Click" BorderBrush="{x:Null}">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                            <GradientStop Color="#FF181C6B" Offset="0"/>
+                                            <GradientStop Color="#FF1B3CC8" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                    <TextBlock Opacity="0.9" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Vehicle Service History" FontSize="20" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontFamily="Tahoma"/>
+                                </Button>
+                            </DockPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border CornerRadius="10" Margin="10 10 10 0" Width="485" HorizontalAlignment="Left" >
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                <GradientStop Color="#FF2F2F2F"/>
+                                <GradientStop Color="#FF202020" Offset="0.689"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel>
+                            <TextBlock Text="MAINTENANCE -" Margin="10 5 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"
+                               Foreground="#9a9a9a" Opacity="0.8" FontFamily="Tahoma"/>
+                            <DockPanel Margin="10 10 10 10">
+                                <Button x:Name="btn_maintenance" Width="200" FontSize="20" Height="80" HorizontalAlignment="Left" Margin="50 0 0 0" VerticalAlignment="Top" Click="btn_maintenance_Click" BorderBrush="{x:Null}">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                            <GradientStop Color="#FF00014F" Offset="0"/>
+                                            <GradientStop Color="#FF363793" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                    <TextBlock Opacity="0.9" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Maintenance History" FontSize="20" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontFamily="Tahoma"/>
+                                </Button>
+                                <Button x:Name="btn_vehicle_maintenance" Width="200" FontSize="20" Height="80" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Top" Click="btn_vehicle_maintenance_Click" BorderBrush="{x:Null}">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                            <GradientStop Color="#FF363793" Offset="0"/>
+                                            <GradientStop Color="#FF187890" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                    <TextBlock Opacity="0.9" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Vehicle Maintenance History" FontSize="20" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontFamily="Tahoma"/>
+                                </Button>
+                            </DockPanel>
+                        </StackPanel>
+                    </Border>
+                    <Border CornerRadius="10" Margin="10 10 10 0" Width="485" HorizontalAlignment="Left" >
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                <GradientStop Color="#FF2F2F2F"/>
+                                <GradientStop Color="#FF202020" Offset="0.689"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel>
+                            <TextBlock Text="MAINTENANCE -" Margin="10 5 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"
+                               Foreground="#9a9a9a" Opacity="0.8" FontFamily="Tahoma"/>
+                            <DockPanel Margin="10 10 10 10">
+                                <Button x:Name="btn_acccident" Width="200" FontSize="20" Height="80" HorizontalAlignment="Left" Margin="50 0 0 0" VerticalAlignment="Top" Click="btn_acccident_Click" BorderBrush="{x:Null}">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                            <GradientStop Color="#FF041942" Offset="0"/>
+                                            <GradientStop Color="#FF1D4A74" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                    <TextBlock Opacity="0.9" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Accident History" FontSize="20" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontFamily="Tahoma"/>
+                                </Button>
+                                <Button x:Name="btn_vehicle_accident" Width="200" FontSize="20" Height="80" HorizontalAlignment="Left" Margin="20 0 0 0" VerticalAlignment="Top" Click="btn_vehicle_accident_Click" BorderBrush="{x:Null}">
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                                            <GradientStop Color="#FF1D4A74" Offset="0"/>
+                                            <GradientStop Color="#FF517EA8" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                    <TextBlock Opacity="0.9" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Vehicle Accident History" FontSize="20" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontFamily="Tahoma"/>
+                                </Button>
+                            </DockPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <Button Margin="30 30 0 0" x:Name="btn_status" Width="200" FontSize="20" Height="250" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btn_status_Click" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                            <GradientStop Color="#FFF92D00" Offset="0"/>
+                            <GradientStop Color="#FFF79E36" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <TextBlock Opacity="0.8" VerticalAlignment="Center" HorizontalAlignment="Center" Text="VEHICLE STATUS" FontSize="25" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontFamily="Tahoma"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

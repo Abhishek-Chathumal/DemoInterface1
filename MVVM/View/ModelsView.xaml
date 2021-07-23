@@ -15,9 +15,24 @@
             <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <TextBlock x:Name="txt_View" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0 0 50 0" Grid.Column="1" Grid.Row="0" FontFamily="Tahoma" FontSize="12" FontWeight="DemiBold" Foreground="#9a9a9a"/>
+        <Border Grid.Row="0">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Color="#202020" Offset="0.01"/>
+                    <GradientStop Color="#202020" Offset="0.99"/>
+                    <GradientStop Color="#FF191919" Offset="0.25"/>
+                    <GradientStop Color="#191919" Offset="0.75"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <StackPanel Opacity="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 
-        <TextBlock Text="- ADD MODELS -" Foreground="White" Opacity="0.8" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"
-                   FontSize="16" FontFamily="Tahoma" />
+                <RadioButton x:Name="rbtn_add" Content="Add Models" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"
+                             Style="{StaticResource HorizontalMenuButtonTheme}" Checked="rbtn_add_Checked"/>
+                <Rectangle Height="24" Width="1" VerticalAlignment="Center" Fill="White" Stroke="White" StrokeThickness="1"/>
+                <RadioButton x:Name="rbtn_update" Content="Update Models" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource HorizontalMenuButtonTheme}" Checked="rbtn_update_Checked"/>
+            </StackPanel>
+        </Border>
 
         <Border Grid.Row="1" CornerRadius="10" Background="#191919" Margin="0 10 0 10">
             <Border.Clip>
@@ -298,7 +313,14 @@
                 <DataGrid x:Name="dg_model"
                     ItemsSource="{Binding}"
                     CanUserAddRows="False"
-                    SelectionMode="Extended" Background="Transparent" Foreground="#9a9a9a" IsReadOnly="True" IsEnabled="False" SelectionChanged="dg_model_SelectionChanged"/>
+                    SelectionMode="Extended" Background="Transparent" Foreground="#9a9a9a" IsReadOnly="True" IsEnabled="False" SelectionChanged="dg_model_SelectionChanged">
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#FF4C4C4C"/>
+                            <Setter Property="Foreground" Value="#9a9a9a"/>
+                        </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
             </Grid>
         </Border>
         <Border Height="50" Grid.Row="1" Grid.Column="1" Background="#191919" VerticalAlignment="Bottom" Margin="15 0 0 40"
@@ -316,8 +338,7 @@
             </DockPanel>
         </Border>
         <TextBlock x:Name="txt_error" Grid.Column="1" HorizontalAlignment="Left" Margin="98,455,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="23" Foreground="#FFFF4949" TextAlignment="Center" FontSize="15"/>
-        <RadioButton x:Name="rbtn_add" Content="ADD MODEL" Grid.Column="1" HorizontalAlignment="Left" Margin="98,6,0,0" VerticalAlignment="Top" Width="100" Foreground="White" BorderBrush="{x:Null}" Background="#FF673AB7" Checked="rbtn_add_Checked"/>
-        <RadioButton x:Name="rbtn_update" Content="UPDATE MODEL" Grid.Column="1" HorizontalAlignment="Left" Margin="261,6,0,0" VerticalAlignment="Top" Width="129" Foreground="White" Background="#FF673AB7" BorderBrush="{x:Null}" Checked="rbtn_update_Checked"/>
+        
 
     </Grid>
 </UserControl>

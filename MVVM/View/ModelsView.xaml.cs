@@ -199,6 +199,7 @@ namespace DemoInterface1.MVVM.View
 
         private void rbtn_add_Checked(object sender, RoutedEventArgs e)
         {
+            txt_View.Text = (string)rbtn_add.Content;
             rbtn_update.IsChecked = false;
             dg_model.IsEnabled = false;
             btn_save.IsEnabled = true;
@@ -206,10 +207,12 @@ namespace DemoInterface1.MVVM.View
             btn_del.IsEnabled = false;
             clearScreen();
             loadData();
+            
         }
 
         private void rbtn_update_Checked(object sender, RoutedEventArgs e)
         {
+            txt_View.Text = (string)rbtn_update.Content;
             rbtn_add.IsChecked = false;
             dg_model.IsEnabled = true;
             btn_save.IsEnabled = false;
