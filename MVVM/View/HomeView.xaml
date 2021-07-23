@@ -90,7 +90,14 @@
                                       ItemsSource="{Binding}"
                                       CanUserAddRows="False"
                                       SelectionUnit="Cell"
-                                      SelectionMode="Extended" Background="Transparent" Foreground="#9a9a9a" Margin="20,40,20,10"/>
+                                      SelectionMode="Extended" Background="Transparent" Foreground="#9a9a9a" Margin="20,40,20,10">
+                                <DataGrid.Resources>
+                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="Background" Value="#FF4C4C4C"/>
+                                        <Setter Property="Foreground" Value="#9a9a9a"/>
+                                    </Style>
+                                </DataGrid.Resources>
+                            </DataGrid>
                             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TO BE RETURNED" VerticalAlignment="Top" Margin="10,10,0,0" Width="371" Height="25" Foreground="White" FontFamily="Tahoma" FontSize="22" FontWeight="Bold" Opacity="0.6"/>
                         </Grid>
                     </Border>

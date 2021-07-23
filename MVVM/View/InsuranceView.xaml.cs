@@ -57,6 +57,7 @@ namespace DemoInterface1.MVVM.View
 
         private void rbtn_add_Checked(object sender, RoutedEventArgs e)
         {
+            txt_View.Text = (string)rbtn_add.Content;
             btn_add.IsEnabled = true;
             btn_update.IsEnabled = false;
             btn_del.IsEnabled = false;
@@ -67,6 +68,7 @@ namespace DemoInterface1.MVVM.View
 
         private void rbtn_update_Checked(object sender, RoutedEventArgs e)
         {
+            txt_View.Text = (string)rbtn_update.Content;
             btn_add.IsEnabled = false;
             btn_update.IsEnabled = true;
             btn_del.IsEnabled = true;

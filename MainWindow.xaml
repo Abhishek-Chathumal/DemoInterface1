@@ -55,7 +55,7 @@
                         Height="40"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        CornerRadius="20" Background="#FF292828">
+                        CornerRadius="20" Background="#FF373737">
 
                         <Border.Clip>
                             <RectangleGeometry RadiusX="20"
@@ -65,28 +65,22 @@
 
                         <StackPanel Orientation="Horizontal">
                             <Border HorizontalAlignment="Left"
-                                    Height="34"
-                                    Width="34" Margin="3 0 0 0"
-                                    CornerRadius="17"
-                                    BorderThickness="2"
-                                    BorderBrush="#673ab7" Background="{x:Null}">
+                                    Height="40"
+                                    Width="40" VerticalAlignment="Center"
+                                    CornerRadius="20"
+                                    BorderThickness="0" Background="#673ab7">
 
                                 <Border.Clip>
-                                    <RectangleGeometry RadiusX="17"
-                                                       RadiusY="17"
-                                                       Rect="0 0 34 34"/>
+                                    <RectangleGeometry RadiusX="20"
+                                                       RadiusY="20"
+                                                       Rect="0 0 40 40"/>
                                 </Border.Clip>
-
-                                <!--" Image Height="36"
-                                       Width="36"
-                                       Stretch="Fill"
-                                       /-->
-                                <materialDesign:PackIcon Kind="User" Height="25" Margin="2,2,0,0" Width="25"/>
+                                <materialDesign:PackIcon Kind="User" Height="20" Foreground="#FFB394EA" HorizontalAlignment="Center" VerticalAlignment="Center" Width="20"/>
                             </Border>
-                            <Border CornerRadius="17"
-                                    BorderThickness="2"
-                                    BorderBrush="#673ab7" Background="{x:Null}" Width="141">
-                                <TextBlock x:Name="txt_user" TextWrapping="Wrap" Text="USER" Foreground="White" FontSize="15" FontFamily="Tahoma" Opacity="0.6" FontWeight="Bold" TextAlignment="Center" Margin="0,8"/>
+                            <Border CornerRadius="20"
+                                    BorderThickness="0" Background="{x:Null}" Width="141">
+                                <TextBlock x:Name="txt_user" TextWrapping="Wrap" Text="USER" Margin="10 0 0 0"
+                                           VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="15" FontFamily="Tahoma" Opacity="0.6" FontWeight="Bold" TextAlignment="Center"/>
 
                             </Border>
 

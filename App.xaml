@@ -71,15 +71,6 @@
             <DataTemplate DataType="{x:Type viewModel:InsuranceViewModel}">
                 <view:InsuranceView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:ViewInsuranceViewModel}">
-                <view:ViewInsuranceView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:AddInsuranceViewModel}">
-                <view:AddInsuranceView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:UpdateInsuranceViewModel}">
-                <view:UpdateInsuranceView/>
-            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:ViewBookingViewModel}">
                 <view:ViewBookingView/>
             </DataTemplate>
@@ -97,12 +88,6 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:UpdateOwnersViewModel}">
                 <view:UpdateOwnersView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:ViewModelsViewModel}">
-                <view:ViewModelsView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:AddModelsViewModel}">
-                <view:AddModelsView/>
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:ViewRepairViewModel}">
                 <view:ViewRepairView/>
