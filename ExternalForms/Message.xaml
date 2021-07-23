@@ -7,10 +7,10 @@
         xmlns:local="clr-namespace:DemoInterface1.ExternalForms"
         mc:Ignorable="d"
          Title="Message" Height="148.866" Width="334.139" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Grid Width="350" Height="170" HorizontalAlignment="Center">
+    <Grid Width="350" Height="170" HorizontalAlignment="Center"  Background="#202020">
         <StackPanel Orientation="Horizontal" Margin="20,0,10,30">
             <materialDesign:PackIcon x:Name="icon" Kind="CheckCircle" Foreground="{StaticResource PrimaryHueMidBrush}" Width="50" Height="50"/>
-            <TextBlock x:Name="txt_msg" Foreground="Gray" Width="239" Margin="15,30,15,47" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" Height="63" TextAlignment="Center"/>
+            <TextBlock x:Name="txt_msg" Foreground="White" Width="239" Margin="15,30,15,47" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" Height="63" TextAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,27,49">
             <Button x:Name="btn_ok"  Margin="4" VerticalAlignment="Center" Content="OK" Click="btn_ok_Click" Style="{StaticResource MaterialDesignRaisedButton}" Foreground="White" Width="71" Height="24"/>

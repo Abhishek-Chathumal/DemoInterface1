@@ -32,7 +32,7 @@
 
             </StackPanel>
         </Grid>
-        <Grid Width="200" HorizontalAlignment="Left" Margin="200 40 0 0">
+        <Grid Width="200" HorizontalAlignment="Left" Margin="200 40 0 0" >
             <Grid.Background>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
                     <GradientStop Color="#FFE7EBEE" Offset="0"/>

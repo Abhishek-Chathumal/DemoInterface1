@@ -50,5 +50,15 @@ namespace DemoInterface1.ExternalForms
             obj.Show();
             this.Close();
         }
+
+        private void btn_minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void btn_close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
