@@ -89,103 +89,122 @@ namespace DemoInterface1.MVVM.View
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if(txt_insComp.Text != "")
             {
-                Insurance insurance = new Insurance(txt_insID.Text, txt_insComp.Text);
-                int i = insurance.addInsurance();
-                if (i == 1)
+                try
+                {
+                    Insurance insurance = new Insurance(txt_insID.Text, txt_insComp.Text);
+                    int i = insurance.addInsurance();
+                    if (i == 1)
+                    {
+                        ExternalForms.Message msg = new ExternalForms.Message();
+                        msg.Show();
+                        rbtn_add_Checked(this, null);
+                    }
+                    else
+                    {
+                        ExternalForms.Message msg = new ExternalForms.Message();
+                        msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                        msg.Show();
+                    }
+                }
+                catch (System.Data.SqlClient.SqlException)
                 {
                     ExternalForms.Message msg = new ExternalForms.Message();
+                    msg.errorMsg("Please fill the form correctly. ");
                     msg.Show();
-                    rbtn_add_Checked(this, null);
                 }
-                else
+                catch (Exception ex)
                 {
                     ExternalForms.Message msg = new ExternalForms.Message();
-                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                    msg.errorMsg("Oops something went worng. " + ex.Message);
                     msg.Show();
                 }
             }
-            catch (System.Data.SqlClient.SqlException)
-            {
-                ExternalForms.Message msg = new ExternalForms.Message();
-                msg.errorMsg("Please fill the form correctly. ");
-                msg.Show();
-            }
-            catch (Exception ex)
-            {
-                ExternalForms.Message msg = new ExternalForms.Message();
-                msg.errorMsg("Oops something went worng. " + ex.Message);
-                msg.Show();
-            }
-
+          
         }
 
         private void btn_update_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if(txt_insComp.Text != "")
             {
-                Insurance insurance = new Insurance(txt_insID.Text, txt_insComp.Text);
-                int i = insurance.updateInsurance();
-                if (i == 1)
+                try
+                {
+                    Insurance insurance = new Insurance(txt_insID.Text, txt_insComp.Text);
+                    int i = insurance.updateInsurance();
+                    if (i == 1)
+                    {
+                        ExternalForms.Message msg = new ExternalForms.Message();
+                        msg.informationMsg("Data Updated Successfully!");
+                        msg.Show();
+                        rbtn_update_Checked(this, null);
+                    }
+                    else
+                    {
+                        ExternalForms.Message msg = new ExternalForms.Message();
+                        msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                        msg.Show();
+                    }
+                }
+                catch (System.Data.SqlClient.SqlException)
                 {
                     ExternalForms.Message msg = new ExternalForms.Message();
-                    msg.informationMsg("Data Updated Successfully!");
+                    msg.errorMsg("Please fill the form correctly. ");
                     msg.Show();
-                    rbtn_update_Checked(this, null);
                 }
-                else
+                catch (Exception ex)
                 {
                     ExternalForms.Message msg = new ExternalForms.Message();
-                    msg.errorMsg("Sorry, couldn't save your data.Please try again");
+                    msg.errorMsg("Oops something went worng. " + ex.Message);
                     msg.Show();
                 }
             }
-            catch (System.Data.SqlClient.SqlException)
-            {
-                ExternalForms.Message msg = new ExternalForms.Message();
-                msg.errorMsg("Please fill the form correctly. ");
-                msg.Show();
-            }
-            catch (Exception ex)
-            {
-                ExternalForms.Message msg = new ExternalForms.Message();
-                msg.errorMsg("Oops something went worng. " + ex.Message);
-                msg.Show();
-            }
+           
         }
 
         private void btn_del_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if(txt_insID.Text != "")
             {
-                int i = ins.deleteInsurance(txt_insID.Text);
-                if (i == 1)
+                try
+                {
+                    int i = ins.deleteInsurance(txt_insID.Text);
+                    if (i == 1)
+                    {
+                        ExternalForms.Message msg = new ExternalForms.Message();
+                        msg.informationMsg("Data Deleted Successfully!");
+                        msg.Show();
+                        rbtn_update_Checked(this, null);
+                    }
+                    else
+                    {
+                        ExternalForms.Message msg = new ExternalForms.Message();
+                        msg.errorMsg("Sorry, couldn't delete your data.Please try again");
+                        msg.Show();
+                    }
+                }
+                catch (System.Data.SqlClient.SqlException)
                 {
                     ExternalForms.Message msg = new ExternalForms.Message();
-                    msg.informationMsg("Data Deleted Successfully!");
+                    msg.errorMsg("Please fill the form correctly. ");
                     msg.Show();
-                    rbtn_update_Checked(this, null);
                 }
-                else
+                catch (Exception ex)
                 {
                     ExternalForms.Message msg = new ExternalForms.Message();
-                    msg.errorMsg("Sorry, couldn't delete your data.Please try again");
+                    msg.errorMsg("Oops something went worng. " + ex.Message);
                     msg.Show();
                 }
             }
-            catch (System.Data.SqlClient.SqlException)
-            {
-                ExternalForms.Message msg = new ExternalForms.Message();
-                msg.errorMsg("Please fill the form correctly. ");
-                msg.Show();
-            }
-            catch (Exception ex)
-            {
-                ExternalForms.Message msg = new ExternalForms.Message();
-                msg.errorMsg("Oops something went worng. " + ex.Message);
-                msg.Show();
-            }
+            
+        }
+
+        private void txt_insComp_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txt_insComp.Text.Length == 0)
+                txt_error.Text = "Please enter a Insurance Name";
+            else
+                txt_error.Text = "";
         }
     }
 }
