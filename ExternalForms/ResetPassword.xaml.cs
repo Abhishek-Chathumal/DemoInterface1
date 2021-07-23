@@ -52,6 +52,7 @@ namespace DemoInterface1.ExternalForms
             {
                 ManageAccount ma = new ManageAccount(txt_uname.Text);
                 ma.Show();
+                this.Close();
             }
             else
             {
@@ -59,6 +60,18 @@ namespace DemoInterface1.ExternalForms
                 msg.errorMsg("Invalid Code.Please try again");
                 msg.Show();
             }
+        }
+
+        private void btn_close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Login log = new Login();
+            log.Show();
+        }
+
+        private void btn_minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
 
         public void sendEmail()
