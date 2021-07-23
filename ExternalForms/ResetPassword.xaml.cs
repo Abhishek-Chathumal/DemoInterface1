@@ -63,10 +63,10 @@ namespace DemoInterface1.ExternalForms
         }
 
         private void btn_close_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
+        {          
             Login log = new Login();
             log.Show();
+            this.Close();
         }
 
         private void btn_minimize_Click(object sender, RoutedEventArgs e)
