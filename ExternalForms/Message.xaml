@@ -6,14 +6,15 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:DemoInterface1.ExternalForms"
         mc:Ignorable="d"
-         Title="Message" Height="148.866" Width="334.139" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Grid Width="350" Height="170" HorizontalAlignment="Center"  Background="#202020">
+        Background="Transparent"
+        Title="Message" Height="148.866" Width="334.139" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid Width="350" Height="170" HorizontalAlignment="Center"  Background="#212121">
         <StackPanel Orientation="Horizontal" Margin="20,0,10,30">
             <materialDesign:PackIcon x:Name="icon" Kind="CheckCircle" Foreground="{StaticResource PrimaryHueMidBrush}" Width="50" Height="50"/>
             <TextBlock x:Name="txt_msg" Foreground="White" Width="239" Margin="15,30,15,47" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" Height="63" TextAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,27,49">
-            <Button x:Name="btn_ok"  Margin="4" VerticalAlignment="Center" Content="OK" Click="btn_ok_Click" Style="{StaticResource MaterialDesignRaisedButton}" Foreground="White" Width="71" Height="24"/>
+            <Button x:Name="btn_ok"  Margin="4" VerticalAlignment="Center" VerticalContentAlignment="Center" Content="OK" Click="btn_ok_Click" Style="{StaticResource MaterialDesignRaisedButton}" Foreground="White" Width="71" Height="24"/>
         </StackPanel>
     </Grid>
 </Window>

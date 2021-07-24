@@ -11,6 +11,7 @@
         TextOptions.TextRenderingMode="Auto"      
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
+        Background="Transparent"
         Height="525.5" Width="500"
         WindowStyle="None"
         ResizeMode="NoResize"
