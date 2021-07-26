@@ -3,11 +3,296 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:DemoInterface1.MVVM.View"
+             xmlns:local="clr-namespace:DemoInterface1.MVVM.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="489.6" d:DesignWidth="780">
     <Grid>
-        <TextBlock Text="- ADD BOOKING -" Foreground="White" Opacity="0.8" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,11,0,419"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="- ADD BOOKINGS -" Foreground="White" Opacity="0.8" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"
                    FontSize="16" FontFamily="Tahoma" />
+
+        <Border Grid.Row="1" CornerRadius="10" Background="#191919" Margin="0 10 0 10">
+            <Border.Clip>
+                <RectangleGeometry RadiusX="10" RadiusY="10"
+                                   Rect="0 0 300 469.6"/>
+            </Border.Clip>
+            <ScrollViewer Margin="10 10 10 10" Grid.Column="0" VerticalScrollBarVisibility="Auto" Template="{DynamicResource ScrollViewerSubMenu}">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <StackPanel.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="Margin" Value="0 10 0 0"/>
+                            <Setter Property="Background" Value="#252424"/>
+                            <Setter Property="Height" Value="40"/>
+                            <Setter Property="Width" Value="200"/>
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Setter Property="Margin" Value="0 0 0 0"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="Height" Value="20"/>
+                            <Setter Property="Width" Value="20"/>
+                        </Style>
+                        <Style TargetType="{x:Type Rectangle}">
+                            <Setter Property="Margin" Value="4 0 5 0"/>
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="Height" Value="16"/>
+                            <Setter Property="Width" Value="1"/>
+                            <Setter Property="Opacity" Value="0.5"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="Fill" Value="#FF9A9A9A"/>
+                            <Setter Property="Stroke" Value="#FF9A9A9A"/>
+                            <Setter Property="StrokeThickness" Value="1"/>
+                        </Style>
+                        <Style TargetType="{x:Type TextBox}">
+                            <Setter Property="Height" Value="30"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="Width" Value="185"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Foreground" Value="#FF9A9A9A"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="FontSize" Value="15"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <Border Margin="0 0 0 0">
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBlock Text="Booking ID" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_bid}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_bid" IsReadOnly="True" />
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <ComboBox x:Name="cmb_cNIC" Margin="5 0 5 0" Height="30" Width="185"
+                                      materialDesign:HintAssist.Hint="Customer NIC"
+                                      materialDesign:HintAssist.HintOpacity="0.5"
+                                      materialDesign:HintAssist.Foreground="#FF9A9A9A"
+                                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                                      Foreground="#FF9A9A9A"
+                                      FontSize="15" Background="Transparent"
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
+                            </ComboBox.Resources>
+
+                        </ComboBox>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBlock Text="Cusomer Name" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_cName}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_cName"/>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <ComboBox x:Name="cmb_vLplate" Margin="5 0 5 0" Height="30" Width="185"
+                                      materialDesign:HintAssist.Hint="License Plate No. "
+                                      materialDesign:HintAssist.HintOpacity="0.5"
+                                      materialDesign:HintAssist.Foreground="#FF9A9A9A"
+                                      materialDesign:ComboBoxAssist.ClassicMode="True"
+                                      Foreground="#FF9A9A9A"
+                                      FontSize="15" Background="Transparent"
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                            <ComboBox.Resources>
+                                <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
+                            </ComboBox.Resources>
+
+                        </ComboBox>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+                            <TextBlock Text="Year" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_vYear}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_vYear"/>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+
+                            <TextBlock Text="Make" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_vMake}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_vMake"/>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+
+                            <TextBlock Text="Model" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_vModel}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_vModel"/>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+
+                            <TextBlock Text="Advance (Rs.)" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                               IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_advance}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_advance"/>
+                        </Grid>
+                    </Border>
+                    
+                    
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <DatePicker FontSize="15"
+                            x:Name="dte_lend" Foreground="#9a9a9a"
+                            Width="185" Height="30" BorderBrush="#9a9a9a"
+                            materialDesign:HintAssist.Hint="Lend Date"
+                            materialDesign:HintAssist.Foreground="#9a9a9a"
+                            materialDesign:HintAssist.HintOpacity="0.5">
+
+                            <DatePicker.Resources>
+                                <SolidColorBrush x:Key="MaterialDesignPaper" Color="#191919"/>
+                                <SolidColorBrush x:Key="MaterialDesignBody" Color="White"/>
+                            </DatePicker.Resources>
+                        </DatePicker>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <DatePicker FontSize="15"
+                            x:Name="dte_return" Foreground="#9a9a9a"
+                            Width="185" Height="30" BorderBrush="#9a9a9a"
+                            materialDesign:HintAssist.Hint="Return Date"
+                            materialDesign:HintAssist.Foreground="#9a9a9a"
+                            materialDesign:HintAssist.HintOpacity="0.5">
+
+                            <DatePicker.Resources>
+                                <SolidColorBrush x:Key="MaterialDesignPaper" Color="#191919"/>
+                                <SolidColorBrush x:Key="MaterialDesignBody" Color="White"/>
+                            </DatePicker.Resources>
+                        </DatePicker>
+                    </Border>
+
+                </StackPanel>
+            </ScrollViewer>
+
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" Height="350" Width="400" Background="#191919" CornerRadius="10" Margin="0 10 0 0"
+                VerticalAlignment="Top">
+            <StackPanel>
+                <TextBlock x:Name="book_date" Height="25" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 20 0 0" TextAlignment="Center" FontSize="12" FontWeight="DemiBold" FontFamily="Tahoma" Foreground="White" Opacity="0.6"/> 
+                <TextBlock x:Name="error_msg" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Margin="0 50 0 0" VerticalAlignment="Center" Width="200" Height="100" Foreground="#FFFF4949" TextAlignment="Center" FontSize="15"/>
+            </StackPanel>
+            
+        </Border>
+        <Border Height="50" Width="400" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" >
+            <DockPanel>
+                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
+                    Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Left"
+                    BorderThickness="0" Margin="40 0 0 0" />
+                
+                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
+                    Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Left"
+                    BorderThickness="0" Margin="10 0 0 0"/>
+
+                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="BILL"
+                    Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Right"
+                    BorderThickness="0" Margin="0 0 40 0" />
+            </DockPanel>
+        </Border>
+        <Separator Grid.Row="1" Grid.Column="1" Width="300" Background="#9a9a9a" Opacity="0.5" VerticalAlignment="Bottom" Margin="0 0 0 35"/>
+        
     </Grid>
 </UserControl>

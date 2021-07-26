@@ -8,13 +8,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="520" d:DesignWidth="780">
     <Grid>
-        <TextBlock Foreground="white" FontSize="50"><Run Text="Accounts"/></TextBlock>
-        <Border CornerRadius="10" Background="#191919" Margin="0,75,496,10">
+        <Border CornerRadius="10" Background="#191919" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20 50 0 0" Height="440" Width="220">
             <Border.Clip>
                 <RectangleGeometry RadiusX="10" RadiusY="10"
-                                   Rect="0 0 300 469.6"/>
+                                   Rect="0 0 220 440"/>
             </Border.Clip>
-            <ScrollViewer Margin="10" Grid.Column="0" VerticalScrollBarVisibility="Auto" Template="{DynamicResource ScrollViewerSubMenu}">
+            <ScrollViewer Margin="10" VerticalAlignment="Center" Grid.Column="0" VerticalScrollBarVisibility="Auto" Template="{DynamicResource ScrollViewerSubMenu}">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
                     <StackPanel.Resources>
                         <Style TargetType="{x:Type Border}">
@@ -146,8 +145,8 @@
             </ScrollViewer>
 
         </Border>
-        <Border Background="#191919" CornerRadius="10" Margin="298,75,10,105">
-            <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="444" Height="310" Margin="20,52,20,71">
+        <Border Background="#191919" CornerRadius="10" VerticalAlignment="Top" HorizontalAlignment="Right" Height="350" Margin="0 50 20 0">
+            <Grid VerticalAlignment="Top" HorizontalAlignment="Center" Width="444" Height="310" Margin="20 50 20 20">
                 <DataGrid x:Name="dg_accounts"
                     ItemsSource="{Binding}"
                     CanUserAddRows="False"
@@ -161,7 +160,7 @@
                 </DataGrid>
             </Grid>
         </Border>
-        <Border Height="55" Background="#191919" VerticalAlignment="Bottom" Margin="298,0,10,35"
+        <Border Height="55" Background="#191919" VerticalAlignment="Bottom" Margin="275,0,20,35"
                 CornerRadius="10">
             <DockPanel>
                 <Button x:Name="btn_add" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="ADD"
