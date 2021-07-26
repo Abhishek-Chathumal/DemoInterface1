@@ -44,19 +44,17 @@ namespace DemoInterface1.MVVM.View
             PointLabel = chartPoint => string.Format("{0}({1:P})", chartPoint.Y, chartPoint.Participation);
             DataContext = this;
             SolidColorBrush brush1 = new SolidColorBrush();
-            brush1.Color = Color.FromRgb(74,20,140);
+            brush1.Color = Color.FromRgb(101, 31, 255);
             SolidColorBrush brush2 = new SolidColorBrush();
-            brush2.Color = Color.FromRgb(123, 31, 162);
+            brush2.Color = Color.FromRgb(109, 42, 255);
             SolidColorBrush brush3 = new SolidColorBrush();
-            brush3.Color = Color.FromRgb(159, 36, 176);
+            brush3.Color = Color.FromRgb(124, 64, 255);
             SolidColorBrush brush4 = new SolidColorBrush();
-            brush4.Color = Color.FromRgb(186, 104, 200);
+            brush4.Color = Color.FromRgb(155, 109, 255);
             SolidColorBrush brush5 = new SolidColorBrush();
-            brush5.Color = Color.FromRgb(225, 190, 231);
-            SolidColorBrush brushStroke = new SolidColorBrush();
-            brush5.Color = Color.FromRgb(25, 25, 25);
+            brush5.Color = Color.FromRgb(185, 154, 255);
             SolidColorBrush brush6 = new SolidColorBrush();
-            brush6.Color = Color.FromRgb(138, 1, 254);
+            brush6.Color = Color.FromRgb(216, 199, 255);
             piechart.Series = new SeriesCollection
         {
             new PieSeries
@@ -86,17 +84,7 @@ namespace DemoInterface1.MVVM.View
                 LabelPoint = PointLabel,
                 Fill = brush3,
                 StrokeThickness=0
-            },
-            new PieSeries
-            {
-                Title = "VAN",
-                Values = new ChartValues<double> {vehicle.getVan()},
-                DataLabels = true,
-                LabelPoint = PointLabel,
-                Fill = brush5,
-                StrokeThickness=0
-            }
-            ,
+            },            
             new PieSeries
             {
                 Title = "MINI-VAN",
@@ -104,6 +92,15 @@ namespace DemoInterface1.MVVM.View
                 DataLabels = true,
                 LabelPoint = PointLabel,
                 Fill = brush4,
+                StrokeThickness=0
+            },
+             new PieSeries
+            {
+                Title = "VAN",
+                Values = new ChartValues<double> {vehicle.getVan()},
+                DataLabels = true,
+                LabelPoint = PointLabel,
+                Fill = brush5,
                 StrokeThickness=0
             }
             ,
