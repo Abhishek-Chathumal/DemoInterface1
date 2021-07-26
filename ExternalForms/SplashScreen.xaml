@@ -8,6 +8,6 @@
         mc:Ignorable="d"
          Title="SplashScreen" Height="413.584" Width="555.491" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="558" gif:ImageBehavior.AnimatedSource="E:\Downloads\loading1.gif"/>
+        <Image HorizontalAlignment="Left" Height="419" VerticalAlignment="Top" Width="558"/><!-- gif:ImageBehavior.AnimatedSource="E:\Downloads\loading1.gif"/-->
     </Grid>
 </Window>

@@ -23,28 +23,28 @@ namespace DemoInterface1.ExternalForms
         DispatcherTimer dT = new DispatcherTimer();
         String utype, uname;
         public SplashScreen()
-        {
-            InitializeComponent();
-            dT.Tick += new EventHandler(dT_Tick);
-            dT.Interval = new TimeSpan(0, 0, 5);
-            dT.Start();
-        }
-        public SplashScreen(string utype, string uname)
-        {
-            InitializeComponent();
+         {
+             InitializeComponent();
+             dT.Tick += new EventHandler(dT_Tick);
+             dT.Interval = new TimeSpan(0, 0, 5);
+             dT.Start();
+         }
+         public SplashScreen(string utype, string uname)
+         {
+             InitializeComponent();
 
-            dT.Tick += new EventHandler(dT_Tick);
-            dT.Interval = new TimeSpan(0, 0, 7);
-            dT.Start();
-            this.utype = utype;
-            this.uname = uname;
-        }
-        private void dT_Tick(object sender, EventArgs e)
-        {
-            MainWindow mw = new MainWindow(utype, uname);
-            mw.Show();
-            dT.Stop();
-            this.Close();
-        }
+             dT.Tick += new EventHandler(dT_Tick);
+             dT.Interval = new TimeSpan(0, 0, 7);
+             dT.Start();
+             this.utype = utype;
+             this.uname = uname;
+         }
+         private void dT_Tick(object sender, EventArgs e)
+         {
+             MainWindow mw = new MainWindow(utype, uname);
+             mw.Show();
+             dT.Stop();
+             this.Close();
+         }
     }
 }
