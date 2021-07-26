@@ -5,15 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:DemoInterface1.ExternalForms"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"      
+        FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-         Title="Message" Height="148.866" Width="334.139" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Grid Width="350" Height="170" HorizontalAlignment="Center"  Background="#202020">
-        <StackPanel Orientation="Horizontal" Margin="20,0,10,30">
-            <materialDesign:PackIcon x:Name="icon" Kind="CheckCircle" Foreground="{StaticResource PrimaryHueMidBrush}" Width="50" Height="50"/>
-            <TextBlock x:Name="txt_msg" Foreground="White" Width="239" Margin="15,30,15,47" TextWrapping="Wrap" Text="Data Saved Successfully!" VerticalAlignment="Center" HorizontalAlignment="Center" Height="63" TextAlignment="Center"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,27,49">
-            <Button x:Name="btn_ok"  Margin="4" VerticalAlignment="Center" Content="OK" Click="btn_ok_Click" Style="{StaticResource MaterialDesignRaisedButton}" Foreground="White" Width="71" Height="24"/>
-        </StackPanel>
+        Height="150" Width="340"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Border
+            Background="#202020"/>
+        <materialDesign:PackIcon x:Name="icon" Kind="CheckCircle" Foreground="{StaticResource PrimaryHueMidBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="50"/>
+        <TextBlock x:Name="txt_msg"  HorizontalAlignment="Left" Margin="44,50,0,0" TextWrapping="Wrap" Text="Data Saved Successfully" VerticalAlignment="Top" Width="261" Height="54" Opacity="0.75" Foreground="#DDFFFFFF" TextAlignment="Center"/>
+        <Button  x:Name="btn_ok" Content="OK" Click="btn_ok_Click" Style="{StaticResource MaterialDesignRaisedButton}" Foreground="White" HorizontalAlignment="Left" Margin="255,108,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

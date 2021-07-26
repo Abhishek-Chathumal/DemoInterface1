@@ -393,7 +393,7 @@
                         <DatePicker FontSize="15"
                             x:Name="date_licenseStart" Foreground="#9a9a9a"
                             Width="185" Height="30" BorderBrush="#9a9a9a"
-                            materialDesign:HintAssist.Hint="Expiry Date"
+                            materialDesign:HintAssist.Hint="Start Date"
                             materialDesign:HintAssist.Foreground="#9a9a9a"
                             materialDesign:HintAssist.HintOpacity="0.5" CalendarClosed="date_licenseStart_CalendarClosed">
 
