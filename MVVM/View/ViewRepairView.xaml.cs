@@ -24,6 +24,7 @@ namespace DemoInterface1.MVVM.View
         public ViewRepairView()
         {
             InitializeComponent();
+            loadData();
         }
         Database db = new Database();
         DataTable dt = new DataTable();
@@ -40,14 +41,16 @@ namespace DemoInterface1.MVVM.View
 
         private void cmb_RepCatagory_DropDownClosed(object sender, EventArgs e)
         {
+            date_repair.SelectedDate = null;
+            cmb_vehicle.SelectedIndex = -1;
             if (cmb_RepCatagory.SelectedIndex == 0)
             {
-                dt = mr.viewRepairVehicle(cmb_vehicle.Text);
+                dt = mr.viewRepair();
                 dg_repair.ItemsSource = dt.DefaultView;
             }
             else if (cmb_RepCatagory.SelectedIndex == 1)
             {
-                dt = ar.viewRepairVehicle(cmb_vehicle.Text);
+                dt = ar.viewRepair();
                 dg_repair.ItemsSource = dt.DefaultView;
             }
         }

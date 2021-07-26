@@ -34,7 +34,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_vehicle_DropDownClosed">
                                 <ComboBox.Resources>
                                     <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                                 </ComboBox.Resources>
@@ -46,14 +46,14 @@
 
                 </Border>
                 <Button x:Name="btn_view" Content="VIEW ALL" FontSize="12" Foreground="White" Height="25" Width="100" HorizontalAlignment="Right"
-                        Margin="0 0 50 10" VerticalAlignment="Bottom" BorderThickness="0"/>
+                        Margin="0 0 50 10" VerticalAlignment="Bottom" BorderThickness="0" Click="btn_view_Click"/>
 
 
             </DockPanel>
 
             <Border Width="780" Height="359.6" VerticalAlignment="Center" Margin="0 10 0 0" Background="#191919" CornerRadius="10">
                 <Grid Width="760" Height="330" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 10 0 0">
-                    <DataGrid
+                    <DataGrid x:Name="dg_service"
                     ItemsSource="{Binding}"
                     CanUserAddRows="False"
                     SelectionUnit="Cell"

@@ -64,25 +64,7 @@
                             <ComboBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                             </ComboBox.Resources>
-                            <ComboBoxItem Content="AUDI"  HorizontalAlignment="Left" Width="138"/>
-                            <ComboBoxItem Content="BMW"/>
-                            <ComboBoxItem Content="BENZ"/>
-                            <ComboBoxItem Content="FORD"/>
-                            <ComboBoxItem Content="HONDA"/>
-                            <ComboBoxItem Content="HYUNDAI"/>
-                            <ComboBoxItem Content="JAGUAR"/>
-                            <ComboBoxItem Content="KIA"/>
-                            <ComboBoxItem Content="LEXUS"/>
-                            <ComboBoxItem Content="MAZDA"/>
-                            <ComboBoxItem Content="MERCEDES"/>
-                            <ComboBoxItem Content="MITSUBISHI"/>
-                            <ComboBoxItem Content="NISSAN"/>
-                            <ComboBoxItem Content="PERADUA"/>
-                            <ComboBoxItem Content="PEUGEOT"/>
-                            <ComboBoxItem Content="RENAULT"/>
-                            <ComboBoxItem Content="SUZUKI"/>
-                            <ComboBoxItem Content="TOYOTA"/>
-                            <ComboBoxItem Content="VOLKSWAGAON"/>
+                            
                         </ComboBox>
 
                     </Border>
