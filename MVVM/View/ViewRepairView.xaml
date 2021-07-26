@@ -21,22 +21,7 @@
                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 -10 700 90"/>
                 </Border.Clip>
                 <DockPanel>
-                    <Border Background="#202020" Height="30" Width="165" CornerRadius="5" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                            Margin="20 0 0 10">
-                        <Border.Clip>
-                            <RectangleGeometry RadiusX="5" RadiusY="5" Rect="0 0 165 30"/>
-                        </Border.Clip>
-                        <DatePicker x:Name="date_repair" FontSize="15" Foreground="#9a9a9a"
-                            Width="150" Height="30" BorderBrush="#9a9a9a"
-                            materialDesign:HintAssist.Hint="Select Date"
-                            materialDesign:HintAssist.Foreground="#9a9a9a">
 
-                            <DatePicker.Resources>
-                                <SolidColorBrush x:Key="MaterialDesignPaper" Color="#191919"/>
-                                <SolidColorBrush x:Key="MaterialDesignBody" Color="White"/>
-                            </DatePicker.Resources>
-                        </DatePicker>
-                    </Border>
 
 
                     <Border Background="#202020" Height="30" Width="165" CornerRadius="5" VerticalAlignment="Bottom" HorizontalAlignment="Left"
@@ -51,20 +36,17 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_RepCatagory_DropDownClosed">
                             <ComboBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                             </ComboBox.Resources>
-                            <ComboBoxItem Content="Sedan" HorizontalAlignment="Left" Width="138"/>
-                            <ComboBoxItem Content="HatchBack" HorizontalAlignment="Left" />
-                            <ComboBoxItem Content="SUV" HorizontalAlignment="Left"/>
-                            <ComboBoxItem Content="Pickup" HorizontalAlignment="Left"/>
-                            <ComboBoxItem Content="Van" HorizontalAlignment="Left"/>
-                            <ComboBoxItem Content="Pickup" HorizontalAlignment="Left"/>
-
+                            <ComboBoxItem Content="Maintenance" HorizontalAlignment="Left" Width="138"/>
+                            <ComboBoxItem Content="Accident" HorizontalAlignment="Left" />
                         </ComboBox>
 
                     </Border>
+                    
+                    
 
                     <Border Background="#202020" Height="30" Width="165" CornerRadius="5" VerticalAlignment="Bottom" HorizontalAlignment="Left"
                             Margin="20 0 0 10">
@@ -78,7 +60,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_vehicle_DropDownClosed">
                             <ComboBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                             </ComboBox.Resources>
@@ -104,12 +86,29 @@
                         </ComboBox>
 
                     </Border>
+
+                    <Border Background="#202020" Height="30" Width="165" CornerRadius="5" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                            Margin="20 0 0 10">
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="5" RadiusY="5" Rect="0 0 165 30"/>
+                        </Border.Clip>
+                        <DatePicker x:Name="date_repair" FontSize="15" Foreground="#9a9a9a"
+                            Width="150" Height="30" BorderBrush="#9a9a9a"
+                            materialDesign:HintAssist.Hint="Select Date"
+                            materialDesign:HintAssist.Foreground="#9a9a9a" CalendarClosed="date_repair_CalendarClosed">
+
+                            <DatePicker.Resources>
+                                <SolidColorBrush x:Key="MaterialDesignPaper" Color="#191919"/>
+                                <SolidColorBrush x:Key="MaterialDesignBody" Color="White"/>
+                            </DatePicker.Resources>
+                        </DatePicker>
+                    </Border>
                 </DockPanel>
 
             </Border>
             <Border Width="780" Height="325" VerticalAlignment="Center" Margin="0 10 0 0" Background="#191919" CornerRadius="10">
                 <Grid Width="760" Height="305" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 10 0 0">
-                    <DataGrid
+                    <DataGrid x:Name="dg_repair"
                     ItemsSource="{Binding}"
                     CanUserAddRows="False"
                     SelectionUnit="Cell"
@@ -124,7 +123,7 @@
                 </Grid>
             </Border>
         </StackPanel>
-        <Button Grid.Row="1" Content="VIEW ALL" FontSize="12" Foreground="White" Height="25" Width="100" HorizontalAlignment="Right" 
-                VerticalContentAlignment="Center" VerticalAlignment="Bottom" BorderThickness="0"/>
+        <Button x:Name="btn_view" Grid.Row="1" Content="VIEW ALL" FontSize="12" Foreground="White" Height="25" Width="100" HorizontalAlignment="Right" 
+                VerticalContentAlignment="Center" VerticalAlignment="Bottom" BorderThickness="0" Click="btn_view_Click"/>
     </Grid>
 </UserControl>
