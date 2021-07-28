@@ -74,7 +74,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_sID_DropDownClosed">
                             <ComboBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                             </ComboBox.Resources>
@@ -92,7 +92,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_vid_DropDownClosed">
                             <ComboBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                             </ComboBox.Resources>
@@ -108,7 +108,7 @@
                             Width="185" Height="30" BorderBrush="#9a9a9a"
                             materialDesign:HintAssist.Hint="Service Date"
                             materialDesign:HintAssist.Foreground="#9a9a9a"
-                            materialDesign:HintAssist.HintOpacity="0.5">
+                            materialDesign:HintAssist.HintOpacity="0.5" CalendarClosed="dte_service_CalendarClosed">
 
                             <DatePicker.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#191919"/>
@@ -134,7 +134,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_mileage"/>
+                            <TextBox x:Name="txt_mileage" KeyUp="txt_mileage_KeyUp"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -156,7 +156,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_sLocation"/>
+                            <TextBox x:Name="txt_sLocation" TextChanged="txt_sLocation_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -178,7 +178,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_sCost"/>
+                            <TextBox x:Name="txt_sCost" TextChanged="txt_sCost_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -200,7 +200,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_nxtMileage"/>
+                            <TextBox x:Name="txt_nxtMileage" TextChanged="txt_nxtMileage_TextChanged"/>
                         </Grid>
                     </Border>
 
@@ -233,24 +233,24 @@
                         </Style>
                     </TextBlock.Style>
                 </TextBlock>
-                <TextBox x:Name="txt_details"/>
+                <TextBox x:Name="txt_details" TextChanged="txt_details_TextChanged" Foreground="#FF9A9A9A" FontSize="15"/>
             </Grid>
 
         </Border>
         <TextBlock x:Name="error_msg" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Margin="0 50 0 100" VerticalAlignment="Bottom" Width="400" Height="30" Foreground="#FFFF4949" TextAlignment="Center" FontSize="15"/>
         <Border Height="50" Width="400" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" >
             <DockPanel>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
+                <Button x:Name="btn_update" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="UPDATE"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Left"
-                    BorderThickness="0" Margin="40 0 0 0" />
+                    BorderThickness="0" Margin="40 0 0 0" Click="btn_update_Click" />
 
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
+                <Button x:Name="btn_cls" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Left"
-                    BorderThickness="0" Margin="10 0 0 0"/>
+                    BorderThickness="0" Margin="10 0 0 0" Click="btn_cls_Click"/>
 
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="BILL"
+                <Button x:Name="btn_del" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="DELETE"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Right"
-                    BorderThickness="0" Margin="0 0 40 0" />
+                    BorderThickness="0" Margin="0 0 40 0" Click="btn_del_Click" />
             </DockPanel>
         </Border>
         <Separator Grid.Row="1" Grid.Column="1" Width="300" Background="#9a9a9a" Opacity="0.5" VerticalAlignment="Bottom" Margin="0 0 0 35"/>

@@ -74,11 +74,12 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_Rtype_DropDownClosed">
                             <ComboBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                             </ComboBox.Resources>
-
+                            <ComboBoxItem Content="Maintenance" HorizontalAlignment="Left" Width="183"/>
+                            <ComboBoxItem Content="Accident" HorizontalAlignment="Left" Width="183"/>
                         </ComboBox>
                         
                     </Border>
@@ -100,7 +101,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_id"/>
+                            <TextBox x:Name="txt_id" IsEnabled="False"/>
                         </Grid>
                         
                     </Border>
@@ -113,7 +114,7 @@
                             Width="185" Height="30" BorderBrush="#9a9a9a"
                             materialDesign:HintAssist.Hint="Repair Date"
                             materialDesign:HintAssist.Foreground="#9a9a9a"
-                            materialDesign:HintAssist.HintOpacity="0.5">
+                            materialDesign:HintAssist.HintOpacity="0.5" CalendarClosed="date_repair_CalendarClosed">
 
                             <DatePicker.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#191919"/>
@@ -132,7 +133,7 @@
                                       materialDesign:ComboBoxAssist.ClassicMode="True"
                                       Foreground="#FF9A9A9A"
                                       FontSize="15" Background="Transparent"
-                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277">
+                                      IsEditable="True" BorderBrush="#FF9A9A9A" MaxDropDownHeight="277" DropDownClosed="cmb_vehicle_DropDownClosed">
                             <ComboBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignPaper" Color="#252424"/>
                             </ComboBox.Resources>
@@ -158,7 +159,7 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_location"/>
+                            <TextBox x:Name="txt_location" TextChanged="txt_location_TextChanged"/>
                         </Grid>
                     </Border>
                     <Border>
@@ -180,7 +181,51 @@
                                     </Style>
                                 </TextBlock.Style>
                             </TextBlock>
-                            <TextBox x:Name="txt_cost"/>
+                            <TextBox x:Name="txt_cost" TextChanged="txt_cost_TextChanged"/>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+
+                            <TextBlock x:Name="tb_opt1" Text="" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_option1}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_option1" IsEnabled="False" TextChanged="txt_option1_TextChanged"/>
+                        </Grid>
+                    </Border>
+                    <Border>
+                        <Border.Clip>
+                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0 0 200 40"/>
+                        </Border.Clip>
+                        <Grid>
+
+                            <TextBlock x:Name="tb_opt2" Text="" VerticalAlignment="Center" Background="Transparent" Opacity="0.5" Foreground="#FF9A9A9A" FontSize="15"
+                                           IsHitTestVisible="False" Margin="10 0 0 0">
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=txt_option2}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <TextBox x:Name="txt_option2" IsEnabled="False" TextChanged="txt_option2_TextChanged"/>
                         </Grid>
                     </Border>
                 </StackPanel>
@@ -210,20 +255,20 @@
                         </Style>
                     </TextBlock.Style>
                 </TextBlock>
-                <TextBox x:Name="txt_details"/>
+                <TextBox x:Name="txt_details" TextChanged="txt_details_TextChanged" Foreground="#FF9A9A9A" FontSize="15"/>
             </Grid>
 
         </Border>
         <TextBlock x:Name="error_msg" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Margin="0 50 0 100" VerticalAlignment="Bottom" Width="400" Height="30" Foreground="#FFFF4949" TextAlignment="Center" FontSize="15"/>
         <Border Height="50" Width="400" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 0 40" >
             <DockPanel>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
+                <Button x:Name="btn_save" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="SAVE"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Left"
-                    BorderThickness="0" Margin="40 0 0 0" />
+                    BorderThickness="0" Margin="40 0 0 0" Click="btn_save_Click" />
 
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
+                <Button x:Name="btn_cls" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" ToolTip="Resource name: MaterialDesignRaisedButton" Content="CLEAR"
                     Foreground="White" Background="#ad4bff" VerticalAlignment="Center" FontSize="12" Height="25" HorizontalAlignment="Right"
-                    BorderThickness="0" Margin="0 0 40 0"/>
+                    BorderThickness="0" Margin="0 0 40 0" Click="btn_cls_Click"/>
 
                 
             </DockPanel>

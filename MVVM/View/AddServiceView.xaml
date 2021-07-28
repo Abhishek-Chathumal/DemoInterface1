@@ -236,7 +236,7 @@
                         </Style>
                     </TextBlock.Style>
                 </TextBlock>
-                <TextBox x:Name="txt_details" TextChanged="txt_details_TextChanged"/>
+                <TextBox x:Name="txt_details" TextChanged="txt_details_TextChanged" FontSize="15" Foreground="#FF9A9A9A"/>
             </Grid>
 
         </Border>
