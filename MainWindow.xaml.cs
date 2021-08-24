@@ -52,5 +52,26 @@ namespace DemoInterface1
             this.WindowState = WindowState.Minimized;
         }
 
+        private void btn_logout_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ExternalForms.Login login = new ExternalForms.Login();
+            login.Show();
+            this.Close();
+        }
+
+        private void acc_panel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            acc_panel.Visibility = Visibility.Hidden;
+        }
+
+        private void btn_acc_MouseEnter(object sender, MouseEventArgs e)
+        {
+            acc_panel.Visibility = Visibility.Visible;
+        }
+
+        private void acc_panel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            acc_panel.Visibility = Visibility.Visible;
+        }
     }
 }
