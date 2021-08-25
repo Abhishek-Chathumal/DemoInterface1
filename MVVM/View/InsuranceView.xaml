@@ -132,6 +132,6 @@
                 </DataGrid>
             </Grid>
         </Border>
-        <TextBlock x:Name="txt_error"  HorizontalAlignment="Left" Margin="28,87,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="23" Foreground="#FFFF4949" TextAlignment="Center" FontSize="15"/>
+        <TextBlock x:Name="txt_error"  HorizontalAlignment="Left" Margin="238,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" Height="23" Foreground="#FFFF4949" TextAlignment="Center" FontSize="15"/>
     </Grid>
 </UserControl>

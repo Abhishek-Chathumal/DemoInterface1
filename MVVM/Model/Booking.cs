@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,8 +33,10 @@ namespace DemoInterface1
         {
             string query1 = "insert into Booking values ('" + bookingID + "','" + bookingDate + "','" + lendDate + "','" + returnDate + "','" + advAmount + "')";
             string query2 = "insert into Customer_Booking values ('" + bookingID + "','" + cid + "','" + vid + "')";
+            string query3 = "update vehicle set bookingStatus='1' where plateNUmber='" + vid + "'";
             int i = db.save_update_delete(query1);
             int j = db.save_update_delete(query2);
+            db.save_update_delete(query3);
             if (i == 1 && j == 1)
                 return i;
             else
@@ -118,7 +121,7 @@ namespace DemoInterface1
         {
             DateTime today = DateTime.Today;
             DateTime monthAfter = today.AddDays(+31);
-            dt = db.getData("exec viewReturns '"+ monthAfter + "','"+today+"'");
+            dt = db.getData("exec viewReturns '"+ today + "','"+ monthAfter + "'");
             return dt;
         }
     }
