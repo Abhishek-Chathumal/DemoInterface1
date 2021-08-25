@@ -60,6 +60,7 @@ namespace DemoInterface1.MVVM.View
                 tb_opt2.Text = "";
                 txt_option1.IsEnabled = true;
                 txt_option2.IsEnabled = false;
+                loadData();
             }
             else if (cmb_Rtype.SelectedIndex == 1)
             {
@@ -81,6 +82,7 @@ namespace DemoInterface1.MVVM.View
                 tb_opt2.Text = "Duration (Days)";
                 txt_option1.IsEnabled = true;
                 txt_option2.IsEnabled = true;
+                loadData();
             }
             else
                 error_msg.Text = "Please Select A Repair Type";

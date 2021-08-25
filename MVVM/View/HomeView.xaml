@@ -98,7 +98,7 @@
                                     </Style>
                                 </DataGrid.Resources>
                             </DataGrid>
-                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TO BE RETURNED" VerticalAlignment="Top" Margin="10,10,0,0" Width="371" Height="25" Foreground="White" FontFamily="Tahoma" FontSize="22" FontWeight="Bold" Opacity="0.6"/>
+                            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,10,0,0" Width="202" Height="25" Foreground="White" FontFamily="Tahoma" FontSize="22" FontWeight="Bold" Opacity="0.6"><Run Text="TO BE RETURNED "/><LineBreak/><Run/></TextBlock>
                         </Grid>
                     </Border>
                     <Border VerticalAlignment="Top" HorizontalAlignment="Left"
@@ -131,5 +131,6 @@
 
             </StackPanel>
         </ScrollViewer>
+        <TextBlock HorizontalAlignment="Left" Margin="219,202,0,0" TextWrapping="Wrap" Text="WITHIN 4 WEEKS" VerticalAlignment="Top" Foreground="White" Opacity="0.6"/>
     </Grid>
 </UserControl>
