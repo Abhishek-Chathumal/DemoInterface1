@@ -16,6 +16,26 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\NIBM\Final Project\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Malshi Rent a Car</ProductName>
+    <PublisherName>NIBM</PublisherName>
+    <SuiteName>NIBM</SuiteName>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +55,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4AB9E5F52B1ECED3CE9814C879B6ACE446F2359F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DemoInterface1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -329,20 +361,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Class\AccidentRepair.cs" />
-    <Compile Include="Class\Bill.cs" />
-    <Compile Include="Class\Booking.cs" />
-    <Compile Include="Class\Customer.cs" />
-    <Compile Include="Class\Database.cs" />
-    <Compile Include="Class\HashCode.cs" />
-    <Compile Include="Class\Insurance.cs" />
-    <Compile Include="Class\MaintenanceRepair.cs" />
-    <Compile Include="Class\ModelPricing.cs" />
-    <Compile Include="Class\Owner.cs" />
-    <Compile Include="Class\Repair.cs" />
-    <Compile Include="Class\Service.cs" />
-    <Compile Include="Class\User.cs" />
-    <Compile Include="Class\Vehicle.cs" />
+    <Compile Include="MVVM\Model\AccidentRepair.cs" />
+    <Compile Include="MVVM\Model\Bill.cs" />
+    <Compile Include="MVVM\Model\Booking.cs" />
+    <Compile Include="MVVM\Model\Customer.cs" />
+    <Compile Include="MVVM\Model\Database.cs" />
+    <Compile Include="MVVM\Model\HashCode.cs" />
+    <Compile Include="MVVM\Model\Insurance.cs" />
+    <Compile Include="MVVM\Model\MaintenanceRepair.cs" />
+    <Compile Include="MVVM\Model\ModelPricing.cs" />
+    <Compile Include="MVVM\Model\Owner.cs" />
+    <Compile Include="MVVM\Model\Repair.cs" />
+    <Compile Include="MVVM\Model\Service.cs" />
+    <Compile Include="MVVM\Model\User.cs" />
+    <Compile Include="MVVM\Model\Vehicle.cs" />
     <Compile Include="Core\observableObject.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -623,6 +655,7 @@
     <EmbeddedResource Include="Reports\RViewVehicleStatus.resx">
       <DependentUpon>RViewVehicleStatus.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DemoInterface1_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -633,8 +666,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Class\" />
     <Folder Include="Fonts\" />
-    <Folder Include="MVVM\Model\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="IconsAndImages\Home1.png" />
@@ -714,6 +747,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="IconsAndImages\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

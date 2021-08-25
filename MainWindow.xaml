@@ -64,11 +64,11 @@
                         </Border.Clip>
 
                         <StackPanel Orientation="Horizontal">
-                            <Border HorizontalAlignment="Left"
+                            <Border x:Name="btn_acc" HorizontalAlignment="Left"
                                     Height="40"
                                     Width="40" VerticalAlignment="Center"
                                     CornerRadius="20"
-                                    BorderThickness="0" Background="#673ab7">
+                                    BorderThickness="0" Background="#673ab7" MouseEnter="btn_acc_MouseEnter">
 
                                 <Border.Clip>
                                     <RectangleGeometry RadiusX="20"
@@ -390,6 +390,20 @@
                     </StackPanel>
                 </Grid>
             </Grid>
+            <StackPanel x:Name="acc_panel" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="58,51,0,0" VerticalAlignment="Top" Width="168" Opacity="0.8" Visibility="Hidden" MouseLeave="acc_panel_MouseLeave" MouseEnter="acc_panel_MouseEnter">
+                <StackPanel.Effect>
+                    <DropShadowEffect Color="#FF474449" BlurRadius="6"/>
+                </StackPanel.Effect>
+                <Border x:Name="btn_logout" CornerRadius="20"
+                                    BorderThickness="0" Background="#FF373737" Height="25" MouseLeftButtonDown="btn_logout_MouseLeftButtonDown">
+                    <Border.Clip>
+                        <RectangleGeometry RadiusX="10"
+                                               RadiusY="10"
+                                               Rect="10 0 100 25"/>
+                    </Border.Clip>
+                    <TextBlock Text="Logout" Height="22" Foreground="#DDFFFFFF" FontSize="17" FontWeight="Bold" Opacity="0.6" Margin="32,2,76,1"/>
+                </Border>
+            </StackPanel>
 
 
 

@@ -124,7 +124,7 @@
                             </LinearGradientBrush>
                         </Border.Background>
                         <StackPanel>
-                            <TextBlock Text="MAINTENANCE -" Margin="10 5 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"
+                            <TextBlock Text="ACCIDENT -" Margin="10 5 0 0" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="12" FontWeight="DemiBold"
                                Foreground="#9a9a9a" Opacity="0.8" FontFamily="Tahoma"/>
                             <DockPanel Margin="10 10 10 10">
                                 <Button x:Name="btn_acccident" Width="200" FontSize="20" Height="80" HorizontalAlignment="Left" Margin="50 0 0 0" VerticalAlignment="Top" Click="btn_acccident_Click" BorderBrush="{x:Null}">

@@ -117,7 +117,7 @@ namespace DemoInterface1
         public DataTable viewReturn()
         {
             DateTime today = DateTime.Today;
-            DateTime monthAfter = today.AddDays(-61);
+            DateTime monthAfter = today.AddDays(+31);
             dt = db.getData("exec viewReturns '"+ monthAfter + "','"+today+"'");
             return dt;
         }
